@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Scoop A Dive :)</h1>
+    <table>
+        {% for list in postlist %}
+            <ul>
+                <li>{{ list.postname }}</li>
+                <li>{{ list.contents }}</li>
+            </ul>
+        {% endfor %}
+    </table>
+</body>
+</html>
