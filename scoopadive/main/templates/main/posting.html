@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posting!</title>
+</head>
+<body>
+    <h1>{{ log.logName}}</h1>
+    <p>Dive No. {{ log.diveNo }}</p>
+    <p>Date: {{ log.date }}</p>
+    <p>Location: {{ log.location }}</p>
+    <p>Buddy: {{ log.buddy }}</p>
+    <p>Time In: {{ log.timeIn }}</p>
+    <p>Time Out: {{ log.timeOut }}</p>
+    <p>Weight: {{ log.weight }}</p>
+    <p>Start(Bar): {{ log.barStart }}</p>
+    <p>End(Bar): {{ log.barEnd }}</p>
+    <p>Max: {{ log.maxDepth }}</p>
+    <p>Min: {{ log.minDepth }}</p>
+    <p>Temperature: {{ log.temperature }}</p>
+    <h2>Comments</h2>
+    <p>{{ log.comments }}</p>
+    <!-- 이미지 보여주기 -->
+    <h2>Images</h2>
+    {% if log.images %}
+        <img src = "{{ log.images.url }}" alt="" height="600">
+        <br>
+    {% endif %}
+    <a href="/home/">목록</a>
+    <a href="/home/{{ log.pk }}/remove">삭제</a>
+</body>
+</html>

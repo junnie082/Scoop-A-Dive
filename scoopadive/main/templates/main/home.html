@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Home</h1>
+    <table>
+        {% for list in loglist %}
+            <ul>
+                <li><a href="{{ list.pk }}/">{{ list.logName }}</a></li>
+            </ul>
+        {% endfor %}
+    </table>
+    <button><a href="new_post/">글쓰기</a></button>
+</body>
+</html>
