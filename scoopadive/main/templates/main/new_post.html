@@ -5,14 +5,40 @@
     <title>글쓰기 페이지</title>
 </head>
 <body>
-    <h1>글쓰기 페이지</h1>
+    <h1>New Log</h1>
     <form method="POST">
         {% csrf_token %}
-        제목<br>
-        <input type="text" name="postname"><br>
-        내용<br>
-        <textarea rows="10" cols="50" name="contents"></textarea>
-        <input type="file" name="mainphoto"><br>
+        Title<br>
+        <input type="text" name="logName"><br>
+        Dive No <br>
+        <input type="number" name="diveNo"><br>
+        Date<br>
+        <input type="date" name="date"><br>
+        Location<br>
+        <input type="text" name="location"><br>
+        Buddy<br>
+        <input type="text" name="buddy"><br>
+        Time In<br>
+        <input type="time" name="timeIn"><br>
+        Time Out<br>
+        <input type="time" name="timeOut"><br>
+        Weight<br>
+        <input type="number" name="weight"><br>
+        Start(Bar)<br>
+        <input type="number" name="barStart"><br>
+        End(Bar)<br>
+        <input type="number" name="barEnd"><br>
+        Max Depth<br>
+        <input type="number" name="maxDepth"><br>
+        Min Depth<br>
+        <input type="number" name="minDepth"><br>
+        Temperature<br>
+        <input type="number" name="temperature" step="0.1"><br>
+        Comments<br>
+        <textarea rows="50" cols="100" name="comments"></textarea>
+        Images<br>
+        <input type="file" name="images"><br>
+
         <input type="submit" value="글쓰기">
     </form>
 </body>

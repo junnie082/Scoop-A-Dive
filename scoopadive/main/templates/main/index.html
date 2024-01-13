@@ -7,10 +7,10 @@
 <body>
     <h1>Scoop A Dive :)</h1>
     <table>
-        {% for list in postlist %}
+        {% for list in loglist %}
             <ul>
-                <li>{{ list.postname }}</li>
-                <li>{{ list.contents }}</li>
+                <li>{{ list.logName }}</li>
+                <li>{{ list.comments }}</li>
             </ul>
         {% endfor %}
     </table>
