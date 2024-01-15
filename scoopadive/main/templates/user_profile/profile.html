@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+    <h2>{{ user.username }}</h2>
+    <p>Name: {{ profile.name }}</p>
+
+    {% if profile %}
+        {% if profile.is_ststMember %}
+            <p>I'm a member of Seoul Tech Scuba Team</p>
+        {% else %}
+            <p>I'm not a member of Seoul Tech Scuba Team</p>
+        {% endif %}
+    {% else %}
+        <p>No profile found for this user.</p>
+    {% endif %}
+
+</body>
+</html>

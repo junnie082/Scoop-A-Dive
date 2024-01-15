@@ -15,7 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+import user_profile
+from main import views
 from main.views import index, home, posting, new_post, remove_post
 
 # 이미지를 업로드하자
@@ -24,14 +27,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # 웹사이트의 첫화면은 index 페이지이다 + URL 이름은 index이다.
-    path('', index, name='index'),
-    # URL:80/home에 접속하면 home 페이지 + URL 이름은 home 이다
-    path('home/', home, name='home'),
-    # URL:80/home/숫자로 접속하면 게시글-세부페이지(posting)
-    path('home/<int:pk>/', posting, name="posting"),
-    path('home/new_post/', new_post, name="new_post"),
-    path('home/<int:pk>/remove/', remove_post),
+    path('', include('main.urls')),
+    path('common/', include('common.urls')),
+    path('profile/', include('user_profile.urls')),
+    path('', views.index, name='index'),
 ]
 
 # 이미지 URL 설정
