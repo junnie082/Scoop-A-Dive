@@ -82,7 +82,7 @@
     <table>
         {% for list in loglist %}
             <ul>
-                <li><a id="title" href="{{ list.pk }}/">{{ list.logName }}</a></li>
+                <li><a id="title" href="{{ list.pk }}/">{{ list.logName }}</a>, {{ list.diver }}</li>
             </ul>
         {% endfor %}
     </table>
