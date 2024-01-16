@@ -1,12 +1,22 @@
+from django.contrib.auth.models import AnonymousUser
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 
+from user_profile.models import Profile
 # View에 Model(Post 게시글) 가져오기
 from .models import Log
 
 def index(request):
     loglist = Log.objects.all()
-    return render(request, 'main/index.html', {'loglist': loglist})
+    current_user = request.user
+
+    if not isinstance(current_user, AnonymousUser):
+        print("Is not AnonymousUser!")
+        profile = Profile.objects.get(user=request.user)
+        print("profile.is_ststMember: " + str(profile.is_ststMember))
+        return render(request, 'main/index.html', {'loglist': loglist, 'profile': profile})
+    else:
+        return render(request, 'main/index.html', {'loglist': loglist})
 
 def home(request):
     loglist = Log.objects.all()

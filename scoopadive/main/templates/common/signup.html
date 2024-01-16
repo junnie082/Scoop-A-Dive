@@ -1,40 +1,79 @@
-<form method="post" class="post-form" action="{% url 'common:signup' %}">
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Sign Up</title>
+</head>
+<body>
+<!-- 네비게이션바 -->
+{% include "components/navbar.html" %}
+
+<div class="container mt-5">
+  <form method="post" class="post-form" action="{% url 'common:signup' %}">
     {% csrf_token %}
-    <!-- Heading -->
     <h3 class="dark-grey-text text-center">
       <strong>회원가입</strong>
     </h3>
     <hr>
-    <div class="md-form">
-      <i class="fas fa-user prefix grey-text"></i>
-      <input type="text" name="username" id="username" class="form-control">
-      <label for="username">아이디</label>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="md-form">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" name="username" id="username" class="form-control">
+          <label for="username">아이디</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="md-form">
+          <i class="fas fa-key prefix grey-text"></i>
+          <input type="password" name="password1" id="password1" class="form-control">
+          <label for="password1">패스워드</label>
+        </div>
+      </div>
     </div>
-    <div class="md-form">
-      <i class="fas fa-key prefix grey-text"></i>
-      <input type="password" name="password1" id="password1" class="form-control">
-      <label for="password1">패스워드</label>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="md-form">
+          <i class="fas fa-key prefix grey-text"></i>
+          <input type="password" name="password2" id="password2" class="form-control">
+          <label for="password2">패스워드 확인</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="md-form">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" name="email" id="email" class="form-control">
+          <label for="email">이메일</label>
+        </div>
+      </div>
     </div>
-    <div class="md-form">
-      <i class="fas fa-key prefix grey-text"></i>
-      <input type="password" name="password2" id="password2" class="form-control">
-      <label for="password2">패스워드 확인</label>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="md-form">
+          <i class="fas fa-signature prefix grey-text"></i>
+          <input type="text" name="name" id="name" class="form-control">
+          <label for="name">성명</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-check mt-4 ml-3">
+          <input type="checkbox" class="form-check-input" name="is_ststMember" id="is_ststMember">
+          <label class="form-check-label" for="is_ststMember">Member of Seoul Tech Scuba Team?</label>
+        </div>
+      </div>
     </div>
-    <div class="md-form">
-      <i class="fas fa-envelope prefix grey-text"></i>
-      <input type="email" name="email" id="email" class="form-control">
-      <label for="email">이메일</label>
-    </div>
-    <div class="md-form">
-      <i class="fas fa-signature prefix grey-text"></i>
-      <input type="text" name="name" id="name" class="form-control">
-      <label for="name">성명</label>
-    </div>
-    <div class="md-form custom-control custom-checkbox ml-4">
-      <input type="checkbox" class="custom-control-input" name="is_ststMember" id="is_ststMember">
-      <label class="custom-control-label" for="is_ststMember">Member of Seoul Tech Scuba Team?</label>
-    </div>
-    <div class="text-center">
+
+    <div class="text-center mt-4">
       <button class="btn btn-indigo">회원가입</button>
     </div>
   </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+</body>
+</html>
