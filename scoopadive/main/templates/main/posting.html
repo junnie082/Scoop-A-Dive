@@ -1,11 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Posting!</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Log!</title>
 </head>
 <body>
+<!-- 네비게이션바 -->
+    {% include "components/navbar.html" %}
+
     <h1>{{ log.logName}}</h1>
+    <p>Diver: {{ user.username }}</p>
     <p>Dive No. {{ log.diveNo }}</p>
     <p>Date: {{ log.date }}</p>
     <p>Location: {{ log.location }}</p>
@@ -44,5 +51,8 @@
     </form>
     <a href="/home/">목록</a>
     <a href="/home/{{ log.pk }}/remove">삭제</a>
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+
 </body>
 </html>

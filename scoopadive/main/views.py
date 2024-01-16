@@ -1,12 +1,22 @@
+from django.contrib.auth.models import AnonymousUser
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 
+from user_profile.models import Profile
 # View에 Model(Post 게시글) 가져오기
 from .models import Log
 
 def index(request):
     loglist = Log.objects.all()
-    return render(request, 'main/index.html', {'loglist': loglist})
+    current_user = request.user
+
+    if not isinstance(current_user, AnonymousUser):
+        print("Is not AnonymousUser!")
+        profile = Profile.objects.get(user=request.user)
+        print("profile.is_ststMember: " + str(profile.is_ststMember))
+        return render(request, 'main/index.html', {'loglist': loglist, 'profile': profile})
+    else:
+        return render(request, 'main/index.html', {'loglist': loglist})
 
 def home(request):
     loglist = Log.objects.all()
@@ -19,12 +29,13 @@ def posting(request, pk):
     # 게시글(Post) 중 pk(primary_key)를 이용해 하나의 게시글(post)를 검색
     # # posthing.html 페이지를 열 때, 찾아낸 게시글(post)을 post라는 이름으로 가져옴
     log = Log.objects.get(pk=pk)
-    return render(request, 'main/posting.html', {'log': log})
+    return render(request, 'main/posting.html', {'user': request.user, 'log': log})
 
 def new_post(request):
     if request.method == 'POST':
         if 'timeIn' in request.POST and 'timeOut' in request.POST:
             new_log = Log.objects.create(
+                diver = request.user,
                 logName = request.POST['logName'],
                 diveNo = request.POST['diveNo'],
                 date = request.POST['date'],

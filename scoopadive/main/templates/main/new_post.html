@@ -1,10 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>글쓰기 페이지</title>
 </head>
 <body>
+<!-- 네비게이션바 -->
+{% include "components/navbar.html" %}
+
     <h1>New Log</h1>
     <form method="POST">
         {% csrf_token %}
@@ -41,5 +47,9 @@
 
         <input type="submit" value="글쓰기">
     </form>
+
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+
 </body>
 </html>

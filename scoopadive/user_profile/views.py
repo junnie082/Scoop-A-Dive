@@ -80,5 +80,5 @@ def modify_profile(request):
 
     profile.save()
 
-    print("birthday: " + str(birthday) + "profile.birthday: " + str(profile.birthday))
+    print("is_ststMember: " + str(profile.is_ststMember) + "profile.birthday: " + str(profile.birthday))
     return render(request, 'main/home.html')
