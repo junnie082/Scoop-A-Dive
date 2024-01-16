@@ -19,16 +19,16 @@ class Log(models.Model):
     comments = models.TextField()
     images = models.ImageField(blank=True, null=True)
 
+    class Meta:
+        db_table = 'Logs'
     def __str__(self):
         return self.logName
 
 
-class Post(models.Model):
-    postname = models.CharField(max_length=50)
-    # 게시글 Post에 이미지 추가
-    mainphoto = models.ImageField(blank=True, null=True)
-    contents = models.TextField()
+class Answer(models.Model):
+    log = models.ForeignKey(Log, on_delete=models.CASCADE)
+    content = models.TextField()
+    create_date = models.DateTimeField()
 
-    # 게시글의 제목(postname)이 Post object 대신하기
-    def __str__(self):
-        return self.postname
+    class Meta:
+        db_table = 'Answers'
