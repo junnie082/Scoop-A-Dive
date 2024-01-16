@@ -62,3 +62,5 @@ def signup(request):
     else:
         # Render the signup page for GET requests
         return render(request, 'common/signup.html')
+
+
