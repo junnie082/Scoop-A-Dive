@@ -6,10 +6,34 @@
 </head>
 <body>
 <h2>Modify Profile!!</h2>
-    {% if profile.is_ststMember %}
-        StudentId
-        <input type="text" name="studentId">
+<a href="/profile">돌아가기</a>
+<form action="{% url 'user_profile:modify_profile' %}" method="POST">
+{% csrf_token %}
+    Name
+    <input type="text" name="name"><br>
+    Birthday
+    <input type="date" name="birthday"><br>
+    Diving License
+    <input type="text" name="diveLicense"><br>
+    Profile Image
+    <input type="file" name="image"><br>
 
+    {% if profile.is_ststMember %}
+        <h3>Only for STST members!</h3>
+        StudentId
+        <input type="text" name="studentId"><br>
+        Kisu
+        <input type="number" name="kisu"><br>
+        Major
+        <input type="text" name="major"><br>
+        Absent for this semester
+        <input type="checkbox" name="absence"><br>
+        Introduction
+        <textarea type="text" name="introduction"></textarea><br>
+
+
+        <input type="submit" value="수정하기">
     {% endif %}
+</form>
 </body>
 </html>

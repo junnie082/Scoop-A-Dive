@@ -28,7 +28,7 @@ class Log(models.Model):
 class Answer(models.Model):
     log = models.ForeignKey(Log, on_delete=models.CASCADE)
     content = models.TextField()
-    create_date = models.DateTimeField()
+    # create_date = models.DateTimeField()
 
     class Meta:
         db_table = 'Answers'
