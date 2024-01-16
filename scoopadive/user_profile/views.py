@@ -16,3 +16,13 @@ def view_profile(request):
         profile = None
 
     return render(request, 'user_profile/profile.html', {"user": current_user, "profile": profile})
+
+def modify_profile(request):
+    current_user = request.user
+
+    try:
+        profile = Profile.objects.get(user=current_user)
+    except Profile.DoesNotExist:
+        profile = None
+
+    return render(request, 'user_profile/modify_profile.html', {"user": current_user, "profile": profile})
