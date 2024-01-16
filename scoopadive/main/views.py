@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import timezone
+
 # View에 Model(Post 게시글) 가져오기
-from .models import Post, Log
+from .models import Log
 
 def index(request):
     loglist = Log.objects.all()
@@ -15,9 +17,7 @@ def home(request):
 
 def posting(request, pk):
     # 게시글(Post) 중 pk(primary_key)를 이용해 하나의 게시글(post)를 검색
-    # post = Post.objects.get(pk=pk)
     # # posthing.html 페이지를 열 때, 찾아낸 게시글(post)을 post라는 이름으로 가져옴
-    # return render(request, 'main/posting.html', {'post':post})
     log = Log.objects.get(pk=pk)
     return render(request, 'main/posting.html', {'log': log})
 
@@ -62,3 +62,9 @@ def remove_post(request, pk):
         log.delete()
         return redirect('/home/')
     return render(request, 'main/remove_post.html', {'Log':  log})
+
+def answer_create(request, logId):
+    # 답글 추가
+    log = get_object_or_404(Log, pk=logId)
+    log.answer_set.create(content=request.POST.get('content'), create_date=timezone.now())
+    return redirect('main:posting', logId)

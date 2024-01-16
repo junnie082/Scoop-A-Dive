@@ -26,6 +26,22 @@
         <img src = "{{ log.images.url }}" alt="" height="600">
         <br>
     {% endif %}
+
+    <h5 class="border-bottom my-3 py-2">{{log.answer_set.count}}개의 답글이 있습니다.</h5>
+    <div>
+        <ul>
+            {% for answer in log.answer_set.all %}
+                <li>{{ answer.content }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <form action="{% url 'main:answer_create' log.id %}" method="post">
+    {% csrf_token %}
+    <textarea name="content" id="content" rows="15"></textarea>
+    <input type="submit" value="답변등록">
+    </form>
     <a href="/home/">목록</a>
     <a href="/home/{{ log.pk }}/remove">삭제</a>
 </body>

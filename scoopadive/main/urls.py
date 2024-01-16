@@ -1,4 +1,6 @@
 from django.urls import path
+
+from . import views
 from .views import *
 
 app_name = 'main'
@@ -15,4 +17,5 @@ urlpatterns = [
     path('home/<int:pk>/', posting, name="posting"),
     path('home/new_post/', new_post, name="new_post"),
     path('home/<int:pk>/remove/', remove_post),
+    path('answer/create/<int:logId>', views.answer_create, name="answer_create")
 ]
