@@ -10,7 +10,7 @@
 {% include "components/navbar.html" %}
 
 <div class="container mt-5">
-  <form method="post" class="post-form" action="{% url 'common:signup' %}">
+  <form method="post" class="was-validated" action="{% url 'common:signup' %}">
     {% csrf_token %}
     <h3 class="dark-grey-text text-center">
       <strong>회원가입</strong>
@@ -18,14 +18,17 @@
     <hr>
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 mx-auto">
         <div class="md-form">
           <i class="fas fa-user prefix grey-text"></i>
           <input type="text" name="username" id="username" class="form-control">
           <label for="username">아이디</label>
         </div>
       </div>
-      <div class="col-md-6">
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mx-auto">
         <div class="md-form">
           <i class="fas fa-key prefix grey-text"></i>
           <input type="password" name="password1" id="password1" class="form-control">
@@ -35,14 +38,17 @@
     </div>
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 mx-auto">
         <div class="md-form">
           <i class="fas fa-key prefix grey-text"></i>
           <input type="password" name="password2" id="password2" class="form-control">
           <label for="password2">패스워드 확인</label>
         </div>
       </div>
-      <div class="col-md-6">
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mx-auto">
         <div class="md-form">
           <i class="fas fa-envelope prefix grey-text"></i>
           <input type="email" name="email" id="email" class="form-control">
@@ -52,14 +58,17 @@
     </div>
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 mx-auto">
         <div class="md-form">
           <i class="fas fa-signature prefix grey-text"></i>
           <input type="text" name="name" id="name" class="form-control">
           <label for="name">성명</label>
         </div>
       </div>
-      <div class="col-md-6">
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mx-auto">
         <div class="form-check mt-4 ml-3">
           <input type="checkbox" class="form-check-input" name="is_ststMember" id="is_ststMember">
           <label class="form-check-label" for="is_ststMember">Member of Seoul Tech Scuba Team?</label>
@@ -67,8 +76,8 @@
       </div>
     </div>
 
-    <div class="text-center mt-4">
-      <button class="btn btn-indigo">회원가입</button>
+    <div class="text-center">
+        <button class="btn btn-primary">회원가입</button>
     </div>
   </form>
 </div>

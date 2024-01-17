@@ -22,6 +22,7 @@ class Log(models.Model):
     comments = models.TextField()
     images = models.ImageField(blank=True, null=True)
     create_date = models.DateTimeField(null=True)
+    voter = models.ManyToManyField(User) # 추천인 추가
 
     class Meta:
         db_table = 'Logs'

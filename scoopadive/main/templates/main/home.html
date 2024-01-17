@@ -1,4 +1,5 @@
 {% load static %}
+{% load main_filter %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>Diving Logs</title>
-
 </head>
 <body>
 <!-- 네비게이션바 -->
@@ -24,17 +24,26 @@
             <ul class="list-group">
                 {% for log in loglist %}
                     <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <td>
+                            <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
+                            {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
+                        </td>
                         <div class="text-center">
-                            <div class="fw-bold mb-2"><a href="{{ log.pk }}/">{{ log.logName }}</a></div>
-                            <div>{{ log.diver }}</div>
+                            <h4 class="fw-bold mb-2"><a href="{{ log.pk }}/">{{ log.logName }}</a></h4>
+                            <p class="mb-0">{{ log.diver }}</p>
                         </div>
-                        <span class="badge bg-primary rounded-pill">{{ log.answer_set.count }}</span>
+                        <div class="d-flex align-items-center">
+                            <span class="badge bg-primary rounded-pill me-2">{{ log.voter.count }} 추천</span>
+                            <span class="badge bg-success rounded-pill">{{ log.answer_set.count }} 답글</span>
+                        </div>
                     </li>
                 {% endfor %}
             </ul>
         </div>
     </div>
 </div>
+
+
 
 
 

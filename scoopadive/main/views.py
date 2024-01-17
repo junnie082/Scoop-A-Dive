@@ -1,3 +1,5 @@
+from email import message
+
 from django.contrib.auth.models import AnonymousUser
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
@@ -88,3 +90,11 @@ def answer_create(request, logId):
     author = request.user
     log.answer_set.create(content=request.POST.get('content'), author=author, create_date=timezone.now())
     return redirect('main:posting', logId)
+
+def log_vote(request, log_id):
+    log = get_object_or_404(Log, pk = log_id)
+    if request.user == log.diver:
+        message.error(request, '본인이 작성한 글은 추천할 수 없습니다.')
+    else:
+        log.voter.add(request.user)
+    return redirect('main:posting', log_id)

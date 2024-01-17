@@ -17,5 +17,6 @@ urlpatterns = [
     path('home/<int:pk>/', posting, name="posting"),
     path('home/new_post/', new_post, name="new_post"),
     path('home/<int:pk>/remove/', remove_post),
-    path('answer/create/<int:logId>', views.answer_create, name="answer_create")
+    path('answer/create/<int:logId>', views.answer_create, name="answer_create"),
+    path('home/vote/<int:log_id>/', views.log_vote, name="log_vote"),
 ]
