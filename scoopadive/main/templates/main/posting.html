@@ -12,7 +12,7 @@
     {% include "components/navbar.html" %}
 
     <h1>{{ log.logName}}</h1>
-    <p>Diver: {{ user.username }}</p>
+    <p>Diver: {{ log.diver }}</p>
     <p>Dive No. {{ log.diveNo }}</p>
     <p>Date: {{ log.date }}</p>
     <p>Location: {{ log.location }}</p>
@@ -43,6 +43,24 @@
             {% endfor %}
         </ul>
     </div>
+
+    <a href="javascript:void(0)" data-uri="{% url 'main:log_vote' log_id=log.id %}"
+       class="recommend btn btn-sm btn-outline-secondary"> 추천
+        <span class="badge rounded-pill bg-success">{{question.voter.count}}</span>
+    </a>
+
+<script>
+    const recommend_elements = document.getElementsByClassName("recommend");
+Array.from(recommend_elements).forEach(function(element) {
+    element.addEventListener('click', function() {
+        if(confirm("정말로 추천하시겠습니까?")) {
+            location.href = this.dataset.uri;
+        };
+    });
+});
+
+</script>
+
 
 
     <form action="{% url 'main:answer_create' log.id %}" method="post">

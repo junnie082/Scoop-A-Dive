@@ -1,4 +1,5 @@
 {% load static %}
+{% load main_filter %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>Diving Logs</title>
-
 </head>
 <body>
 <!-- 네비게이션바 -->
@@ -18,15 +18,78 @@
 
     <h1>Diving Logs</h1>
 
-    <br>
-    <a href="{% url 'main:index' %}">Back to main page</a>
-    <table>
-        {% for list in loglist %}
-            <ul>
-                <li><a id="title" href="{{ list.pk }}/">{{ list.logName }}</a>, {{ list.diver }}</li>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <ul class="list-group">
+                {% for log in loglist %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <td>
+                            <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
+                            {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
+                        </td>
+                        <div class="text-center">
+                            <h4 class="fw-bold mb-2"><a href="{{ log.pk }}/">{{ log.logName }}</a></h4>
+                            <p class="mb-0">{{ log.diver }}</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="badge bg-primary rounded-pill me-2">{{ log.voter.count }} 추천</span>
+                            <span class="badge bg-success rounded-pill">{{ log.answer_set.count }} 답글</span>
+                        </div>
+                    </li>
+                {% endfor %}
             </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- 페이징처리 시작 -->
+    <ul class="pagination justify-content-center">
+        <a class="page-link" href="/home/?page=1">처음으로</a>
+        <!-- 이전페이지 -->
+        {% if loglist.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ loglist.previous_page_number }}">이전</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+        </li>
+        {% endif %}
+        <!-- 페이지리스트 -->
+        {% for page_number in loglist.paginator.page_range %}
+        {% if page_number >= loglist.number|add:-5 and page_number <= loglist.number|add:5 %}
+
+        {% if page_number == loglist.number %}
+        <li class="page-item active" aria-current="page">
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+        </li>
+        {% endif %}
+        {% endif %}
+
         {% endfor %}
-    </table>
+        <!-- 다음페이지 -->
+        {% if loglist.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ loglist.next_page_number }}">다음</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+        </li>
+        {% endif %}
+    </ul>
+    <!-- 페이징처리 끝 -->
+
     <button><a href="new_post/" style="color: white;">글쓰기</a></button>
 
     <!-- Bootstrap JS -->
