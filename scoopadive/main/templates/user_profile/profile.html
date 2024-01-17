@@ -13,10 +13,16 @@
             padding: 0;
             text-align: center;
             background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         h1, h2, h3 {
-            color: #333;
+            color: #007BFF;
         }
 
         a {
@@ -33,73 +39,91 @@
         p {
             font-size: 16px;
             margin-bottom: 10px;
+            color: #555;
         }
 
         img {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .btn {
-            margin: 5px;
+            margin: 10px;
+        }
+
+        .profile-section, .introduction-section, .logs-section, .button-section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     {% include 'components/navbar.html' %}
-    <h1>{{ user.username }}'s Profile</h1>
-    <a href="/home">돌아가기</a>
+    <div class="container profile-section">
+        <h1>{{ user.username }}'s Profile</h1>
+        <a href="/home">Back to Home</a>
 
-    {% if profile %}
-        <p><strong>Name:</strong> {{ profile.name }}</p>
-        {% if profile.image %}
-            <img src="{{ profile.image.url }}" alt="" height="150"><br>
+        {% if profile %}
+            <p><strong>Name:</strong> {{ profile.name }}</p>
+            {% if profile.image %}
+                <img src="{{ profile.image.url }}" alt="{{ user.username }}'s Profile Image" height="150">
+            {% endif %}
+
+            {% if profile.diveLicense %}
+                <h3>{{ profile.diveLicense }}</h3>
+            {% endif %}
+
+            {% if profile.is_ststMember %}
+                <p>Member of Seoul Tech Scuba Team</p>
+
+                {% if profile.studentID %}
+                    <p>{{ profile.studentID }}</p>
+                {% endif %}
+                {% if profile.kisu %}
+                    <h3>{{ profile.kisu }}기</h3>
+                {% endif %}
+                {% if profile.birthday %}
+                    <h3>{{ profile.birthday }}, {{ profile.age }} years old</h3>
+                {% endif %}
+                {% if profile.major %}
+                    <h3>{{ profile.major }} Major</h3>
+                {% endif %}
+                {% if profile.is_absence %}
+                    <h3>On Leave</h3>
+                {% else %}
+                    <h3>Enrolled</h3>
+                {% endif %}
+            {% endif %}
+
+            {% if profile.introduction %}
+                <div class="introduction-section">
+                    <h3>Introduction</h3>
+                    <p>{{ profile.introduction }}</p>
+                </div>
+            {% endif %}
+
+            <div class="logs-section">
+                <h2>Diving Logs</h2>
+                {% for log in loglist %}
+                    <p><a href="/home/{{ log.id }}">{{ log.logName }}</a></p>
+                {% endfor %}
+            </div>
+
+        {% else %}
+            <p>No profile found for this user.</p>
         {% endif %}
+    </div>
 
-        {% if profile.diveLicense %}
-            <h3>{{ profile.diveLicense }}</h3>
-        {% endif %}
-
-        {% if profile.is_ststMember %}
-            <p>I'm the member of Seoul Tech Scuba Team</p>
-
-            {% if profile.studentID %}
-                {{ profile.studentID }}
-            {% endif %}
-            {% if profile.kisu %}
-                <h3>{{ profile.kisu }}기</h3>
-            {% endif %}
-            {% if profile.birthday %}
-                <h3>{{ profile.birthday }}, 만 {{ profile.age }}세</h3>
-            {% endif %}
-            {% if profile.major %}
-                <h3>{{ profile.major }} 전공</h3>
-            {% endif %}
-            {% if profile.is_absence %}
-                <h3>휴학중</h3>
-            {% else %}
-                <h3>재학중</h3>
-            {% endif %}
-        {% endif %}
-
-        {% if profile.introduction %}
-            <h3>자기소개</h3>
-            <p>{{ profile.introduction }}</p>
-        {% endif %}
-
-        <h2>Diving Logs</h2>
-        {% for log in loglist %}
-            <p><a href="/home/{{ log.id }}">{{ log.logName }}</a></p>
-        {% endfor %}
-
-    {% else %}
-        <p>No profile found for this user.</p>
-    {% endif %}
-
-    <button class="btn btn-primary"><a href="view_modify_profile/" style="color: white;">프로필 수정하기</a></button>
-    <button class="btn btn-danger"><a href="{% url 'common:logout' %}" style="color: white;">로그아웃</a></button>
+    <div class="container button-section">
+        <button class="btn btn-primary"><a href="view_modify_profile/" style="color: white;">Edit Profile</a></button>
+        <button class="btn btn-danger"><a href="{% url 'common:logout' %}" style="color: white;">Logout</a></button>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="{% static 'bootstrap.min.js' %}"></script>
-
 </body>
 </html>
