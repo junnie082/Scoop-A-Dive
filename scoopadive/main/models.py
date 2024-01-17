@@ -21,6 +21,7 @@ class Log(models.Model):
     temperature = models.FloatField()
     comments = models.TextField()
     images = models.ImageField(blank=True, null=True)
+    create_date = models.DateTimeField(null=True)
 
     class Meta:
         db_table = 'Logs'
@@ -32,7 +33,7 @@ class Answer(models.Model):
     log = models.ForeignKey(Log, on_delete=models.CASCADE)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    # create_date = models.DateTimeField()
+    create_date = models.DateTimeField(null=True)
 
     class Meta:
         db_table = 'Answers'

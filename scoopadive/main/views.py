@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AnonymousUser
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.paginator import Paginator
 from django.utils import timezone
 
 from user_profile.models import Profile
@@ -19,8 +20,12 @@ def index(request):
         return render(request, 'main/index.html', {'loglist': loglist})
 
 def home(request):
-    loglist = Log.objects.all()
-    return render(request, 'main/home.html', {'loglist': loglist})
+    page = request.GET.get('page', '1') # 페이지
+    loglist = Log.objects.all().order_by('-create_date')
+    paginator = Paginator(loglist, 20) # 페이지당 10개씩 보여주기
+    page_obj = paginator.get_page(page)
+
+    return render(request, 'main/home.html', {'loglist': page_obj})
     # postlist = Post.objects.all()
     # home.html 페이지를 열 때, 모든 Post인 postlist도 같이 가져옵니다
     # return render(request, 'main/home.html', {'postlist':postlist})
@@ -50,6 +55,7 @@ def new_post(request):
                 temperature = request.POST['temperature'],
                 comments = request.POST['comments'],
                 images = request.POST['images'],
+                create_date = timezone.now()
             )
         # if request.POST['mainphoto']:
         #     new_article = Post.objects.create(
@@ -78,5 +84,5 @@ def answer_create(request, logId):
     # 답글 추가
     log = get_object_or_404(Log, pk=logId)
     author = request.user
-    log.answer_set.create(content=request.POST.get('content'), author=author)
+    log.answer_set.create(content=request.POST.get('content'), author=author, create_date=timezone.now())
     return redirect('main:posting', logId)

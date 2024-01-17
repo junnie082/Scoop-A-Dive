@@ -58,8 +58,8 @@
         <p>No profile found for this user.</p>
     {% endif %}
 
-    <button class="btn btn-primary" href="view_modify_profile/">프로필 수정하기</button>
-    <button href="{% url 'common:logout' %}" class="btn btn-danger">로그아웃</button>
+<button class="btn btn-primary"><a href="view_modify_profile/" style="color: white;">프로필 수정하기</a></button>
+<button class="btn btn-danger"><a href="{% url 'common:logout' %}" style="color: white;">로그아웃</a></button>
 
 <!-- Bootstrap JS -->
 <script src="{% static 'bootstrap.min.js' %}"></script>
