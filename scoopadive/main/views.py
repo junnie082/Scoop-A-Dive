@@ -22,8 +22,10 @@ def index(request):
 def home(request):
     page = request.GET.get('page', '1') # 페이지
     loglist = Log.objects.all().order_by('-create_date')
-    paginator = Paginator(loglist, 20) # 페이지당 10개씩 보여주기
+    paginator = Paginator(loglist, 10) # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
+
+
 
     return render(request, 'main/home.html', {'loglist': page_obj})
     # postlist = Post.objects.all()
