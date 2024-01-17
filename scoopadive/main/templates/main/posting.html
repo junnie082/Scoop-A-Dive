@@ -38,7 +38,8 @@
     <div>
         <ul>
             {% for answer in log.answer_set.all %}
-                <li>{{ answer.content }}</li>
+
+                <li>{{ answer.content }}  {{ answer.author }}</li>
             {% endfor %}
         </ul>
     </div>

@@ -1,4 +1,6 @@
+from django.contrib.auth.models import User
 from django.db import models
+
 
 # Create your models here.
 # 게시글(Post)엔 제목(postname), 내용(contents)이 존재합니다
@@ -29,6 +31,7 @@ class Log(models.Model):
 class Answer(models.Model):
     log = models.ForeignKey(Log, on_delete=models.CASCADE)
     content = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     # create_date = models.DateTimeField()
 
     class Meta:
