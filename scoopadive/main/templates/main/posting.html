@@ -5,73 +5,138 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>Log!</title>
+    <title>{{ log.logName }}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding-top: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4, h5 {
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .box-section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            margin: 10px;
+        }
+
+        .answer-section {
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .badge {
+            margin-left: 5px;
+        }
+    </style>
 </head>
 <body>
-<!-- 네비게이션바 -->
     {% include "components/navbar.html" %}
 
-    <h1>{{ log.logName}}</h1>
-    <p>Diver: {{ log.diver }}</p>
-    <p>Dive No. {{ log.diveNo }}</p>
-    <p>Date: {{ log.date }}</p>
-    <p>Location: {{ log.location }}</p>
-    <p>Buddy: {{ log.buddy }}</p>
-    <p>Time In: {{ log.timeIn }}</p>
-    <p>Time Out: {{ log.timeOut }}</p>
-    <p>Weight: {{ log.weight }}</p>
-    <p>Start(Bar): {{ log.barStart }}</p>
-    <p>End(Bar): {{ log.barEnd }}</p>
-    <p>Max: {{ log.maxDepth }}</p>
-    <p>Min: {{ log.minDepth }}</p>
-    <p>Temperature: {{ log.temperature }}</p>
-    <h2>Comments</h2>
-    <p>{{ log.comments }}</p>
-    <!-- 이미지 보여주기 -->
-    <h2>Images</h2>
-    {% if log.images %}
-        <img src = "{{ log.images.url }}" alt="" height="600">
-        <br>
-    {% endif %}
+    <div class="container box-section">
+        <h1>{{ log.logName }}</h1>
+        <p><strong>Diver:</strong> {{ log.diver }}</p>
+        <p><strong>Dive No.:</strong> {{ log.diveNo }}</p>
+        <p><strong>Date:</strong> {{ log.date }}</p>
+        <p><strong>Location:</strong> {{ log.location }}</p>
+        <p><strong>Buddy:</strong> {{ log.buddy }}</p>
+        <p><strong>Time In:</strong> {{ log.timeIn }}</p>
+        <p><strong>Time Out:</strong> {{ log.timeOut }}</p>
+        <p><strong>Weight:</strong> {{ log.weight }}</p>
+        <p><strong>Start(Bar):</strong> {{ log.barStart }}</p>
+        <p><strong>End(Bar):</strong> {{ log.barEnd }}</p>
+        <p><strong>Max Depth:</strong> {{ log.maxDepth }}</p>
+        <p><strong>Min Depth:</strong> {{ log.minDepth }}</p>
+        <p><strong>Temperature:</strong> {{ log.temperature }}</p>
+        <h2>Comments</h2>
+        <p>{{ log.comments }}</p>
 
-    <h5 class="border-bottom my-3 py-2">{{log.answer_set.count}}개의 답글이 있습니다.</h5>
-    <div>
-        <ul>
-            {% for answer in log.answer_set.all %}
-
-                <li>{{ answer.content }}  {{ answer.author }}</li>
-            {% endfor %}
-        </ul>
+        <!-- Images Section -->
+        <div class="box-section">
+            <h2>Images</h2>
+            {% if log.images %}
+                <img src="{{ log.images.url }}" alt="" height="600">
+                <br>
+            {% endif %}
+        </div>
     </div>
 
-    <a href="javascript:void(0)" data-uri="{% url 'main:log_vote' log_id=log.id %}"
-       class="recommend btn btn-sm btn-outline-secondary"> 추천
-        <span class="badge rounded-pill bg-success">{{question.voter.count}}</span>
-    </a>
+    <div class="my-3">
+{#        {% if request.user == log.diver %}#}
+        <a href="{% url 'main:view_modify_log' log_id=log.id %}"
+           class="btn btn-sm btn-outline-secondary">수정</a>
+{#        {% endif %}#}
+    </div>
 
-<script>
-    const recommend_elements = document.getElementsByClassName("recommend");
-Array.from(recommend_elements).forEach(function(element) {
-    element.addEventListener('click', function() {
-        if(confirm("정말로 추천하시겠습니까?")) {
-            location.href = this.dataset.uri;
-        };
-    });
-});
+    <!-- Comments Section -->
+    <div class="container box-section comments-section">
+        <h2 class="border-bottom my-3 py-2">{{ log.answer_set.count }} Comments</h2>
+        <ul class="comment-list">
+            {% for answer in log.answer_set.all %}
+                <li class="comment-box box-section" >
+                    <span class="comment-content">{{ answer.content }}</span>
+                    <span class="badge rounded-pill text-bg-danger">{{ answer.author }}</span>
+                </li>
+            {% endfor %}
+        </ul>
 
-</script>
+        <a href="javascript:void(0)" data-uri="{% url 'main:log_vote' log_id=log.id %}"
+            class="recommend btn btn-sm btn-outline-secondary"> Recommend
+            <span class="badge rounded-pill bg-success">{{ log.voter.count }}</span>
+        </a>
+    </div>
 
 
 
-    <form action="{% url 'main:answer_create' log.id %}" method="post">
-    {% csrf_token %}
-    <textarea name="content" id="content" rows="15"></textarea>
-    <input type="submit" value="답변등록">
-    </form>
-    <a href="/home/">목록</a>
-    <a href="/home/{{ log.pk }}/remove">삭제</a>
-<!-- Bootstrap JS -->
-<script src="{% static 'bootstrap.min.js' %}"></script>
+    <!-- Answer Submission Form -->
+    <div class="container box-section answer-section">
+        <form action="{% url 'main:answer_create' log.id %}" method="post">
+            {% csrf_token %}
+            <textarea name="content" id="content" rows="15" class="form-control" placeholder="Write your comment here"></textarea>
+            <input type="submit" value="Submit Comment" class="btn btn-primary">
+        </form>
+    </div>
 
-</body>
+    <div class="container box-section">
+        <a href="/home/">Back to List</a>
+        <a href="/home/{{ log.pk }}/remove" class="btn btn-danger">Delete Log</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+
+    <script>
+        const recommend_elements = document.getElementsByClassName("recommend");
+        Array.from(recommend_elements).forEach(function(element) {
+            element.addEventListener('click', function() {
+                if(confirm("Are you sure you want to recommend this log ?")) {
+                    location.href = this.dataset.uri;
+                }
+            });
+        });
+    </script>
+    </body>
 </html>

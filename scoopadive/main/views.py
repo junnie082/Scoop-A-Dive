@@ -1,5 +1,6 @@
 from email import message
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import AnonymousUser
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
@@ -78,7 +79,9 @@ def answer_create(request, logId):
     # 답글 추가
     log = get_object_or_404(Log, pk=logId)
     author = request.user
-    log.answer_set.create(content=request.POST.get('content'), author=author, create_date=timezone.now())
+    content = request.POST.get('content')
+    if content != '':
+        log.answer_set.create(content=content, author=author, create_date=timezone.now())
     return redirect('main:posting', logId)
 
 def log_vote(request, log_id):
@@ -88,3 +91,57 @@ def log_vote(request, log_id):
     else:
         log.voter.add(request.user)
     return redirect('main:posting', log_id)
+
+@login_required()
+def view_modify_log(request, log_id):
+    return render(request, 'main/modify_log.html', {'log_id': log_id})
+
+@login_required
+def modify_log(request, log_id):
+    log = Log.objects.get(pk=log_id)
+    print("log: " + str(log.diver))
+    logName = request.POST.get('logName')
+    diver = request.POST.get('diver')
+    diveNo = request.POST.get('diveNo')
+    date = request.POST.get('date')
+    location = request.POST.get('location')
+    buddy = request.POST.get('buddy')
+    timeIn = request.POST.get('timeIn')
+    timeOut = request.POST.get('timeOut')
+    weight = request.POST.get('weight')
+    barStart = request.POST.get('barStart')
+    barEnd = request.POST.get('barEnd')
+    maxDepth = request.POST.get('maxDepth')
+    minDepth = request.POST.get('minDepth')
+    temperature = request.POST.get('temperature')
+    comments = request.POST.get('comments')
+    images = request.POST.get('images')
+    print("logName: " + str(logName) + " diver: " + str(diver) + " diveNo: " + str(diveNo) + " date: " + str(date) + " location: " + str(location)
+          + " buddy: " + str(buddy) + " timeIn: " + str(timeIn) + " timeOut: " + str(timeOut) + " weight: " + str(weight)
+          + "barStart: " + str(barStart) + " barEnd: " + str(barEnd) + " maxDepth: " + str(maxDepth) + " minDepth: " + str(minDepth)
+          + " temperature: " + str(temperature) + " comments: " + str(comments) + " images: " + str(images))
+
+    if logName != '': log.logName = logName
+    if diver != None: log.diver = diver
+    if diveNo != '': log.diveNo = diveNo
+    if date != '': log.date = date
+    if location != '': log.location = location
+    if buddy != '': log.buddy = buddy
+    if timeIn != '': log.timeIn = timeIn
+    if timeOut != '': log.timeOut = timeOut
+    if weight != '': log.weight = weight
+    if barStart != '': log.barStart = barStart
+    if barEnd != '': log.barEnd = barEnd
+    if maxDepth != '': log.maxDepth = maxDepth
+    if minDepth != '':log.minDepth = minDepth
+    if temperature != '':log.temperature = temperature
+    if comments != '':log.comments = comments
+    if images != '': log.images = images
+
+    log.save()
+
+    return render(request, 'main/home.html')
+
+
+
+
