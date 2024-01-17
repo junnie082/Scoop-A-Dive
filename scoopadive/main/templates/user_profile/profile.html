@@ -49,6 +49,11 @@
             <p>{{ profile.introduction }}</p>
         {% endif %}
 
+        <h2>Diving Logs</h2>
+        {% for log in loglist %}
+            <ul><a href="/home/{{ log.id }}">{{ log.logName }}</a></ul>
+        {% endfor %}
+
     {% else %}
         <p>No profile found for this user.</p>
     {% endif %}
