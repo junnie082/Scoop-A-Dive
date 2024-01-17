@@ -77,5 +77,5 @@ def remove_post(request, pk):
 def answer_create(request, logId):
     # 답글 추가
     log = get_object_or_404(Log, pk=logId)
-    log.answer_set.create(content=request.POST.get('content'), create_date=timezone.now())
+    log.answer_set.create(content=request.POST.get('content'))
     return redirect('main:posting', logId)
