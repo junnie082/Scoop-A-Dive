@@ -61,18 +61,8 @@ def new_post(request):
                 images = request.POST['images'],
                 create_date = timezone.now()
             )
-        # if request.POST['mainphoto']:
-        #     new_article = Post.objects.create(
-        #         postname=request.POST['postname'],
-        #         contents=request.POST['contents'],
-        #         mainphoto=request.POST['mainphoto'],
-        #     )
-        # else:
-        #     new_article = Post.objects.create(
-        #         postname=request.POST['postname'],
-        #         contents=request.POST['contents'],
-        #         mainphoto=request.POST['mainphoto'],
-        #     )
+            print("date: " + str(new_log.date))
+
         return redirect('/home/')
     return render(request, 'main/new_post.html')
 
