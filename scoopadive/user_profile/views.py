@@ -6,6 +6,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils.timezone import now
 from datetime import datetime
 
+from main.models import Log
 from .models import Profile
 
 @login_required
@@ -13,13 +14,16 @@ def view_profile(request):
     # Assuming the user is authenticated, request.user will be the current user instance
     current_user = request.user
 
+    # Filter Log objects for the current user
+    loglist = Log.objects.filter(diver=current_user)
+
     # Get the profile associated with the current user
     try:
         profile = Profile.objects.get(user=current_user)
     except Profile.DoesNotExist:
         profile = None
 
-    return render(request, 'user_profile/profile.html', {"user": current_user, "profile": profile})
+    return render(request, 'user_profile/profile.html', {"user": current_user, "profile": profile, "loglist" : loglist})
 
 def view_modify_profile(request):
     current_user = request.user
