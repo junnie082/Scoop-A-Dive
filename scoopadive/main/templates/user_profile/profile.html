@@ -62,6 +62,9 @@
         {% if profile.is_ststMember %}
             <p>I'm the member of Seoul Tech Scuba Team</p>
 
+            {% if profile.studentID %}
+                {{ profile.studentID }}
+            {% endif %}
             {% if profile.kisu %}
                 <h3>{{ profile.kisu }}기</h3>
             {% endif %}

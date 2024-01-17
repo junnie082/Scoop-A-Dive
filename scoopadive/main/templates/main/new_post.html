@@ -14,8 +14,10 @@
     <h1>New Log</h1>
     <form method="POST">
         {% csrf_token %}
-        Title<br>
-        <input type="text" name="logName"><br>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
         Dive No <br>
         <input type="number" name="diveNo"><br>
         Date<br>
@@ -40,10 +42,19 @@
         <input type="number" name="minDepth"><br>
         Temperature<br>
         <input type="number" name="temperature" step="0.1"><br>
-        Comments<br>
-        <textarea rows="50" cols="100" name="comments"></textarea>
-        Images<br>
-        <input type="file" name="images"><br>
+{#        Comments<br>#}
+{#        <textarea rows="50" cols="100" name="comments"></textarea>#}
+        <div class="form-floating">
+          <textarea name="comments" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+          <label for="floatingTextarea2">Comments</label>
+        </div>
+
+
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupFile01">Upload</label>
+          <input type="file" name="images" class="form-control" id="inputGroupFile01">
+        </div>
+
 
         <input type="submit" value="글쓰기">
     </form>

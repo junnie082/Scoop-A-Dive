@@ -81,8 +81,6 @@ def modify_profile(request):
         profile.image = image
 
     profile.is_absence = absence == 'on'
-
     profile.save()
 
-    print("is_ststMember: " + str(profile.is_ststMember) + "profile.birthday: " + str(profile.birthday))
     return render(request, 'main/home.html')
