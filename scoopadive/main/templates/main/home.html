@@ -90,7 +90,9 @@
     </ul>
     <!-- 페이징처리 끝 -->
 
+    {% if user.is_authenticated %}
     <button><a href="new_post/" style="color: white;">글쓰기</a></button>
+    {% endif %}
 
     <!-- Bootstrap JS -->
     <script src="{% static 'bootstrap.min.js' %}"></script>
