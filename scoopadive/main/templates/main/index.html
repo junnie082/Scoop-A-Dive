@@ -1,23 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Scoop A Dive</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
 <body>
     <h1>Scoop A Dive</h1>
+    <a id="logs-link" href="/home">Diving Logs</a>
+
     {% if not user.is_authenticated %}
-        <a href="{% url 'common:signup' %}">회원가입</a>
-        <a href="{% url 'common:login' %}">로그인</a>
+        <a id="signup-link" href="{% url 'common:signup' %}">회원가입</a>
+        <a id="login-link" href="{% url 'common:login' %}">로그인</a>
+    {% elif profile.is_ststMember %}
+        <a id="happy-buddies-link" href="https://junnie082.github.io/happy-buddies/">Happy Buddies</a>
+        <p>How to use Happy Buddies?<a href="https://github.com/junnie082/happy-buddies/tree/develop">Press here!</a></p>
     {% endif %}
-    <a href="/home">Logs</a>
-    <table>
-        {% for list in loglist %}
-            <ul>
-                <li>{{ list.logName }}</li>
-                <li>{{ list.comments }}</li>
-            </ul>
-        {% endfor %}
-    </table>
 </body>
 </html>

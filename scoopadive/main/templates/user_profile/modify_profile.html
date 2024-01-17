@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Profile</title>
+</head>
+<body>
+{% include 'components/navbar.html' %}
+<h2>Modify Profile!!</h2>
+<a href="/profile">돌아가기</a>
+<form action="{% url 'user_profile:modify_profile' %}" method="POST">
+{% csrf_token %}
+    Name
+    <input type="text" name="name"><br>
+    Birthday
+    <input type="date" name="birthday"><br>
+    Diving License
+    <input type="text" name="diveLicense"><br>
+    Profile Image
+    <input type="file" name="image"><br>
+
+    {% if profile.is_ststMember %}
+        <h3>Only for STST members!</h3>
+        StudentId
+        <input type="text" name="studentId"><br>
+        Kisu
+        <input type="number" name="kisu"><br>
+        Major
+        <input type="text" name="major"><br>
+        Absent for this semester
+        <input type="checkbox" name="absence"><br>
+
+
+    {% endif %}
+    Introduction
+    <textarea type="text" name="introduction"></textarea><br>
+
+    <input type="submit" value="수정하기">
+
+</form>
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+
+</body>
+</html>

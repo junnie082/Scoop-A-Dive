@@ -1,26 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Logs</title>
+    <!-- BootStrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Diving Logs</title>
+
 </head>
 <body>
-    <h1>Logs</h1>
-    {% if user.is_authenticated %}
-    <a href="{% url 'user_profile:profile' %}">{{ user.username }} (프로필 보기)</a><br>
-        <a href="{% url 'common:logout' %}">로그아웃</a>
-    {% else %}
-    <a href="{% url 'common:login' %}">로그인</a>
-    {% endif %}
+<!-- 네비게이션바 -->
+{% include "components/navbar.html" %}
+
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+
+    <h1>Diving Logs</h1>
+
     <br>
-    <a href={% url 'main:index' %}>Back to main page</a>
+    <a href="{% url 'main:index' %}">Back to main page</a>
     <table>
         {% for list in loglist %}
             <ul>
-                <li><a href="{{ list.pk }}/">{{ list.logName }}</a></li>
+                <li><a id="title" href="{{ list.pk }}/">{{ list.logName }}</a>, {{ list.diver }}</li>
             </ul>
         {% endfor %}
     </table>
-    <button><a href="new_post/">글쓰기</a></button>
+    <button><a href="new_post/" style="color: white;">글쓰기</a></button>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+
 </body>
 </html>

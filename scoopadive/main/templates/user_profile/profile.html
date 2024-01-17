@@ -1,22 +1,68 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
+    <title>{{ user.username }}'s Profile</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h2>{{ user.username }}</h2>
-    <p>Name: {{ profile.name }}</p>
+{% include 'components/navbar.html' %}
+    <h1>{{ user.username }}'s Profile</h1>
+    <a href="/home">돌아가기</a>
 
     {% if profile %}
-        {% if profile.is_ststMember %}
-            <p>I'm a member of Seoul Tech Scuba Team</p>
-        {% else %}
-            <p>I'm not a member of Seoul Tech Scuba Team</p>
+        <p>Name: {{ profile.name }}</p>
+        {% if profile.image %}
+            <img src="{{ profile.image.url }}" alt="" height="150"><br>
         {% endif %}
+
+
+
+        {% if profile.diveLicense %}
+            <h3>{{ profile.diveLicense }}</h3>
+        {% endif %}
+
+
+        {% if profile.is_ststMember %}
+            <p>I'm the member of Seoul Tech Scuba Team</p>
+
+            {% if profile.kisu %}
+                <h3>{{ profile.kisu }}기</h3>
+            {% endif %}
+            {% if profile.birthday %}
+                <h3>{{ profile.birthday }}, 만 {{ profile.age }}세</h3>
+            {% endif %}
+            {% if profile.major %}
+                <h3>{{ profile.major }} 전공</h3>
+            {% endif %}
+            {% if profile.is_absence %}
+                <h3>휴학중</h3>
+            {% else %}
+                <h3>재학중</h3>
+            {% endif %}
+        {% endif %}
+
+        {% if profile.introduction %}
+            <h3>자기소개 </h3>
+            <p>{{ profile.introduction }}</p>
+        {% endif %}
+
+        <h2>Diving Logs</h2>
+        {% for log in loglist %}
+            <ul><a href="/home/{{ log.id }}">{{ log.logName }}</a></ul>
+        {% endfor %}
+
     {% else %}
         <p>No profile found for this user.</p>
     {% endif %}
+
+    <button class="btn btn-primary" href="view_modify_profile/">프로필 수정하기</button>
+    <button href="{% url 'common:logout' %}" class="btn btn-danger">로그아웃</button>
+
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
 
 </body>
 </html>
