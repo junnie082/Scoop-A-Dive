@@ -77,6 +77,10 @@ def remove_post(request, pk):
 def answer_create(request, logId):
     # 답글 추가
     log = get_object_or_404(Log, pk=logId)
+<<<<<<< HEAD
     author = request.user
     log.answer_set.create(content=request.POST.get('content'), author=author)
+=======
+    log.answer_set.create(content=request.POST.get('content'))
+>>>>>>> develop-frontend
     return redirect('main:posting', logId)
