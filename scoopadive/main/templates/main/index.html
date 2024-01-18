@@ -5,17 +5,51 @@
     <meta charset="UTF-8">
     <title>Scoop A Dive</title>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding-top: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Scoop A Dive</h1>
-    <a id="logs-link" href="/home">Diving Logs</a>
+    {% include 'components/navbar.html' %}
 
-    {% if not user.is_authenticated %}
-        <a id="signup-link" href="{% url 'common:signup' %}">회원가입</a>
-        <a id="login-link" href="{% url 'common:login' %}">로그인</a>
-    {% elif profile.is_ststMember %}
-        <a id="happy-buddies-link" href="https://junnie082.github.io/happy-buddies/">Happy Buddies</a>
-{#        <p>How to use Happy Buddies?<a href="https://github.com/junnie082/happy-buddies/tree/develop">Press here!</a></p>#}
-    {% endif %}
+    <div class="container">
+        <h1>Scoop A Dive</h1>
+        <a id="logs-link" href="/home">Diving Logs</a>
+
+        {% if not user.is_authenticated %}
+            <a id="signup-link" href="{% url 'common:signup' %}">회원가입</a>
+            <a id="login-link" href="{% url 'common:login' %}">로그인</a>
+        {% elif profile.is_ststMember %}
+            <a id="happy-buddies-link" href="https://junnie082.github.io/happy-buddies/">Happy Buddies</a>
+            <a id="happy-buddies-link" href="{% url 'divepedia:index' %}">Divepedia</a>
+        {% endif %}
+    </div>
 </body>
 </html>
