@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    {% if user.username %}
+    {% if user.username and user.username != log.diver %}
         <a href="javascript:void(0)" data-uri="{% url 'main:log_vote' log_id=log.id %}"
             class="recommend btn btn-sm btn-outline-secondary"> Recommend
             <span class="badge rounded-pill bg-success">{{ log.voter.count }}</span>
@@ -120,17 +120,7 @@
     </div>
 
     {% if user.username == log.diver %}
-        <div class="my-3">
-{#        {% if request.user == log.diver %}#}
-        <a href="{% url 'main:view_modify_log' log_id=log.id %}"
-           class="btn btn-sm btn-outline-secondary">edit</a>
-{#        {% endif %}#}
-        </div>
 
-        <div class="container box-section">
-            <a href="/home/">Back to List</a>
-            <a href="/home/{{ log.pk }}/remove" class="btn btn-danger">Delete Log</a>
-        </div>
 
         <!-- Answer Submission Form -->
         <div class="container box-section answer-section">
@@ -139,6 +129,16 @@
                 <textarea name="content" id="content" rows="15" class="form-control" placeholder="Write your comment here"></textarea>
                 <input type="submit" value="Submit Comment" class="btn btn-primary">
             </form>
+        </div>
+
+        <div class="my-3">
+        <a href="{% url 'main:view_modify_log' log_id=log.id %}"
+           class="btn btn-sm btn-outline-secondary">edit</a>
+        </div>
+
+        <div class="container box-section">
+            <a href="/home/">Back to List</a>
+            <a href="/home/{{ log.pk }}/remove" class="btn btn-danger">Delete Log</a>
         </div>
 
     {% endif %}
