@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+
     <title>{{ log.logName }}</title>
     <style>
         body {
@@ -84,12 +87,24 @@
         </div>
     </div>
 
-    <div class="my-3">
-{#        {% if request.user == log.diver %}#}
-        <a href="{% url 'main:view_modify_log' log_id=log.id %}"
-           class="btn btn-sm btn-outline-secondary">수정</a>
-{#        {% endif %}#}
-    </div>
+    {% if user.username %}
+        <a href="javascript:void(0)" data-uri="{% url 'main:log_vote' log_id=log.id %}"
+            class="recommend btn btn-sm btn-outline-secondary"> Recommend
+            <span class="badge rounded-pill bg-success">{{ log.voter.count }}</span>
+        </a>
+        <script>
+            const recommend_elements = document.getElementsByClassName("recommend");
+            Array.from(recommend_elements).forEach(function(element) {
+                element.addEventListener('click', function() {
+                    if(confirm("Are you sure you want to recommend this log ?")) {
+                        location.href = this.dataset.uri;
+                    }
+                });
+            });
+        </script>
+    {% endif %}
+
+
 
     <!-- Comments Section -->
     <div class="container box-section comments-section">
@@ -102,41 +117,30 @@
                 </li>
             {% endfor %}
         </ul>
-
-        <a href="javascript:void(0)" data-uri="{% url 'main:log_vote' log_id=log.id %}"
-            class="recommend btn btn-sm btn-outline-secondary"> Recommend
-            <span class="badge rounded-pill bg-success">{{ log.voter.count }}</span>
-        </a>
     </div>
 
+    {% if user.username == log.diver %}
+        <div class="my-3">
+{#        {% if request.user == log.diver %}#}
+        <a href="{% url 'main:view_modify_log' log_id=log.id %}"
+           class="btn btn-sm btn-outline-secondary">edit</a>
+{#        {% endif %}#}
+        </div>
 
+        <div class="container box-section">
+            <a href="/home/">Back to List</a>
+            <a href="/home/{{ log.pk }}/remove" class="btn btn-danger">Delete Log</a>
+        </div>
 
-    <!-- Answer Submission Form -->
-    <div class="container box-section answer-section">
-        <form action="{% url 'main:answer_create' log.id %}" method="post">
-            {% csrf_token %}
-            <textarea name="content" id="content" rows="15" class="form-control" placeholder="Write your comment here"></textarea>
-            <input type="submit" value="Submit Comment" class="btn btn-primary">
-        </form>
-    </div>
+        <!-- Answer Submission Form -->
+        <div class="container box-section answer-section">
+            <form action="{% url 'main:answer_create' log.id %}" method="post">
+                {% csrf_token %}
+                <textarea name="content" id="content" rows="15" class="form-control" placeholder="Write your comment here"></textarea>
+                <input type="submit" value="Submit Comment" class="btn btn-primary">
+            </form>
+        </div>
 
-    <div class="container box-section">
-        <a href="/home/">Back to List</a>
-        <a href="/home/{{ log.pk }}/remove" class="btn btn-danger">Delete Log</a>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="{% static 'bootstrap.min.js' %}"></script>
-
-    <script>
-        const recommend_elements = document.getElementsByClassName("recommend");
-        Array.from(recommend_elements).forEach(function(element) {
-            element.addEventListener('click', function() {
-                if(confirm("Are you sure you want to recommend this log ?")) {
-                    location.href = this.dataset.uri;
-                }
-            });
-        });
-    </script>
+    {% endif %}
     </body>
 </html>
