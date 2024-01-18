@@ -117,19 +117,6 @@
                 </li>
             {% endfor %}
         </ul>
-
-
-    </div>
-
-
-
-    <!-- Answer Submission Form -->
-    <div class="container box-section answer-section">
-        <form action="{% url 'main:answer_create' log.id %}" method="post">
-            {% csrf_token %}
-            <textarea name="content" id="content" rows="15" class="form-control" placeholder="Write your comment here"></textarea>
-            <input type="submit" value="Submit Comment" class="btn btn-primary">
-        </form>
     </div>
 
     {% if user.username == log.diver %}
@@ -143,6 +130,15 @@
         <div class="container box-section">
             <a href="/home/">Back to List</a>
             <a href="/home/{{ log.pk }}/remove" class="btn btn-danger">Delete Log</a>
+        </div>
+
+        <!-- Answer Submission Form -->
+        <div class="container box-section answer-section">
+            <form action="{% url 'main:answer_create' log.id %}" method="post">
+                {% csrf_token %}
+                <textarea name="content" id="content" rows="15" class="form-control" placeholder="Write your comment here"></textarea>
+                <input type="submit" value="Submit Comment" class="btn btn-primary">
+            </form>
         </div>
 
     {% endif %}
