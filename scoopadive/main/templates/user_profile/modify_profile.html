@@ -112,19 +112,30 @@
                 </script>
 
 
-                <!-- Major Dropdown -->
-                <div class="form-floating mb-2">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                        <option selected>Open this select menu</option>
-                        <option value="I'm gonna">I'm gonna</option>
-                        <option value="let it scrap the info">let it scrap the info</option>
-                        <option value="from school website.">from school website.</option>
-                    </select>
-                    <label for="floatingSelect">Works with selects</label>
-                </div>
+            <!-- Link to View Majors -->
+            <!-- Major Dropdown -->
+            <div class="form-floating mb-2">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example" onchange="updateMajorValue(this)">
+                    <option selected>Open this select menu</option>
+                    {% for major in majors %}
+                        <option value="{{ major }}">{{ major }}</option>
+                    {% endfor %}
+                </select>
+                <label for="floatingSelect">Major</label>
+            </div>
+
+            <script>
+                function updateMajorValue(select) {
+                    var selectedOption = select.options[select.selectedIndex].text;
+                    document.getElementById("majorInput").value = selectedOption;
+                }
+            </script>
+
+                <!-- JavaScript function to update hidden input on dropdown change -->
 
                 <!-- Hidden input box for Major -->
                 <input type="text" id="majorInput" name="major" readonly>
+
 
                 <!-- Absent for this semester -->
                 <div class="form-check mb-2">
