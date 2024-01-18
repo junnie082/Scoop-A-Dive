@@ -7,6 +7,7 @@ from django.utils.timezone import now
 from datetime import datetime
 
 from main.models import Log
+from .api import check_major
 from .models import Profile
 
 @login_required
@@ -27,13 +28,13 @@ def view_profile(request):
 
 def view_modify_profile(request):
     current_user = request.user
-
+    majors = check_major()
     try:
         profile = Profile.objects.get(user=current_user)
     except Profile.DoesNotExist:
         profile = None
 
-    return render(request, 'user_profile/modify_profile.html', {"user": current_user, "profile": profile})
+    return render(request, 'user_profile/modify_profile.html', {"user": current_user, "profile": profile, "majors": majors})
 
 
 def calculate_age(birthdate):
@@ -84,3 +85,4 @@ def modify_profile(request):
     profile.save()
 
     return render(request, 'main/home.html')
+
