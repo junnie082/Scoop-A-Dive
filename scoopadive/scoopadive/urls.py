@@ -31,6 +31,7 @@ urlpatterns = [
     path('common/', include('common.urls')),
     path('profile/', include('user_profile.urls')),
     path('', views.index, name='index'),
+    path('divepedia/', include('divepedia.urls')),
 ]
 
 # 이미지 URL 설정
