@@ -100,6 +100,18 @@
                     <input type="text" name="kisu" id="kisuInput" class="form-control" readonly>
                 </div>
 
+                <script>
+                    // JavaScript function to update the readonly input field with the selected value
+                    function updateKisuValue(selectElement) {
+                        // Get the selected value from the dropdown
+                        var selectedValue = selectElement.value;
+
+                        // Update the readonly input field with the selected value
+                        document.getElementById('kisuInput').value = selectedValue;
+                    }
+                </script>
+
+
                 <!-- Major Dropdown -->
                 <div class="form-floating mb-2">
                     <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
