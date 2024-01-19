@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>글쓰기 페이지</title>
+</head>
+<body>
+<!-- 네비게이션바 -->
+{% include "components/navbar.html" %}
+
+    <h1>New Post</h1>
+    <form method="POST" action="{% url 'board:new_post' %}">
+        {% csrf_token %}
+
+        <!-- Title -->
+        <div class="form-floating mb-3">
+          <input type="text" name="postName" class="form-control" id="floatingInput" placeholder="Integer only" required>
+          <label for="floatingInput">Title (Name of the Post)</label>
+        </div>
+
+        <!-- Content -->
+        <div class="form-floating">
+            <h2>Content</h2>
+          <textarea name="content" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
+          <label for="floatingTextarea2">Content</label>
+        </div>
+
+
+        <!-- Images -->
+        <div class="form-floating">
+            <h2>Images</h2>
+          <input type="file" name="images" class="form-control" id="inputGroupFile01">
+        </div>
+
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">글쓰기</button>
+        </div>
+    </form>
+
+
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+
+</body>
+</html>

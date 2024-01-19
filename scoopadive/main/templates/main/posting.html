@@ -128,12 +128,9 @@
                 <input type="submit" value="Submit Comment" class="btn btn-primary">
             </form>
         </div>
-
     {% endif %}
 
-
     {% if user.username == log.diver %}
-
         <div class="my-3">
         <a href="{% url 'main:view_modify_log' log_id=log.id %}"
            class="btn btn-sm btn-outline-secondary">edit</a>
@@ -143,7 +140,6 @@
             <a href="/home/">Back to List</a>
             <a href="/home/{{ log.pk }}/remove" class="btn btn-danger">Delete Log</a>
         </div>
-
     {% endif %}
     </body>
 </html>

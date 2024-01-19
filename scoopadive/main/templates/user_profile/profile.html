@@ -113,6 +113,13 @@
                 {% endfor %}
             </div>
 
+            <div class="logs-section">
+                <h2>Posts</h2>
+                {% for post in postlist %}
+                    <p><a href="/board/{{ post.id }}">{{ post.postName }}</a></p>
+                {% endfor %}
+            </div>
+
         {% else %}
             <p>No profile found for this user.</p>
         {% endif %}

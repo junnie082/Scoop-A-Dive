@@ -30,11 +30,14 @@ class Log(models.Model):
         return self.logName
 
 
-class Answer(models.Model):
+class Answer4Logs(models.Model):
     log = models.ForeignKey(Log, on_delete=models.CASCADE)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     create_date = models.DateTimeField(null=True)
 
     class Meta:
-        db_table = 'Answers'
+        db_table = 'Answer4Log'
+
+    def __str__(self):
+        return self.content

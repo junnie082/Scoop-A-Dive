@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>글 삭제</title>
+</head>
+<body>
+<!-- 네비게이션바 -->
+{% include "components/navbar.html" %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <h3>{{ Post.postName }} - 삭제하기</h3>
+        <button>삭제</button>
+    </form>
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <title>Modify Log</title>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <form action="{% url 'board:modify_post' post_id=post_id %}" method="POST">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+          <input type="text" name="postName" class="form-control" id="floatingInput" placeholder="Integer only">
+          <label for="floatingInput">Title (Name of the Log)</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="text" name="content" class="form-control" id="floatingInput" placeholder="Integer only">
+          <label for="floatingInput">Content</label>
+        </div>
+
+        <input type="submit" value="수정하기" class="btn btn-primary mt-2">
+
+    </form>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+
+</body>
+</html>
