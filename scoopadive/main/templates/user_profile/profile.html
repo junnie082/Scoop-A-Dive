@@ -65,7 +65,7 @@
     {% include 'components/navbar.html' %}
     <div class="container profile-section">
         <h1>{{ profile.user }}'s Profile</h1>
-        <a href="/home">Back to Home</a>
+        <a href="{% url 'main:home' %}">Back to Home</a>
 
         {% if profile %}
             <p><strong>Name:</strong> {{ profile.name }}</p>
@@ -120,7 +120,7 @@
 
     {% if user.username == user_id %}
         <div class="container button-section">
-            <button class="btn btn-primary"><a href="/view_modify_profile/" style="color: white;">Edit Profile</a></button>
+            <button class="btn btn-primary"><a href="{% url 'user_profile:view_modify_profile' user_id=user.username %}" style="color: white;">Edit Profile</a></button>
             <button class="btn btn-danger"><a href="{% url 'common:logout' %}" style="color: white;">Logout</a></button>
         </div>
     {% endif %}
