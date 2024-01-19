@@ -1,40 +1,30 @@
 {% load static %}
 {% load main_filter %}
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <!-- BootStrap CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>Diving Logs</title>
 </head>
 <body>
-<!-- 네비게이션바 -->
-{% include "components/navbar.html" %}
-
-<!-- Bootstrap JS -->
-<script src="{% static 'bootstrap.min.js' %}"></script>
-
-<h1>Diving Logs</h1>
-
-<div class="container">
+    {% include 'components/navbar.html' %}
+    <h1>Board</h1>
+    <div class="container">
     <div class="row">
         <div class="col-md-8 mx-auto">
             <ul class="list-group">
-                {% for log in loglist %}
+                {% for post in postList %}
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <td>
                             <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
-                            {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
+                            {{ postList.paginator.count|sub:postList.start_index|sub:forloop.counter0|add:1 }}
                         </td>
                         <div class="text-center">
-                            <h4 class="fw-bold mb-2"><a href="{{ log.pk }}/">{{ log.logName }}</a></h4>
-                            <p class="mb-0">{{ log.diver }}</p>
+                            <h4 class="fw-bold mb-2"><a href="{{ post.pk }}/">{{ post.postName }}</a></h4>
+                            <p class="mb-0">{{ post.writer }}</p>
                         </div>
                         <div class="d-flex align-items-center">
-                            <span class="badge bg-primary rounded-pill me-2">{{ log.voter.count }} 추천</span>
-                            <span class="badge bg-success rounded-pill">{{ log.answer_set.count }} 답글</span>
+                            <span class="badge bg-primary rounded-pill me-2">{{ post.voter.count }} 추천</span>
+                            <span class="badge bg-success rounded-pill">{{ post.answer_set.count }} 답글</span>
                         </div>
                     </li>
                 {% endfor %}
@@ -45,16 +35,13 @@
 
 
 
-
-
-
-<!-- 페이징처리 시작 -->
+    <!-- 페이징처리 시작 -->
     <ul class="pagination justify-content-center">
-        <a class="page-link" href="/home/?page=1">처음으로</a>
+        <a class="page-link" href="/board/?page=1">처음으로</a>
         <!-- 이전페이지 -->
-        {% if loglist.has_previous %}
+        {% if postList.has_previous %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ loglist.previous_page_number }}">이전</a>
+            <a class="page-link" href="?page={{ postList.previous_page_number }}">이전</a>
         </li>
         {% else %}
         <li class="page-item disabled">
@@ -62,10 +49,10 @@
         </li>
         {% endif %}
         <!-- 페이지리스트 -->
-        {% for page_number in loglist.paginator.page_range %}
-        {% if page_number >= loglist.number|add:-5 and page_number <= loglist.number|add:5 %}
+        {% for page_number in postList.paginator.page_range %}
+        {% if page_number >= postList.number|add:-5 and page_number <= postList.number|add:5 %}
 
-        {% if page_number == loglist.number %}
+        {% if page_number == postList.number %}
         <li class="page-item active" aria-current="page">
             <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
         </li>
@@ -78,9 +65,9 @@
 
         {% endfor %}
         <!-- 다음페이지 -->
-        {% if loglist.has_next %}
+        {% if postList.has_next %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ loglist.next_page_number }}">다음</a>
+            <a class="page-link" href="?page={{ postList.next_page_number }}">다음</a>
         </li>
         {% else %}
         <li class="page-item disabled">
@@ -91,11 +78,7 @@
     <!-- 페이징처리 끝 -->
 
     {% if user.is_authenticated %}
-    <button><a href="new_log/" style="color: white;">글쓰기</a></button>
+        <button><a href="view_new_post/" style="color: white;">글쓰기</a></button>
     {% endif %}
-
-    <!-- Bootstrap JS -->
-    <script src="{% static 'bootstrap.min.js' %}"></script>
-
 </body>
 </html>

@@ -7,6 +7,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.timezone import now
 from datetime import datetime
 
+from board.models import Post
 from main.models import Log
 from .api import check_major
 from .models import Profile
@@ -18,8 +19,9 @@ def view_profile(request, user_id):
     # Assuming the user is authenticated, request.user will be the current user instance
     # Filter Log objects for the current user
     loglist = Log.objects.filter(diver=user_id)
+    postlist = Post.objects.filter(writer=user_id)
 
-    return render(request, 'user_profile/profile.html', {"user_id": user_id, "profile": profile, "loglist" : loglist})
+    return render(request, 'user_profile/profile.html', {"user_id": user_id, "profile": profile, "loglist" : loglist, "postlist": postlist})
 
 def view_modify_profile(request, user_id):
     current_user = request.user

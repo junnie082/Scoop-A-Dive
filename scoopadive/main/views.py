@@ -28,8 +28,6 @@ def home(request):
     paginator = Paginator(loglist, 10) # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
 
-
-
     return render(request, 'main/home.html', {'loglist': page_obj})
     # postlist = Post.objects.all()
     # home.html 페이지를 열 때, 모든 Post인 postlist도 같이 가져옵니다
@@ -41,7 +39,7 @@ def posting(request, pk):
     log = Log.objects.get(pk=pk)
     return render(request, 'main/posting.html', {'user': request.user, 'log': log})
 
-def new_post(request):
+def new_log(request):
     if request.method == 'POST':
         if 'timeIn' in request.POST and 'timeOut' in request.POST:
             new_log = Log.objects.create(
@@ -65,7 +63,7 @@ def new_post(request):
             print("date: " + str(new_log.date))
 
         return redirect('/home/')
-    return render(request, 'main/new_post.html')
+    return render(request, 'main/new_log.html')
 
 
 def remove_post(request, pk):
@@ -73,7 +71,7 @@ def remove_post(request, pk):
     if request.method == 'POST':
         log.delete()
         return redirect('/home/')
-    return render(request, 'main/remove_post.html', {'Log':  log})
+    return render(request, 'main/remove_log.html', {'Log':  log})
 
 def answer_create(request, logId):
     # 답글 추가
@@ -81,7 +79,7 @@ def answer_create(request, logId):
     author = request.user
     content = request.POST.get('content')
     if content != '':
-        log.answer_set.create(content=content, author=author, create_date=timezone.now())
+        log.answer4logs_set.create(content=content, author=author, create_date=timezone.now())
     return redirect('main:posting', logId)
 
 def log_vote(request, log_id):

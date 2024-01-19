@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.Name }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            margin: 10px;
+        }
+
+        .box-section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .comments-section {
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .comment-box {
+            margin-bottom: 10px;
+        }
+
+        .comment-content {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .comment-box a {
+            color: #dc3545;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+
+        .comment-box a:hover {
+            text-decoration: underline;
+        }
+
+        #content {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Add these styles to your existing style block */
+        .writer-info {
+            font-size: 18px;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .post-content {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .post-date {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+    <a href="{% url 'board:index' %}" class="btn btn-link">Back to Board</a>
+
+    <div class="container box-section">
+        <div class="container box-section">
+            <h1>{{ post.Name }}</h1>
+            <p class="writer-info">Written by: <a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a></p>
+            <p class="post-content">{{ post.content }}</p>
+            <p class="post-date">Posted on: {{ post.date }}</p>
+        </div>
+
+
+        {% if user.username == post.writer %}
+            <div class="my-3">
+                <a href="{% url 'board:view_modify_post' post_id=post.pk %}" class="btn btn-sm btn-outline-secondary">Edit</a>
+            </div>
+
+            <div class="container box-section">
+                <a href="{% url 'board:index' %}" class="btn btn-secondary">Back to List</a>
+                <a href="{% url 'board:remove_post' post.pk %}" class="btn btn-danger">Delete Post</a>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Comments Section -->
+    <div class="container box-section comments-section">
+        <h2 class="border-bottom my-3 py-2">{{ post.answer4post_set.count }} Answers</h2>
+        <ul class="comment-list">
+            {% for answer in post.answer4post_set.all %}
+                <li class="comment-box box-section">
+                    <span class="comment-content">{{ answer.content }}</span>
+                    <a href="{% url 'user_profile:view_profile' user_id=answer.writer %}" class="badge rounded-pill text-bg-danger">{{ answer.writer }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Answer Submission Form -->
+    <form action="{% url 'board:answer_create' post_id=post.pk %}" method="post" class="container box-section">
+        {% csrf_token %}
+        <textarea name="content" id="content" rows="10" placeholder="Write your answer here"></textarea>
+        <input type="submit" value="Submit Answer">
+    </form>
+</body>
+</html>
