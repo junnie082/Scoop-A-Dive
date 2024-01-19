@@ -113,16 +113,14 @@
             {% for answer in log.answer_set.all %}
                 <li class="comment-box box-section" >
                     <span class="comment-content">{{ answer.content }}</span>
-                    <span class="badge rounded-pill text-bg-danger">{{ answer.author }}</span>
+                    <a href="{% url 'user_profile:view_profile' user_id=answer.author %}" class="badge rounded-pill text-bg-danger">{{ answer.author }}</a>
                 </li>
             {% endfor %}
         </ul>
     </div>
 
-    {% if user.username == log.diver %}
-
-
-        <!-- Answer Submission Form -->
+    {% if user.username %}
+         <!-- Answer Submission Form -->
         <div class="container box-section answer-section">
             <form action="{% url 'main:answer_create' log.id %}" method="post">
                 {% csrf_token %}
@@ -130,6 +128,11 @@
                 <input type="submit" value="Submit Comment" class="btn btn-primary">
             </form>
         </div>
+        
+    {% endif %}
+
+
+    {% if user.username == log.diver %}
 
         <div class="my-3">
         <a href="{% url 'main:view_modify_log' log_id=log.id %}"
