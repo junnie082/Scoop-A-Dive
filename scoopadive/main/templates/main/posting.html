@@ -119,10 +119,8 @@
         </ul>
     </div>
 
-    {% if user.username == log.diver %}
-
-
-        <!-- Answer Submission Form -->
+    {% if user.username %}
+         <!-- Answer Submission Form -->
         <div class="container box-section answer-section">
             <form action="{% url 'main:answer_create' log.id %}" method="post">
                 {% csrf_token %}
@@ -130,6 +128,11 @@
                 <input type="submit" value="Submit Comment" class="btn btn-primary">
             </form>
         </div>
+        
+    {% endif %}
+
+
+    {% if user.username == log.diver %}
 
         <div class="my-3">
         <a href="{% url 'main:view_modify_log' log_id=log.id %}"
