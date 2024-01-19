@@ -40,9 +40,9 @@
 
     <div class="container mt-5">
         <h2>Modify Profile!!</h2>
-        <a href="/profile">돌아가기</a>
+        <a href="{% url 'user_profile:view_profile' user_id=user_id %}">돌아가기</a>
 
-        <form action="{% url 'user_profile:modify_profile' %}" method="POST">
+        <form action="{% url 'user_profile:modify_profile' user_id=user_id %}" method="POST">
             {% csrf_token %}
             <div class="form-floating mb-2">
                 <input name="name" class="form-control" id="floatingInput" placeholder="Your name">

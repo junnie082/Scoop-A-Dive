@@ -21,7 +21,7 @@ def view_profile(request, user_id):
 
     return render(request, 'user_profile/profile.html', {"user_id": user_id, "profile": profile, "loglist" : loglist})
 
-def view_modify_profile(request):
+def view_modify_profile(request, user_id):
     current_user = request.user
     majors = check_major()
     try:
@@ -29,7 +29,7 @@ def view_modify_profile(request):
     except Profile.DoesNotExist:
         profile = None
 
-    return render(request, 'user_profile/modify_profile.html', {"user": current_user, "profile": profile, "majors": majors})
+    return render(request, 'user_profile/modify_profile.html', {"user_id": user_id, "user": current_user, "profile": profile, "majors": majors})
 
 
 def calculate_age(birthdate):
@@ -39,7 +39,7 @@ def calculate_age(birthdate):
     return age
 
 
-def modify_profile(request):
+def modify_profile(request, user_id):
     profile = Profile.objects.get(user=request.user)
 
     # Get values from the form
@@ -50,10 +50,8 @@ def modify_profile(request):
     kisu = request.POST.get('kisu')
     dive_license = request.POST.get('diveLicense')
     introduction = request.POST.get('introduction')
-
     # Calculate age based on the provided birthdate
     age = calculate_age(birthday) if birthday else None
-
     major = request.POST.get('major')
     absence = request.POST.get('absence')
     image = request.POST.get('image')
