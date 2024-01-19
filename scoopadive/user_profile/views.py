@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.functions import datetime
 
 # Create your views here.
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.timezone import now
 from datetime import datetime
 
@@ -77,5 +77,5 @@ def modify_profile(request, user_id):
     profile.is_absence = absence == 'on'
     profile.save()
 
-    return render(request, 'main/home.html')
+    return redirect('main:home')
 
