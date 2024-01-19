@@ -64,7 +64,7 @@
 <body>
     {% include 'components/navbar.html' %}
     <div class="container profile-section">
-        <h1>{{ user.username }}'s Profile</h1>
+        <h1>{{ profile.user }}'s Profile</h1>
         <a href="/home">Back to Home</a>
 
         {% if profile %}
@@ -118,10 +118,13 @@
         {% endif %}
     </div>
 
-    <div class="container button-section">
-        <button class="btn btn-primary"><a href="view_modify_profile/" style="color: white;">Edit Profile</a></button>
-        <button class="btn btn-danger"><a href="{% url 'common:logout' %}" style="color: white;">Logout</a></button>
-    </div>
+    {% if user.username == user_id %}
+        <div class="container button-section">
+            <button class="btn btn-primary"><a href="/view_modify_profile/" style="color: white;">Edit Profile</a></button>
+            <button class="btn btn-danger"><a href="{% url 'common:logout' %}" style="color: white;">Logout</a></button>
+        </div>
+    {% endif %}
+
 
     <!-- Bootstrap JS -->
     <script src="{% static 'bootstrap.min.js' %}"></script>
