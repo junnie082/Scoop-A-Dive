@@ -6,7 +6,7 @@ from user_profile.views import view_profile, view_modify_profile, modify_profile
 app_name = 'user_profile'
 
 urlpatterns = [
-    path('', view_profile, name="profile"),
+    path('<str:user_id>/', view_profile, name="view_profile"),
     path('view_modify_profile/', view_modify_profile, name="view_modify_profile"),
     path('modify_profile/', modify_profile, name="modify_profile"),
 ]

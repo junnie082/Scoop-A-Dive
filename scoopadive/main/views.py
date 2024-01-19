@@ -85,7 +85,7 @@ def answer_create(request, logId):
     return redirect('main:posting', logId)
 
 def log_vote(request, log_id):
-    log = get_object_or_404(Log, pk = log_id)
+    log = get_object_or_404(Log, pk=log_id)
     if request.user == log.diver:
         message.error(request, '본인이 작성한 글은 추천할 수 없습니다.')
     else:

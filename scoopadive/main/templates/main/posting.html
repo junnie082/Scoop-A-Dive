@@ -113,7 +113,7 @@
             {% for answer in log.answer_set.all %}
                 <li class="comment-box box-section" >
                     <span class="comment-content">{{ answer.content }}</span>
-                    <span class="badge rounded-pill text-bg-danger">{{ answer.author }}</span>
+                    <a href="{% url 'user_profile:view_profile' user_id=answer.author %}" class="badge rounded-pill text-bg-danger">{{ answer.author }}</a>
                 </li>
             {% endfor %}
         </ul>
