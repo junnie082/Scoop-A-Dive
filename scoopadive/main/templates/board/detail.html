@@ -121,12 +121,36 @@
     <a href="{% url 'board:index' %}" class="btn btn-link">Back to Board</a>
 
     <div class="container box-section">
+        <p class="writer-info"><a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a></p>
+
         <div class="container box-section">
             <h1>{{ post.Name }}</h1>
-            <p class="writer-info">Written by: <a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a></p>
             <p class="post-content">{{ post.content }}</p>
             <p class="post-date">Posted on: {{ post.date }}</p>
         </div>
+
+        {% if user.username != post.writer %}
+        <a href="javascript:void(0)" data-uri="{% url 'board:post_vote' post_id=post.id %}"
+            class="recommend btn btn-sm btn-outline-secondary"> Recommend
+            <span class="badge rounded-pill bg-success">{{ post.voter.count }}</span>
+        </a>
+        <script>
+            const recommend_elements = document.getElementsByClassName("recommend");
+            Array.from(recommend_elements).forEach(function(element) {
+                element.addEventListener('click', function() {
+                    if(confirm("Are you sure you want to recommend this log ?")) {
+                        location.href = this.dataset.uri;
+                    }
+                });
+            });
+        </script>
+        {% else %}
+
+        <div> Recommend
+            <span class="badge rounded-pill bg-success">{{ post.voter.count }}</span>
+        </div>
+        {% endif %}
+
 
 
         {% if user.username == post.writer %}
@@ -155,8 +179,11 @@
                             </td>
                             <span class="mb-0">{{ answer.content }}</span>
                             <div class="text-center">
-                                <h4 class="fw-bold mb-2"><a href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a></h4>
-                                <p class="mb-0">{{ answer.author }}</p>
+                                {% if answer.writer|lower == log.diver|lower %}
+                                    <h4 class="fw-bold mb-2"><a style="color:red;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a></h4>
+                                {% else %}
+                                    <h4 class="fw-bold mb-2"><a href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a></h4>
+                                {% endif %}
                             </div>
                         </li>
                     {% endfor %}
@@ -225,7 +252,7 @@
     <!-- Answer Submission Form -->
     <form action="{% url 'board:answer_create' post_id=post.pk %}" method="post" class="container box-section">
         {% csrf_token %}
-        <textarea name="content" id="content" rows="10" placeholder="Write your answer here"></textarea>
+        <textarea name="content" id="content" rows="3" placeholder="Write your answer here"></textarea>
         <input type="submit" value="Submit Answer">
     </form>
 </body>
