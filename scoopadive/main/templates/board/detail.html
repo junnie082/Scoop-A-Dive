@@ -184,7 +184,21 @@
 
                             <h4 class="fw-bold mb-2">
                                 {% if request.user|lower == answer.writer|lower %}
-                                    <a href="{% url 'main:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white">수정</a>
+                                    <a href="{% url 'board:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white">수정</a>
+                                    <a href="{% url 'board:answer_delete' answer.id %}" onclick="return confirm('진짜 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
+                                    <script>
+                                        document.getElementById('deleteButton').addEventListener('click', function (event) {
+                                            event.preventDefault(); // Prevent the default link behavior
+
+                                            // Show the confirmation dialog
+                                            if (confirm('정말 삭제하시겠습니까?')) {
+                                                // If the user clicks "OK", proceed with the deletion
+                                                window.location.href = event.target.getAttribute('href');
+                                            } else {
+                                                // If the user clicks "Cancel", do nothing
+                                            }
+                                        });
+                                    </script>
                                 {% endif %}
 
                                 {% if answer.author|lower == log.diver|lower %}

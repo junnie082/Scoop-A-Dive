@@ -21,4 +21,5 @@ urlpatterns = [
     path('home/log/modify/view_log_modify/<int:log_id>', views.view_modify_log, name="view_modify_log"),
     path('home/log/modify/<int:log_id>/', views.modify_log, name="modify_log"),
     path('answer/modify/<int:answer_id>/', views.answer_modify, name='answer_modify'),
+    path('answer/delete/<int:answer_id>/', views.answer_delete, name='answer_delete'),
 ]
