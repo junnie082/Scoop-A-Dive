@@ -2,22 +2,28 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 
-from board.models import Post
+from board.models import Post, Answer4Post
 
 
 # Create your views here.
 
 def index(request):
     page = request.GET.get('page', '1') # 페이지
-    postList = Post.objects.order_by('date')
+    postList = Post.objects.order_by('-date')
     paginator = Paginator(postList, 10) # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
     return render(request, 'board/board_home.html', {'postList': page_obj})
 
+
 def detail(request, post_id):
     # 상세보기
+    page = request.GET.get('page', '1') # Get the requested page number, default to 1 if not provided
     post = Post.objects.get(id=post_id)
-    return render(request, 'board/detail.html', {'post': post})
+    answer_list = Answer4Post.objects.filter(post=post)
+    paginator = Paginator(answer_list, 5) # Set up pagination with 5 items per page
+    page_obj = paginator.get_page(page) # Get the requested page from the paginator
+
+    return render(request, 'board/detail.html', {'post': post, 'answer_list': page_obj})
 
 def view_new_post(request):
     return render(request, 'board/new_post.html')
