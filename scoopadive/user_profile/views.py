@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 from django.db.models.functions import datetime
 
 # Create your views here.
@@ -12,16 +13,23 @@ from main.models import Log
 from .api import check_major
 from .models import Profile
 
+
 @login_required
 def view_profile(request, user_id):
     user = get_object_or_404(User, username=user_id)
     profile = get_object_or_404(Profile, user=user)
     # Assuming the user is authenticated, request.user will be the current user instance
     # Filter Log objects for the current user
+    pageLog = request.GET.get('page', '1')
+    pagePost = request.GET.get('page', '1')
     loglist = Log.objects.filter(diver=user_id)
     postlist = Post.objects.filter(writer=user_id)
+    paginatorLog = Paginator(loglist, 5)
+    paginatorPost = Paginator(postlist, 5)
+    page_obj_log = paginatorLog.get_page(pageLog)
+    page_obj_post = paginatorPost.get_page(pagePost)
 
-    return render(request, 'user_profile/profile.html', {"user_id": user_id, "profile": profile, "loglist" : loglist, "postlist": postlist})
+    return render(request, 'user_profile/profile.html', {"user_id": user_id, "profile": profile, "loglist" : page_obj_log, "postlist": page_obj_post})
 
 def view_modify_profile(request, user_id):
     current_user = request.user

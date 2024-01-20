@@ -196,6 +196,7 @@
                                 {% if request.user|lower == answer.author|lower %}
                                     <a href="{% url 'main:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white;">수정</a>
                                     <a href="{% url 'main:answer_delete' answer.id %}" onclick="return confirm('진짜 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
+
                                     <script>
                                         document.getElementById('deleteButton').addEventListener('click', function (event) {
                                             event.preventDefault(); // Prevent the default link behavior
