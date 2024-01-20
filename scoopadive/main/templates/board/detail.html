@@ -177,14 +177,23 @@
                                 <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
                                 {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}
                             </td>
-                            <span class="mb-0">{{ answer.content }}</span>
-                            <div class="text-center">
-                                {% if answer.writer|lower == log.diver|lower %}
-                                    <h4 class="fw-bold mb-2"><a style="color:red;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a></h4>
-                                {% else %}
-                                    <h4 class="fw-bold mb-2"><a href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a></h4>
-                                {% endif %}
+
+                            <div class="mb-10">
+                                {{ answer.content }}
                             </div>
+
+                            <h4 class="fw-bold mb-2">
+                                {% if request.user|lower == answer.writer|lower %}
+                                    <a href="{% url 'main:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white">수정</a>
+                                {% endif %}
+
+                                {% if answer.author|lower == log.diver|lower %}
+                                    <a style="color:red;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}(작성자)</a>
+                                {% else %}
+                                    <a href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a>
+                                {% endif %}
+                            </h4>
+
                         </li>
                     {% endfor %}
                 </ul>

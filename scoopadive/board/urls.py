@@ -13,5 +13,6 @@ urlpatterns = [
     path('<int:post_id>/answer_create/', views.answer_create, name='answer_create'),
     path('<int:post_id>/view_modify_post/', views.view_modify_post, name='view_modify_post'),
     path('<int:post_id>/modify_post/', views.modify_post, name='modify_post'),
-    path('post/vote/<int:post_id>', views.post_vote, name='post_vote'),
+    path('post/vote/<int:post_id>/', views.post_vote, name='post_vote'),
+    path('answer/modify/<int:answer_id>/', views.answer_modify, name='answer_modify')
 ]

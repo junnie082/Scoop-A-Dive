@@ -88,3 +88,13 @@ def post_vote(request, post_id):
 
     return redirect('board:detail', post_id=post.id)
 
+@login_required(login_url='common:login')
+def answer_modify(request, answer_id):
+    answer = get_object_or_404(Answer4Post, pk=answer_id)
+    if request.method == 'POST':
+        content = request.POST.get('content')
+        answer.content = content
+        answer.save()
+
+        return redirect('board:detail', post_id=answer.post.id)
+    return render(request, 'board/modify_answer.html')

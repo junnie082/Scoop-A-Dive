@@ -146,5 +146,16 @@ def modify_log(request, log_id):
     return render(request, 'main/home.html')
 
 
+@login_required(login_url='common:login')
+def answer_modify(request, answer_id):
+    answer = get_object_or_404(Answer4Logs, pk=answer_id)
+    if request.method == "POST":
+        content = request.POST.get('content')
+        answer.content = content
+        answer.save()
+
+        return redirect('main:posting', pk=answer.log.id)
+        # return render(request, 'main/posting.html', {'log': answer.log})
+    return render(request, 'main/modify_answer.html')
 
 
