@@ -8,7 +8,8 @@ from django.utils import timezone
 
 from user_profile.models import Profile
 # View에 Model(Post 게시글) 가져오기
-from .models import Log
+from .models import Log, Answer4Logs
+
 
 def index(request):
     loglist = Log.objects.all()
@@ -34,10 +35,14 @@ def home(request):
     # return render(request, 'main/home.html', {'postlist':postlist})
 
 def posting(request, pk):
-    # 게시글(Post) 중 pk(primary_key)를 이용해 하나의 게시글(post)를 검색
-    # # posthing.html 페이지를 열 때, 찾아낸 게시글(post)을 post라는 이름으로 가져옴
-    log = Log.objects.get(pk=pk)
-    return render(request, 'main/posting.html', {'user': request.user, 'log': log})
+    page = request.GET.get('page', '1')  # Get the requested page number, default to 1 if not provided
+    log = get_object_or_404(Log, pk=pk)  # Retrieve the specific log post using the provided primary key
+    answer_list = Answer4Logs.objects.filter(log=log)  # Retrieve the associated answers/comments for the log post
+    paginator = Paginator(answer_list, 5)  # Set up pagination with 5 items per page
+    page_obj = paginator.get_page(page)  # Get the requested page from the paginator
+
+    return render(request, 'main/posting.html', {'user': request.user, 'log': log, 'answer_list': page_obj})
+
 
 def new_log(request):
     if request.method == 'POST':

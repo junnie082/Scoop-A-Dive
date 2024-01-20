@@ -35,48 +35,63 @@
 
 
 
-    <!-- 페이징처리 시작 -->
-    <ul class="pagination justify-content-center">
-        <a class="page-link" href="/board/?page=1">처음으로</a>
-        <!-- 이전페이지 -->
-        {% if postList.has_previous %}
+    <!-- Pagination -->
+<ul class="pagination justify-content-center">
+    {% if postList.has_previous %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ postList.previous_page_number }}">이전</a>
+            <a class="page-link" href="?page=1" aria-label="처음으로">
+                <span aria-hidden="true">&laquo;&laquo;</span>
+            </a>
         </li>
-        {% else %}
-        <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ postList.previous_page_number }}" aria-label="이전">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
         </li>
-        {% endif %}
-        <!-- 페이지리스트 -->
-        {% for page_number in postList.paginator.page_range %}
+    {% else %}
+        <li class="page-item disabled" aria-disabled="true">
+            <span class="page-link" aria-hidden="true">&laquo;&laquo;</span>
+        </li>
+        <li class="page-item disabled" aria-disabled="true">
+            <span class="page-link" aria-hidden="true">&laquo;</span>
+        </li>
+    {% endif %}
+
+    <!-- Page numbers -->
+    {% for page_number in postList.paginator.page_range %}
         {% if page_number >= postList.number|add:-5 and page_number <= postList.number|add:5 %}
+            {% if page_number == postList.number %}
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link">{{ page_number }}</span>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                </li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
 
-        {% if page_number == postList.number %}
-        <li class="page-item active" aria-current="page">
-            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-        </li>
-        {% else %}
+    {% if postList.has_next %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+            <a class="page-link" href="?page={{ postList.next_page_number }}" aria-label="다음">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
         </li>
-        {% endif %}
-        {% endif %}
-
-        {% endfor %}
-        <!-- 다음페이지 -->
-        {% if postList.has_next %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ postList.next_page_number }}">다음</a>
+            <a class="page-link" href="?page={{ postList.paginator.num_pages }}" aria-label="마지막으로">
+                <span aria-hidden="true">&raquo;&raquo;</span>
+            </a>
         </li>
-        {% else %}
-        <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+    {% else %}
+        <li class="page-item disabled" aria-disabled="true">
+            <span class="page-link" aria-hidden="true">&raquo;</span>
         </li>
-        {% endif %}
-    </ul>
-    <!-- 페이징처리 끝 -->
-
+        <li class="page-item disabled" aria-disabled="true">
+            <span class="page-link" aria-hidden="true">&raquo;&raquo;</span>
+        </li>
+    {% endif %}
+</ul>
     {% if user.is_authenticated %}
         <button><a href="view_new_post/" style="color: white;">글쓰기</a></button>
     {% endif %}
