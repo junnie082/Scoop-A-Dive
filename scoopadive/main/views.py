@@ -37,7 +37,7 @@ def home(request):
 def posting(request, pk):
     page = request.GET.get('page', '1')  # Get the requested page number, default to 1 if not provided
     log = get_object_or_404(Log, pk=pk)  # Retrieve the specific log post using the provided primary key
-    answer_list = Answer4Logs.objects.filter(log=log)  # Retrieve the associated answers/comments for the log post
+    answer_list = Answer4Logs.objects.filter(log=log).order_by('-create_date')  # Retrieve the associated answers/comments for the log post
     paginator = Paginator(answer_list, 5)  # Set up pagination with 5 items per page
     page_obj = paginator.get_page(page)  # Get the requested page from the paginator
 
@@ -146,5 +146,23 @@ def modify_log(request, log_id):
     return render(request, 'main/home.html')
 
 
+@login_required(login_url='common:login')
+def answer_modify(request, answer_id):
+    answer = get_object_or_404(Answer4Logs, pk=answer_id)
+    if request.method == "POST":
+        content = request.POST.get('content')
+        answer.content = content
+        answer.save()
 
+        return redirect('main:posting', pk=answer.log.id)
+        # return render(request, 'main/posting.html', {'log': answer.log})
+    return render(request, 'main/modify_answer.html')
+
+
+@login_required(login_url='common:login')
+def answer_delete(request, answer_id):
+    answer = get_object_or_404(Answer4Logs, pk=answer_id)
+    log_id = answer.log.id
+    answer.delete()
+    return redirect('main:posting', pk=log_id)
 

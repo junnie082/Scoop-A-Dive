@@ -64,7 +64,7 @@
 <body>
     {% include 'components/navbar.html' %}
     <div class="container profile-section">
-        <h1>{{ profile.user }}'s Profile</h1>
+        <h1>{{ profile.user }}</h1>
         <a href="{% url 'main:home' %}">Back to Home</a>
 
         {% if profile %}

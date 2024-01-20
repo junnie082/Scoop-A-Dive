@@ -121,12 +121,36 @@
     <a href="{% url 'board:index' %}" class="btn btn-link">Back to Board</a>
 
     <div class="container box-section">
+        <p class="writer-info"><a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a></p>
+
         <div class="container box-section">
             <h1>{{ post.Name }}</h1>
-            <p class="writer-info">Written by: <a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a></p>
             <p class="post-content">{{ post.content }}</p>
             <p class="post-date">Posted on: {{ post.date }}</p>
         </div>
+
+        {% if user.username != post.writer %}
+        <a href="javascript:void(0)" data-uri="{% url 'board:post_vote' post_id=post.id %}"
+            class="recommend btn btn-sm btn-outline-secondary"> Recommend
+            <span class="badge rounded-pill bg-success">{{ post.voter.count }}</span>
+        </a>
+        <script>
+            const recommend_elements = document.getElementsByClassName("recommend");
+            Array.from(recommend_elements).forEach(function(element) {
+                element.addEventListener('click', function() {
+                    if(confirm("Are you sure you want to recommend this log ?")) {
+                        location.href = this.dataset.uri;
+                    }
+                });
+            });
+        </script>
+        {% else %}
+
+        <div> Recommend
+            <span class="badge rounded-pill bg-success">{{ post.voter.count }}</span>
+        </div>
+        {% endif %}
+
 
 
         {% if user.username == post.writer %}
@@ -153,11 +177,37 @@
                                 <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
                                 {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}
                             </td>
-                            <span class="mb-0">{{ answer.content }}</span>
-                            <div class="text-center">
-                                <h4 class="fw-bold mb-2"><a href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a></h4>
-                                <p class="mb-0">{{ answer.author }}</p>
+
+                            <div class="mb-10">
+                                {{ answer.content }}
                             </div>
+
+                            <h4 class="fw-bold mb-2">
+                                {% if request.user|lower == answer.writer|lower %}
+                                    <a href="{% url 'board:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white">수정</a>
+                                    <a href="{% url 'board:answer_delete' answer.id %}" onclick="return confirm('진짜 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
+                                    <script>
+                                        document.getElementById('deleteButton').addEventListener('click', function (event) {
+                                            event.preventDefault(); // Prevent the default link behavior
+
+                                            // Show the confirmation dialog
+                                            if (confirm('정말 삭제하시겠습니까?')) {
+                                                // If the user clicks "OK", proceed with the deletion
+                                                window.location.href = event.target.getAttribute('href');
+                                            } else {
+                                                // If the user clicks "Cancel", do nothing
+                                            }
+                                        });
+                                    </script>
+                                {% endif %}
+
+                                {% if answer.author|lower == log.diver|lower %}
+                                    <a style="color:red;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}(작성자)</a>
+                                {% else %}
+                                    <a href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a>
+                                {% endif %}
+                            </h4>
+
                         </li>
                     {% endfor %}
                 </ul>
@@ -225,7 +275,7 @@
     <!-- Answer Submission Form -->
     <form action="{% url 'board:answer_create' post_id=post.pk %}" method="post" class="container box-section">
         {% csrf_token %}
-        <textarea name="content" id="content" rows="10" placeholder="Write your answer here"></textarea>
+        <textarea name="content" id="content" rows="3" placeholder="Write your answer here"></textarea>
         <input type="submit" value="Submit Answer">
     </form>
 </body>

@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
@@ -80,3 +81,26 @@ def modify_post(request, post_id):
 
     return render(request, 'board/detail.html', {'post': post})
 
+@login_required(login_url='common:login')
+def post_vote(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    post.voter.add(request.user)
+
+    return redirect('board:detail', post_id=post.id)
+
+@login_required(login_url='common:login')
+def answer_modify(request, answer_id):
+    answer = get_object_or_404(Answer4Post, pk=answer_id)
+    if request.method == 'POST':
+        content = request.POST.get('content')
+        answer.content = content
+        answer.save()
+
+        return redirect('board:detail', post_id=answer.post.id)
+    return render(request, 'board/modify_answer.html')
+
+@login_required(login_url='common:login')
+def answer_delete(request, answer_id):
+    answer = get_object_or_404(Answer4Post, pk=answer_id)
+    answer.delete()
+    return redirect('board:detail', post_id=answer.post.id)

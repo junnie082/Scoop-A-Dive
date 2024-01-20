@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -7,6 +8,7 @@ class Post(models.Model):
     writer = models.CharField(max_length=20)
     date = models.DateTimeField()
     images = models.ImageField(blank=True, null=True)
+    voter = models.ManyToManyField(User)  # 추천인 추가
 
     class Meta:
         db_table = 'Post'
@@ -20,6 +22,7 @@ class Answer4Post(models.Model):
     content = models.TextField()
     writer = models.CharField(max_length=20)
     date = models.DateTimeField()
+    voter = models.ManyToManyField(User) # 추천인 추가
 
     class Meta:
         db_table = 'Answer4Post'
