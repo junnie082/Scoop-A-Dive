@@ -51,19 +51,8 @@
             margin-bottom: 20px;
         }
 
-        .comments-section {
-            border-top: 1px solid #ddd;
-            margin-top: 20px;
-            padding-top: 20px;
-        }
-
-        .comment-box {
-            margin-bottom: 10px;
-        }
-
-        .comment-content {
-            display: block;
-            margin-bottom: 10px;
+        .list-group-item {
+            margin-bottom: 0px;
         }
 
         .comment-box a {
@@ -169,7 +158,6 @@
     </div>
 
     <h2>Answers</h2>
-
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
@@ -187,8 +175,9 @@
 
                             <h4 class="fw-bold mb-2">
                                 {% if request.user|lower == answer.writer|lower %}
-                                    <a href="{% url 'board:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white">수정</a>
-                                    <a href="{% url 'board:answer_delete' answer.id %}" onclick="return confirm('진짜 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
+                                    <a href="{% url 'main:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white;">수정</a>
+                                    <a href="{% url 'main:answer_delete' answer.id %}" onclick="return confirm('정말 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
+
                                     <script>
                                         document.getElementById('deleteButton').addEventListener('click', function (event) {
                                             event.preventDefault(); // Prevent the default link behavior
@@ -204,13 +193,12 @@
                                     </script>
                                 {% endif %}
 
-                                {% if answer.author|lower == log.diver|lower %}
+                                {% if answer.writer|lower == post.writer|lower %}
                                     <a style="color:red;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}(작성자)</a>
                                 {% else %}
                                     <a href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a>
                                 {% endif %}
                             </h4>
-
                         </li>
                     {% endfor %}
                 </ul>
@@ -219,62 +207,63 @@
     </div>
 
     <!-- Pagination -->
-<ul class="pagination justify-content-center">
-    {% if answer_list.has_previous %}
-        <li class="page-item">
-            <a class="page-link" href="?page=1" aria-label="처음으로">
-                <span aria-hidden="true">&laquo;&laquo;</span>
-            </a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="?page={{ answer_list.previous_page_number }}" aria-label="이전">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-    {% else %}
-        <li class="page-item disabled" aria-disabled="true">
-            <span class="page-link" aria-hidden="true">&laquo;&laquo;</span>
-        </li>
-        <li class="page-item disabled" aria-disabled="true">
-            <span class="page-link" aria-hidden="true">&laquo;</span>
-        </li>
-    {% endif %}
-
-    <!-- Page numbers -->
-    {% for page_number in answer_list.paginator.page_range %}
-        {% if page_number >= answer_list.number|add:-5 and page_number <= answer_list.number|add:5 %}
-            {% if page_number == answer_list.number %}
-                <li class="page-item active" aria-current="page">
-                    <span class="page-link">{{ page_number }}</span>
-                </li>
-            {% else %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-                </li>
-            {% endif %}
+    <ul class="pagination justify-content-center">
+        {% if answer_list.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1" aria-label="처음으로">
+                    <span aria-hidden="true">&laquo;&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ answer_list.previous_page_number }}" aria-label="이전">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&laquo;&laquo;</span>
+            </li>
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&laquo;</span>
+            </li>
         {% endif %}
-    {% endfor %}
 
-    {% if answer_list.has_next %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{ answer_list.next_page_number }}" aria-label="다음">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="?page={{ answer_list.paginator.num_pages }}" aria-label="마지막으로">
-                <span aria-hidden="true">&raquo;&raquo;</span>
-            </a>
-        </li>
-    {% else %}
-        <li class="page-item disabled" aria-disabled="true">
-            <span class="page-link" aria-hidden="true">&raquo;</span>
-        </li>
-        <li class="page-item disabled" aria-disabled="true">
-            <span class="page-link" aria-hidden="true">&raquo;&raquo;</span>
-        </li>
-    {% endif %}
-</ul>
+        <!-- Page numbers -->
+        {% for page_number in answer_list.paginator.page_range %}
+            {% if page_number >= answer_list.number|add:-5 and page_number <= answer_list.number|add:5 %}
+                {% if page_number == answer_list.number %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">{{ page_number }}</span>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% if answer_list.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ answer_list.next_page_number }}" aria-label="다음">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ answer_list.paginator.num_pages }}" aria-label="마지막으로">
+                    <span aria-hidden="true">&raquo;&raquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&raquo;</span>
+            </li>
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&raquo;&raquo;</span>
+            </li>
+        {% endif %}
+    </ul>
+
     <!-- Answer Submission Form -->
     <form action="{% url 'board:answer_create' post_id=post.pk %}" method="post" class="container box-section">
         {% csrf_token %}

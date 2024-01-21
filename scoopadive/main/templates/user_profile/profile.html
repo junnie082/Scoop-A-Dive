@@ -22,7 +22,14 @@
             margin: 0 auto;
         }
 
-        h1, h2, h3 {
+        h1 {
+            color: black;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        h2, h3 {
+            font-size: 20px;
             color: #007BFF;
         }
 
@@ -38,7 +45,7 @@
         }
 
         p {
-            font-size: 16px;
+            font-size: 20px;
             margin-bottom: 10px;
             color: #555;
         }
@@ -53,20 +60,32 @@
             margin: 10px;
         }
 
-        .profile-section, .introduction-section, .logs-section, .button-section {
+        .profile-section {
+            background-color: #ecedee;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .logs-section {
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
         }
+
+        .list-group-item {
+            padding: 1px;
+        }
     </style>
 </head>
 <body>
     {% include 'components/navbar.html' %}
+
     <div class="container profile-section">
         <h1>{{ profile.user }}</h1>
-        <a href="{% url 'main:home' %}">Back to Home</a>
 
         {% if profile %}
             <p><strong>Name:</strong> {{ profile.name }}</p>
@@ -78,12 +97,13 @@
                 <h3>{{ profile.diveLicense }}</h3>
             {% endif %}
 
+            {% if profile.age %}
+                <h3>만 {{ profile.age }} 세 ({{ profile.birthday }})</h3>
+            {% endif %}
+
             {% if profile.is_ststMember %}
                 <p>Member of Seoul Tech Scuba Team</p>
 
-                {% if profile.studentID %}
-                    <p>{{ profile.studentID }}</p>
-                {% endif %}
                 {% if profile.kisu %}
                     <h3>{{ profile.kisu }}기</h3>
                 {% endif %}
@@ -94,188 +114,178 @@
                     <h3>{{ profile.major }}</h3>
                 {% endif %}
                 {% if profile.is_absence %}
-                    <h3>On Leave</h3>
+                    <h3>휴학 및 졸업</h3>
                 {% else %}
-                    <h3>Enrolled</h3>
+                    <h3>재학</h3>
                 {% endif %}
             {% endif %}
 
             {% if profile.introduction %}
                 <div class="introduction-section">
-                    <h3>Introduction</h3>
                     <p>{{ profile.introduction }}</p>
                 </div>
             {% endif %}
-
-            <!-- Pagination -->
-{#             <div class="logs-section">#}
-{#                <h2>Posts</h2>#}
-{#                {% for post in postlist %}#}
-{#                    <p><a href="/board/{{ post.id }}">{{ post.postName }}</a></p>#}
-{#                {% endfor %}#}
-{#            </div>#}
-            <div class="logs-section">
-            <h2>Diving Logs</h2>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 mx-auto">
-                        <ul class="list-group">
-                            {% for log in loglist %}
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <td>
-                                        <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
-                                        {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
-                                    </td>
-                                    <div class="text-center">
-                                        <h4 class="fw-bold mb-2"><a href="{% url 'main:posting' pk=log.id %}">{{ log.logName }}</a></h4>
-                                    </div>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <ul class="pagination justify-content-center">
-                {% if loglist.has_previous %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page=1" aria-label="처음으로">
-                            <span aria-hidden="true">&laquo;&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ loglist.previous_page_number }}" aria-label="이전">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link" aria-hidden="true">&laquo;&laquo;</span>
-                    </li>
-                    <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link" aria-hidden="true">&laquo;</span>
-                    </li>
-                {% endif %}
-
-                <!-- Page numbers -->
-                {% for page_number in loglist.paginator.page_range %}
-                    {% if page_number >= loglist.number|add:-5 and page_number <= loglist.number|add:5 %}
-                        {% if page_number == loglist.number %}
-                            <li class="page-item active" aria-current="page">
-                                <span class="page-link">{{ page_number }}</span>
-                            </li>
-                        {% else %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-                            </li>
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-
-                {% if loglist.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ loglist.next_page_number }}" aria-label="다음">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ loglist.paginator.num_pages }}" aria-label="마지막으로">
-                            <span aria-hidden="true">&raquo;&raquo;</span>
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link" aria-hidden="true">&raquo;</span>
-                    </li>
-                    <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link" aria-hidden="true">&raquo;&raquo;</span>
-                    </li>
-                {% endif %}
-            </ul>
-
-            <h2>Posts</h2>
-            <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <ul class="list-group">
-                        {% for post in postlist %}
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <td>
-                                    <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
-                                    {{ postlist.paginator.count|sub:postlist.start_index|sub:forloop.counter0|add:1 }}
-                                </td>
-                                <div class="text-center">
-                                    <h4 class="fw-bold mb-2"><a href="{% url 'board:detail' post_id=post.id %}">{{ post.postName }}</a></h4>
-                                </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-            <ul class="pagination justify-content-center">
-                {% if postlist.has_previous %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page=1" aria-label="처음으로">
-                            <span aria-hidden="true">&laquo;&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ postlist.previous_page_number }}" aria-label="이전">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link" aria-hidden="true">&laquo;&laquo;</span>
-                    </li>
-                    <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link" aria-hidden="true">&laquo;</span>
-                    </li>
-                {% endif %}
-
-                <!-- Page numbers -->
-                {% for page_number in postlist.paginator.page_range %}
-                    {% if page_number >= postlist.number|add:-5 and page_number <= postlist.number|add:5 %}
-                        {% if page_number == postlist.number %}
-                            <li class="page-item active" aria-current="page">
-                                <span class="page-link">{{ page_number }}</span>
-                            </li>
-                        {% else %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-                            </li>
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-
-                {% if postlist.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ postlist.next_page_number }}" aria-label="다음">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ postlist.paginator.num_pages }}" aria-label="마지막으로">
-                            <span aria-hidden="true">&raquo;&raquo;</span>
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link" aria-hidden="true">&raquo;</span>
-                    </li>
-                    <li class="page-item disabled" aria-disabled="true">
-                        <span class="page-link" aria-hidden="true">&raquo;&raquo;</span>
-                    </li>
-                {% endif %}
-            </ul>
-            </div>
-
         {% else %}
             <p>No profile found for this user.</p>
         {% endif %}
     </div>
+
+    <div class="container logs-section">
+        <h2 class="fw-bold">{{ logCount }} Diving Logs</h2>
+
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <ul class="list-group">
+                    {% for log in loglist %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <td>
+                                {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
+                            </td>
+                            <div class="text-center">
+                                <h4 class="mb-2"><a href="{% url 'main:posting' pk=log.id %}">{{ log.logName }}</a></h4>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <ul class="pagination justify-content-center">
+        {% if loglist.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page=1" aria-label="처음으로">
+                <span aria-hidden="true">&laquo;&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ loglist.previous_page_number }}" aria-label="이전">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {% else %}
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&laquo;&laquo;</span>
+            </li>
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&laquo;</span>
+            </li>
+        {% endif %}
+
+        <!-- Page numbers -->
+        {% for page_number in loglist.paginator.page_range %}
+            {% if page_number >= loglist.number|add:-5 and page_number <= loglist.number|add:5 %}
+                {% if page_number == loglist.number %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">{{ page_number }}</span>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% if loglist.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ loglist.next_page_number }}" aria-label="다음">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ loglist.paginator.num_pages }}" aria-label="마지막으로">
+                    <span aria-hidden="true">&raquo;&raquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&raquo;</span>
+            </li>
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&raquo;&raquo;</span>
+            </li>
+        {% endif %}
+        </ul>
+    </div>
+
+    <div class="container logs-section">
+        <h2 class="fw-bold">{{ postCount }} Posts</h2>
+
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <ul class="list-group">
+                    {% for post in postlist %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <td>
+                                {{ postlist.paginator.count|sub:postlist.start_index|sub:forloop.counter0|add:1 }}
+                            </td>
+                            <div class="text-center">
+                                <h4 class="mb-2"><a href="{% url 'board:detail' post_id=post.id %}">{{ post.postName }}</a></h4>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <ul class="pagination justify-content-center">
+            {% if postlist.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1" aria-label="처음으로">
+                    <span aria-hidden="true">&laquo;&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ postlist.previous_page_number }}" aria-label="이전">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&laquo;&laquo;</span>
+            </li>
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&laquo;</span>
+            </li>
+        {% endif %}
+
+        <!-- Page numbers -->
+        {% for page_number in postlist.paginator.page_range %}
+            {% if page_number >= postlist.number|add:-5 and page_number <= postlist.number|add:5 %}
+                {% if page_number == postlist.number %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">{{ page_number }}</span>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% if postlist.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ postlist.next_page_number }}" aria-label="다음">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ postlist.paginator.num_pages }}" aria-label="마지막으로">
+                    <span aria-hidden="true">&raquo;&raquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&raquo;</span>
+            </li>
+            <li class="page-item disabled" aria-disabled="true">
+                <span class="page-link" aria-hidden="true">&raquo;&raquo;</span>
+            </li>
+        {% endif %}
+        </ul>
+    </div>
+
+    <a href="{% url 'main:home' %}">Back to Home</a>
 
     {% if user.username == user_id %}
         <div class="container button-section">
@@ -284,8 +294,8 @@
         </div>
     {% endif %}
 
-
     <!-- Bootstrap JS -->
     <script src="{% static 'bootstrap.min.js' %}"></script>
+
 </body>
 </html>

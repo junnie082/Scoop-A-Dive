@@ -23,13 +23,15 @@ def view_profile(request, user_id):
     pageLog = request.GET.get('page', '1')
     pagePost = request.GET.get('page', '1')
     loglist = Log.objects.filter(diver=user_id)
+    logCount = loglist.count
     postlist = Post.objects.filter(writer=user_id)
+    postCount = postlist.count
     paginatorLog = Paginator(loglist, 5)
     paginatorPost = Paginator(postlist, 5)
     page_obj_log = paginatorLog.get_page(pageLog)
     page_obj_post = paginatorPost.get_page(pagePost)
 
-    return render(request, 'user_profile/profile.html', {"user_id": user_id, "profile": profile, "loglist" : page_obj_log, "postlist": page_obj_post})
+    return render(request, 'user_profile/profile.html', {"user_id": user_id, "profile": profile, "loglist" : page_obj_log, "postlist": page_obj_post, 'logCount': logCount, 'postCount': postCount})
 
 def view_modify_profile(request, user_id):
     current_user = request.user
@@ -56,6 +58,7 @@ def modify_profile(request, user_id):
     name = request.POST.get('name')
     student_id = request.POST.get('studentId')
     birthday = request.POST.get('birthday')
+    print('birthday: ' + str(birthday))
     name = request.POST.get('name')
     kisu = request.POST.get('kisu')
     dive_license = request.POST.get('diveLicense')
@@ -87,5 +90,5 @@ def modify_profile(request, user_id):
     profile.is_absence = absence == 'on'
     profile.save()
 
-    return redirect('main:home')
+    return redirect('user_profile:view_profile', user_id=user_id)
 

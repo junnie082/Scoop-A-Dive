@@ -49,10 +49,26 @@
                 <label for="floatingInput">Name</label>
             </div>
 
+            <!-- Birthday -->
             <div class="form-floating mb-2">
-                <input type="date" name="birhday" class="form-control" id="floatingInput">
+                <input type="date" name="birthday" class="form-control" id="floatingInput">
                 <label for="floatingInput">Birthday</label>
             </div>
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    // Birthday Input
+                    $('#floatingInput').change(function () {
+                        var selectedValue = $(this).val();
+                        $('#birthdayInput').val(selectedValue);
+                    });
+                });
+            </script>
+
+            <!-- Hidden input for Birthday -->
+            <input type="hidden" id="birthdayInput" name="birthday">
 
             <!-- Diving License -->
             <div class="input-group mb-2 license-dropdown">
