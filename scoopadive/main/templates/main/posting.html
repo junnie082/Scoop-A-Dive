@@ -29,7 +29,7 @@
         }
 
         p {
-            font-size: 16px;
+            font-size: 30px;
             margin-bottom: 10px;
             color: #555;
         }
@@ -69,7 +69,11 @@
         </div>
         <div class="card-body">
             <div class="row">
+                {% if user.is_authenticated %}
                 <a href="/profile/{{ log.diver }}" class="list-group-item"><strong>Diver:</strong> {{ log.diver }}</a>
+                {% else %}
+                <p class="list-group-item"><strong>Diver:</strong> {{ log.diver }}</p>
+                {% endif %}
                 <h5 class="list-group-item"><strong>Log #</strong> {{ log.diveNo }}</h5>
                 <h2>Dive Info</h2>
                 <div class="col-md-6">
@@ -163,7 +167,7 @@
             const recommend_elements = document.getElementsByClassName("recommend");
             Array.from(recommend_elements).forEach(function(element) {
                 element.addEventListener('click', function() {
-                    if(confirm("Are you sure you want to recommend this log ?")) {
+                    if(confirm("Did you press recommend button?")) {
                         location.href = this.dataset.uri;
                     }
                 });
@@ -195,7 +199,7 @@
                             <h4 class="fw-bold mb-2">
                                 {% if request.user|lower == answer.author|lower %}
                                     <a href="{% url 'main:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white;">수정</a>
-                                    <a href="{% url 'main:answer_delete' answer.id %}" onclick="return confirm('진짜 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
+                                    <a href="{% url 'main:answer_delete' answer.id %}" onclick="return confirm('정말 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
 
                                     <script>
                                         document.getElementById('deleteButton').addEventListener('click', function (event) {

@@ -84,7 +84,13 @@ def modify_post(request, post_id):
 @login_required(login_url='common:login')
 def post_vote(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    post.voter.add(request.user)
+
+    recommended = False
+    if request.user in post.voter.all():
+        post.voter.remove(request.user)
+        post.save()
+    else:
+        post.voter.add(request.user)
 
     return redirect('board:detail', post_id=post.id)
 

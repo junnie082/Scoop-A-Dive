@@ -121,8 +121,11 @@
     <a href="{% url 'board:index' %}" class="btn btn-link">Back to Board</a>
 
     <div class="container box-section">
+    {% if user.is_authenticated %}
         <p class="writer-info"><a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a></p>
-
+    {% else %}
+        <p class="writer-info">{{ post.writer }}</p>
+    {% endif %}
         <div class="container box-section">
             <h1>{{ post.Name }}</h1>
             <p class="post-content">{{ post.content }}</p>
