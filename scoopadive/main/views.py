@@ -147,7 +147,7 @@ def modify_log(request, log_id):
 
     log.save()
 
-    return render(request, 'main/home.html')
+    return redirect('main:posting', pk=log_id)
 
 
 @login_required(login_url='common:login')

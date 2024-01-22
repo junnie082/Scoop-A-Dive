@@ -59,7 +59,6 @@ def modify_profile(request, user_id):
     student_id = request.POST.get('studentId')
     birthday = request.POST.get('birthday')
     print('birthday: ' + str(birthday))
-    name = request.POST.get('name')
     kisu = request.POST.get('kisu')
     dive_license = request.POST.get('diveLicense')
     introduction = request.POST.get('introduction')
@@ -68,6 +67,8 @@ def modify_profile(request, user_id):
     major = request.POST.get('major')
     absence = request.POST.get('absence')
     image = request.POST.get('image')
+
+    print('age: ' + str(age))
 
     if name != '':
         profile.name = name

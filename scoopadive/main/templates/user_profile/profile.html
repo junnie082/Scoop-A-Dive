@@ -18,19 +18,34 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
         h1 {
-            color: black;
-            font-size: 50px;
+            color: white;
+            font-size: 80px;
             font-weight: bold;
         }
 
-        h2, h3 {
+        h2 {
+            color: #6c757d;
+        }
+
+        h3 {
             font-size: 20px;
-            color: #007BFF;
+            color: #ffffff;
+        }
+
+        h4 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        h5 {
+            font-size: 20px;
+            color: #ffe69c;
         }
 
         a {
@@ -47,13 +62,13 @@
         p {
             font-size: 20px;
             margin-bottom: 10px;
-            color: #555;
+            color: #000000;
         }
 
         img {
             margin-bottom: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px #ffffff;
         }
 
         .btn {
@@ -61,7 +76,7 @@
         }
 
         .profile-section {
-            background-color: #ecedee;
+            background-color: #007BFF;
             border: 1px solid #ddd;
             border-radius: 10px;
             padding: 20px;
@@ -79,50 +94,61 @@
         .list-group-item {
             padding: 1px;
         }
+
+        .introduction-section {
+            max-height: 200px; /* Set the maximum height for the introduction section */
+            overflow: auto; /* Add scrollbar when content overflows */
+            background: #ffffff;
+            border-radius: 30px;
+            padding: 1px; /* Adjust the padding as needed */
+            box-shadow: 0 2px 4px #ffffff;
+        }
+
+
+        #introduction {
+            color: #1a1d20;
+        }
+
     </style>
 </head>
 <body>
     {% include 'components/navbar.html' %}
 
     <div class="container profile-section">
+        {% if profile.diveLicense %}
+            <h1>{{ profile.user }} <h4><strong>{{ profile.diveLicense }}</strong></h4></h1>
+        {% else %}
         <h1>{{ profile.user }}</h1>
+        {% endif %}
 
         {% if profile %}
-            <p><strong>Name:</strong> {{ profile.name }}</p>
             {% if profile.image %}
                 <img src="{{ profile.image.url }}" alt="{{ user.username }}'s Profile Image" height="150">
             {% endif %}
 
-            {% if profile.diveLicense %}
-                <h3>{{ profile.diveLicense }}</h3>
-            {% endif %}
+            <h3><strong>{{ profile.name }}</strong></h3>
 
-            {% if profile.age %}
-                <h3>만 {{ profile.age }} 세 ({{ profile.birthday }})</h3>
+            {% if profile.birthday %}
+                <h3>만 {{ profile.age }}세 ({{ profile.birthday.year }})</h3>
             {% endif %}
 
             {% if profile.is_ststMember %}
-                <p>Member of Seoul Tech Scuba Team</p>
+                <h5>Member of Seoul Tech Scuba Team</h5>
 
-                {% if profile.kisu %}
-                    <h3>{{ profile.kisu }}기</h3>
-                {% endif %}
-                {% if profile.birthday %}
-                    <h3>{{ profile.birthday }}, {{ profile.age }} years old</h3>
-                {% endif %}
-                {% if profile.major %}
-                    <h3>{{ profile.major }}</h3>
-                {% endif %}
+
+            <h3>{% if profile.kisu %}{{ profile.kisu }}기 {% endif %}
+                {% if profile.major %}{{ profile.major }}{% endif %}
                 {% if profile.is_absence %}
-                    <h3>휴학 및 졸업</h3>
+                    (휴학 및 졸업)
                 {% else %}
-                    <h3>재학</h3>
+                    (재학)
                 {% endif %}
-            {% endif %}
+            </h3>
 
+                {% endif %}
             {% if profile.introduction %}
                 <div class="introduction-section">
-                    <p>{{ profile.introduction }}</p>
+                    <p id="introduction">{{ profile.introduction|mark }}</p>
                 </div>
             {% endif %}
         {% else %}
@@ -130,6 +156,7 @@
         {% endif %}
     </div>
 
+    <div class="logviews">
     <div class="container logs-section">
         <h2 class="fw-bold">{{ logCount }} Diving Logs</h2>
 
@@ -283,6 +310,7 @@
             </li>
         {% endif %}
         </ul>
+    </div>
     </div>
 
     <a href="{% url 'main:home' %}">Back to Home</a>

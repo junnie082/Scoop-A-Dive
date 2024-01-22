@@ -24,6 +24,15 @@
             margin: 0 auto;
         }
 
+        .card-title {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
         h1, h2, h3, h4, h5 {
             color: #007BFF;
         }
@@ -83,7 +92,7 @@
                 <div class="col-md-6">
                     <ul class="list-group">
                         <li class="list-group-item"><strong>Date:</strong> {{ log.date }}</li>
-                        <li class="list-group-item"><strong>Temperature:</strong> {{ log.temperature }}</li>
+                        <li class="list-group-item"><strong>Temperature:</strong> {{ log.temperature }} °C</li>
                         <li class="list-group-item"><strong>Buddy:</strong> {{ log.buddy }}</li>
                     </ul>
                 </div>
@@ -197,7 +206,7 @@
                             </td>
 
                             <div class="mb-10">
-                                {{ answer.content }}
+                                {{ answer.content|mark }}
                             </div>
 
                             <h4 class="fw-bold mb-2">

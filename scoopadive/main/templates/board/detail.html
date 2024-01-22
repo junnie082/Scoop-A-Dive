@@ -32,6 +32,7 @@
             color: #007BFF;
             margin: 0 10px;
             font-size: 18px;
+            font-weight: normal;
         }
 
         a:hover {
@@ -117,7 +118,7 @@
     {% endif %}
         <div class="container box-section">
             <h1>{{ post.Name }}</h1>
-            <p class="post-content">{{ post.content }}</p>
+            <p class="post-content">{{ post.content|mark }}</p>
             <p class="post-date">Posted on: {{ post.date }}</p>
         </div>
 

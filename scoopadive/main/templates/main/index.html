@@ -31,7 +31,6 @@
             justify-content: center;
             padding: 10px;
             margin: 10px;
-            border: 1px solid #007BFF;
             border-radius: 5px;
             cursor: pointer; /* Add cursor pointer for clickable effect */
             transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
@@ -71,25 +70,18 @@
         <div class="link" onclick="location.href='/home';">
             <a id="list-link" href="/home">Diving Logs</a>
         </div>
-        <div class="link" onclick="location.href='/board';">
-            <a id="list-link" href="/board">Board</a>
-        </div>
         {% if not user.is_authenticated %}
             <a href="{% url 'common:signup' %}">회원가입</a>
             <a href="{% url 'common:login' %}">로그인</a>
         {% elif profile.is_ststMember %}
+            <div class="link" onclick="location.href='/board';">
+                <a id="list-link" href="/board">Board</a>
+            </div>
             <div class="link" onclick="location.href='https://junnie082.github.io/happy-buddies/';">
                 <a id="list-link" href="https://junnie082.github.io/happy-buddies/">Happy Buddies</a>
             </div>
             <div class="link" onclick="location.href='{% url 'divepedia:index' %}';">
                 <a id="list-link" href="{% url 'divepedia:index' %}">Divepedia</a>
-            </div>
-        {% endif %}
-        {% if user.is_authenticated %}
-            <div class="container button-section">
-                <div class="btn btn-danger" onclick="redirectToLogout();">
-                    <a href="{% url 'common:logout' %}" style="color: white;">Logout</a>
-                </div>
             </div>
         {% endif %}
     </div>
