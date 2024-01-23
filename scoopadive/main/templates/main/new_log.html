@@ -3,131 +3,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
-    <title>글쓰기 페이지</title>
+    <title>Modify Log</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 500px;
+        }
+        h1 {
+            font-size: 60px;
+            padding: 20px;
+            font-weight: bold;
+            margin-bottom: 0; /* Adjust as needed */
+        }
+    </style>
 </head>
 <body>
-<!-- 네비게이션바 -->
-{% include "components/navbar.html" %}
-
-    <h1>New Log</h1>
-    <form method="POST" action="{% url 'main:new_log' %}">
+    {% include 'components/navbar.html' %}
+    <h1>New Post</h1>
+    <div class="box">
+    <form action="{% url 'main:new_log' %}" method="POST">
         {% csrf_token %}
         <div class="form-floating mb-3">
-          <input type="text" name="logName" class="form-control" id="floatingInput" placeholder="Integer only" required>
-          <label for="floatingInput">Title (Name of the Log)</label>
+          <input type="text" name="logName" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">Title (Name of the Post)</label>
         </div>
-{#        Dive No <br>#}
-{#        <input type="number" name="diveNo"><br>#}
+
         <div class="form-floating mb-3">
-          <input type="number" name="diveNo" class="form-control" id="floatingInput" placeholder="Integer only" required>
-          <label for="floatingInput">Diving No.</label>
+          <input type="number" name="diveNo" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">dive #</label>
         </div>
 
-{#        Date<br>#}
-{#        <input type="date" name="date"><br>#}
-        <div class="form-floating mb-2">
-            <input type="date" name="date" class="form-control" id="floatingInput" required>
-            <label for="floatingInput">Date</label>
-        </div>
-
-{#        Location<br>#}
-{#        <input type="text" name="location"><br>#}
         <div class="form-floating mb-3">
-          <input type="text" name="location" class="form-control" id="floatingInput" placeholder="Where did you dive?" required>
-          <label for="floatingInput">Location</label>
+          <input type="date" name="date" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">date</label>
         </div>
 
-{#        Buddy<br>#}
-{#        <input type="text" name="buddy"><br>#}
         <div class="form-floating mb-3">
-          <input type="text" name="buddy" class="form-control" id="floatingInput" placeholder="Who was your buddy?">
-          <label for="floatingInput">Buddy</label>
+          <input type="text" name="location" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">location</label>
         </div>
 
-{#         Weight<br>#}
-{#        <input type="number" name="weight"><br>#}
         <div class="form-floating mb-3">
-          <input type="number" name="weight" class="form-control" id="floatingInput" placeholder="How heavy was your weight?" required>
-          <label for="floatingInput">Weight</label>
+          <input type="text" name="buddy" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">buddy</label>
         </div>
 
-{#        Temperature<br>#}
-{#        <input type="number" name="temperature" step="0.1"><br>#}
         <div class="form-floating mb-3">
-            <input type="number" name="temperature" step="any" class="form-control" id="floatingInput" placeholder="How cold was the water?" required>
-            <label for="floatingInput">Temperature (°C, float)</label>
-        </div>
-{#        Time In<br>#}
-{#        <input type="time" name="timeIn"><br>#}
-{#        Time Out<br>#}
-{#        <input type="time" name="timeOut"><br>#}
-        <div class="row g-3">
-          <div class="col-sm">
-              <h2>Time In</h2>
-            <input type="time" name="timeIn" class="form-control" placeholder="Time In" aria-label="City" required>
-          </div>
-          <div class="col-sm">
-              <h2>Time Out</h2>
-            <input type="time" name="timeOut" class="form-control" placeholder="Time Out" aria-label="State" required>
-          </div>
+          <input type="number" name="weight" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">weight</label>
         </div>
 
-{#        Start(Bar)<br>#}
-{#        <input type="number" name="barStart"><br>#}
-{#        End(Bar)<br>#}
-{#        <input type="number" name="barEnd"><br>#}
-        <h2>Air Remainder</h2>
-        <div class="row g-3">
-          <div class="col-sm">
-              <h3>Start</h3>
-            <input type="number" name="barStart" step="any" class="form-control" placeholder="Start (Bar)" aria-label="City" required>
-          </div>
-          <div class="col-sm">
-              <h3>End</h3>
-            <input type="number" name="barEnd" step="any" class="form-control" placeholder="End (Bar)" aria-label="State" required>
-          </div>
+        <div class="form-floating mb-3">
+          <input type="number" name="temperature" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">temperature</label>
         </div>
 
-{#        Max Depth<br>#}
-{#        <input type="number" name="maxDepth"><br>#}
-{#        Min Depth<br>#}
-{#        <input type="number" name="minDepth"><br>#}
-        <div class="row g-3">
-          <div class="col-sm">
-              <h2>Max Depth</h2>
-            <input type="number" name="maxDepth" step="any" class="form-control" placeholder="Max Depth" aria-label="City" required>
-          </div>
-          <div class="col-sm">
-              <h2>Min Depth</h2>
-            <input type="number" name="minDepth" step="any" class="form-control" placeholder="Min Depth" aria-label="State" required>
-          </div>
+        <div class="form-floating mb-3">
+          <input type="time" name="timeIn" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">timeIn</label>
         </div>
 
-{#        Comments<br>#}
-{#        <textarea rows="50" cols="100" name="comments"></textarea>#}
-        <div class="form-floating">
-            <h2>Comments</h2>
-          <textarea name="comments" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-          <label for="floatingTextarea2">Comments</label>
+        <div class="form-floating mb-3">
+          <input type="time" name="timeOut" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">timeOut</label>
         </div>
 
-
-        <div class="form-floating">
-            <h2>Images</h2>
-          <input type="file" name="images" class="form-control" id="inputGroupFile01">
+        <div class="form-floating mb-3">
+          <input type="text" name="barStart" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">start(Bar)</label>
         </div>
 
-
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">글쓰기</button>
+        <div class="form-floating mb-3">
+          <input type="text" name="barEnd" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">end(Bar)</label>
         </div>
+
+        <div class="form-floating mb-3">
+          <input type="number" name="maxDepth" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">max depth</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="number" name="minDepth" class="form-control" id="floatingInput" required>
+          <label for="floatingInput">min depth</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <textarea rows="10" name="comments" class="form-control" id="floatingInput" placeholder="Integer only" style="height: auto;"></textarea>
+            <label for="floatingInput">comments</label>
+        </div>
+
+        <div class="input-group mb-2">
+            <label class="input-group-text" for="inputGroupFile01">images</label>
+            <input name="images" type="file" class="form-control" id="inputGroupFile01">
+        </div>
+
+        <input type="submit" value="글쓰기" class="btn btn-primary mt-2">
+
     </form>
+    </div>
 
-<!-- Bootstrap JS -->
-<script src="{% static 'bootstrap.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
 
 </body>
 </html>

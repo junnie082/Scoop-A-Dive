@@ -367,7 +367,6 @@
         {% endif %}
     </ul>
 
-
     {% if user.username %}
          <!-- Answer Submission Form -->
         <div class="container box-section answer-section">
@@ -380,7 +379,7 @@
     {% endif %}
 
     {% if user.username == log.diver %}
-        <div class="container box-section">
+        <div class="container box-section answer-section">
             <a href="/home/">Back to List</a>
             <a href="/home/{{ log.pk }}/remove" class="btn btn-danger">Delete Log</a>
         </div>
