@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from django.db.models import Count
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 
@@ -15,12 +16,20 @@ def index(request):
     page_obj = paginator.get_page(page)
     return render(request, 'board/board_home.html', {'postList': page_obj})
 
+def index_order_recommendation(request):
+    page = request.GET.get('page', '1') # 페이지
+    # loglist = Log.objects.annotate(num_voters=Count('voter')).order_by('-num_voters', '-create_date')
+    postList = Post.objects.annotate(num_voters=Count('voter')).order_by('-num_voters', '-date')
+    paginator = Paginator(postList, 10) # 페이지당 10개씩 보여주기
+    page_obj = paginator.get_page(page)
+    return render(request, 'board/board_home_order_recommendation.html', {'postList': page_obj})
+
 
 def detail(request, post_id):
     # 상세보기
     page = request.GET.get('page', '1') # Get the requested page number, default to 1 if not provided
     post = Post.objects.get(id=post_id)
-    answer_list = Answer4Post.objects.filter(post=post)
+    answer_list = Answer4Post.objects.filter(post=post).order_by('-date')
     paginator = Paginator(answer_list, 5) # Set up pagination with 5 items per page
     page_obj = paginator.get_page(page) # Get the requested page from the paginator
 
@@ -63,7 +72,8 @@ def answer_create(request, post_id):
 
 
 def view_modify_post(request, post_id):
-    return render(request, 'board/modify_post.html', {'post_id': post_id})
+    post = Post.objects.get(pk=post_id)
+    return render(request, 'board/modify_post.html', {'post_id': post_id, 'post': post})
 
 
 def modify_post(request, post_id):

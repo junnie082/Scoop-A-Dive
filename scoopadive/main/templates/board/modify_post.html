@@ -3,10 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <!-- Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -14,25 +11,47 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
     <title>Modify Log</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 500px;
+        }
+        h1 {
+            font-size: 60px;
+            padding: 20px;
+            font-weight: bold;
+            margin-bottom: 0; /* Adjust as needed */
+        }
+    </style>
 </head>
 <body>
     {% include 'components/navbar.html' %}
-
+    <h1>Edit Post</h1>
+    <div class="box">
     <form action="{% url 'board:modify_post' post_id=post_id %}" method="POST">
         {% csrf_token %}
         <div class="form-floating mb-3">
-          <input type="text" name="postName" class="form-control" id="floatingInput" placeholder="Integer only">
-          <label for="floatingInput">Title (Name of the Log)</label>
+          <input type="text" name="postName" value="{% if post.postName %}{{ post.postName }}{% endif %}" class="form-control" id="floatingInput" placeholder="Integer only">
+          <label for="floatingInput">Title (Name of the Post)</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" name="content" class="form-control" id="floatingInput" placeholder="Integer only">
-          <label for="floatingInput">Content</label>
+            <textarea rows="10" name="content" class="form-control" id="floatingInput" placeholder="Integer only" style="height: auto;">{% if post.content %}{{ post.content }}{% endif %}</textarea>
+            <label for="floatingInput">Content</label>
         </div>
+
+
 
         <input type="submit" value="수정하기" class="btn btn-primary mt-2">
 
     </form>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="{% static 'bootstrap.min.js' %}"></script>

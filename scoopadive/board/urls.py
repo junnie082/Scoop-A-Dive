@@ -6,6 +6,7 @@ app_name='board'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('board_home_order_recommendation', views.index_order_recommendation, name='index_order_recommendation'),
     path('<int:post_id>/', views.detail, name='detail'),
     path('view_new_post/', views.view_new_post, name='view_new_post'),
     path('new_post/', views.new_post, name='new_post'),

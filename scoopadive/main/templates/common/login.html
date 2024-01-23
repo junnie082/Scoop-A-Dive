@@ -1,57 +1,9 @@
-{#{% load static %}#}
-{#<html>#}
-{#<head>#}
-{#    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">#}
-{#    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">#}
-{#    <title>Log In</title>#}
-{#</head>#}
-{#<body>#}
-{# Navbar inclusion #}
-{#{% include 'components/navbar.html' %}#}
-{##}
-{#<div class="container mt-5">#}
-{#    <form method="post" class="was-validated" action="{% url 'common:login' %}">#}
-{#        {% csrf_token %}#}
-{#        <h3 class="dark-grey-text text-center">#}
-{#            <strong>로그인</strong>#}
-{#        </h3>#}
-{#        <hr>#}
-{#        <div class="row d-flex flex-column">#}
-{#            <div class="col-md-6 mb-4">#}
-{#                <div class="md-form">#}
-{#                    <i class="fas fa-user prefix grey-text"></i>#}
-{#                    <label for="username">아이디</label>#}
-{#                    <input type="text" name="username" id="username" class="form-control">#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="col-md-6 mb-4">#}
-{#                <div class="md-form">#}
-{#                    <i class="fas fa-key prefix grey-text"></i>#}
-{#                    <label for="password">패스워드</label>#}
-{#                    <input type="password" name="password" id="password" class="form-control">#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="text-center">#}
-{#            <button class="btn btn-primary">로그인</button>#}
-{#            <hr>#}
-{#            <a href="{% url 'common:signup' %}">회원이 아닌가요? 회원가입</a>#}
-{#        </div>#}
-{#    </form>#}
-{#</div>#}
-{##}
-{#<!-- Bootstrap JS -->#}
-{#<script src="{% static 'bootstrap.min.js' %}"></script>#}
-{##}
-{#</body>#}
-{#</html>#}
-
-
 {% load static %}
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
     <title>Sign Up</title>
 </head>
 <body>

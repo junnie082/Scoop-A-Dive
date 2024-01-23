@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Scoop A Dive</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f4;
             color: #333;
-            padding-top: 20px;
         }
 
         .container {
@@ -24,6 +24,7 @@
             color: #007BFF;
             font-size: 100px; /* Adjust the font size as desired */
             font-weight: bold; /* Make the text bold */
+            text-shadow: 1px 1px 2px #000000;
         }
 
         .link {
@@ -39,7 +40,7 @@
         .link a {
             text-decoration: none;
             color: #007BFF;
-            font-size: 18px;
+            font-size: 30px;
             transition: color 0.3s; /* Add smooth transition for text color */
         }
 
@@ -49,10 +50,6 @@
 
         .link:hover a {
             color: white;
-        }
-
-        .button-section {
-            margin-top: 20px;
         }
     </style>
     <script>

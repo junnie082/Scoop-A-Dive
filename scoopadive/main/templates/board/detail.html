@@ -8,6 +8,7 @@
     <title>{{ post.Name }}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,7 +20,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 550px;
             margin: 0 auto;
         }
 
@@ -110,6 +111,7 @@
     {% include 'components/navbar.html' %}
     <a href="{% url 'board:index' %}" class="btn btn-link">Back to Board</a>
 
+    <h1>{% if post.postName %}{{ post.postName }}{% endif %}</h1>
     <div class="container box-section">
     {% if user.is_authenticated %}
         <p class="writer-info"><a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a></p>
@@ -159,25 +161,25 @@
     </div>
 
     <h2>Answers</h2>
-    <div class="container">
+    <div class="container box-section answer-section">
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-md-0 mx-auto">
                 <ul class="list-group">
                     {% for answer in answer_list %}
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <td>
                                 <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
-                                {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}
+                                {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}.
                             </td>
 
-                            <div class="mb-10">
+                            <td class="mb-10">
                                 {{ answer.content }}
-                            </div>
+                            </td>
 
                             <h4 class="fw-bold mb-2">
                                 {% if request.user|lower == answer.writer|lower %}
-                                    <a href="{% url 'main:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white;">수정</a>
-                                    <a href="{% url 'main:answer_delete' answer.id %}" onclick="return confirm('정말 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
+                                    <a href="{% url 'board:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white;">수정</a>
+                                    <a href="{% url 'board:answer_delete' answer.id %}" onclick="return confirm('정말 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
 
                                     <script>
                                         document.getElementById('deleteButton').addEventListener('click', function (event) {
@@ -187,17 +189,15 @@
                                             if (confirm('정말 삭제하시겠습니까?')) {
                                                 // If the user clicks "OK", proceed with the deletion
                                                 window.location.href = event.target.getAttribute('href');
-                                            } else {
-                                                // If the user clicks "Cancel", do nothing
                                             }
                                         });
                                     </script>
                                 {% endif %}
 
                                 {% if answer.writer|lower == post.writer|lower %}
-                                    <a style="color:red;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}(작성자)</a>
+                                    <a style="color:red;" href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}(작성자)</a>
                                 {% else %}
-                                    <a href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a>
+                                    <a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a>
                                 {% endif %}
                             </h4>
                         </li>

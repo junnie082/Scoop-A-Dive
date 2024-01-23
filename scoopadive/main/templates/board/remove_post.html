@@ -14,7 +14,7 @@
     <form method="POST">
         {% csrf_token %}
         <h3>{{ Post.postName }} - 삭제하기</h3>
-        <button>삭제</button>
+        <button class="btn btn-danger">삭제</button>
     </form>
 <!-- Bootstrap JS -->
 <script src="{% static 'bootstrap.min.js' %}"></script>
