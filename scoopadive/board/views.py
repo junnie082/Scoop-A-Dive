@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 
@@ -11,18 +11,37 @@ from board.models import Post, Answer4Post
 
 def index(request):
     page = request.GET.get('page', '1') # 페이지
-    postList = Post.objects.order_by('-date')
-    paginator = Paginator(postList, 10) # 페이지당 10개씩 보여주기
+    kw = request.GET.get('kw', '')  # 검색어
+    postlist = Post.objects.order_by('-date')
+
+    if kw:
+        postlist = postlist.filter(
+            Q(postName__icontains=kw)  | # 제목 검색
+            Q(content__icontains=kw) | # 내용 검색
+            Q(writer__icontains=kw) # 글쓴이 검색
+            # Q(answer__author__username__icontains=kw)  # 답변 글쓴이 검색
+        ).distinct()
+
+    paginator = Paginator(postlist, 10) # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
-    return render(request, 'board/board_home.html', {'postList': page_obj})
+    return render(request, 'board/board_home.html', {'postlist': page_obj})
 
 def index_order_recommendation(request):
     page = request.GET.get('page', '1') # 페이지
-    # loglist = Log.objects.annotate(num_voters=Count('voter')).order_by('-num_voters', '-create_date')
-    postList = Post.objects.annotate(num_voters=Count('voter')).order_by('-num_voters', '-date')
-    paginator = Paginator(postList, 10) # 페이지당 10개씩 보여주기
+    kw = request.GET.get('kw', '')  # 검색어
+    postlist = Post.objects.annotate(num_voters=Count('voter')).order_by('-num_voters', '-date')
+
+    if kw:
+        postlist = postlist.filter(
+            Q(postName__icontains=kw)  | # 제목 검색
+            Q(content__icontains=kw) | # 내용 검색
+            Q(writer__icontains=kw)  # 글쓴이 검색
+            # Q(answer__author__username__icontains=kw)  # 답변 글쓴이 검색
+        ).distinct()
+
+    paginator = Paginator(postlist, 10) # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
-    return render(request, 'board/board_home_order_recommendation.html', {'postList': page_obj})
+    return render(request, 'board/board_home_order_recommendation.html', {'postlist': page_obj})
 
 
 def detail(request, post_id):

@@ -1,3 +1,4 @@
+import re
 from email import message
 
 from django.contrib.auth.decorators import login_required
@@ -10,6 +11,8 @@ from django.utils import timezone
 from user_profile.models import Profile
 # View에 Model(Post 게시글) 가져오기
 from .models import Log, Answer4Logs
+from django.db.models import Q
+
 
 
 def index(request):
@@ -26,19 +29,43 @@ def index(request):
 
 def home(request):
     page = request.GET.get('page', '1') # 페이지
+    kw = request.GET.get('kw', '')  # 검색어
     loglist = Log.objects.all().order_by('-create_date')
-    paginator = Paginator(loglist, 10) # 페이지당 10개씩 보여주기
+
+    if kw:
+        loglist = loglist.filter(
+            Q(logName__icontains=kw)  | # 제목 검색
+            Q(comments__icontains=kw) | # 내용 검색
+            Q(location__icontains=kw) | # 위치 내용 검색
+            Q(diver__icontains=kw)  # 질문 글쓴이 검색
+            # Q(answer__author__username__icontains=kw)  # 답변 글쓴이 검색
+        ).distinct()
+
+    paginator = Paginator(loglist, 10)  # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
 
-    return render(request, 'main/home.html', {'loglist': page_obj})
+    print('kw:' + str(kw))
+
+    return render(request, 'main/home.html', {'loglist': page_obj, 'page': page, 'kw': kw})
 
 def home_order_recommendation(request):
     page = request.GET.get('page', '1') # 페이지
+    kw = request.GET.get('kw', '')  # 검색어
     loglist = Log.objects.annotate(num_voters=Count('voter')).order_by('-num_voters', '-create_date')
+
+    if kw:
+        loglist = loglist.filter(
+            Q(logName__icontains=kw)  | # 제목 검색
+            Q(comments__icontains=kw) | # 내용 검색
+            Q(location__icontains=kw) | # 위치 내용 검색
+            Q(diver__icontains=kw)  # 질문 글쓴이 검색
+            # Q(answer__author__username__icontains=kw)  # 답변 글쓴이 검색
+        ).distinct()
+
     paginator = Paginator(loglist, 10) # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
 
-    return render(request, 'main/home_order_recommendation.html', {'loglist': page_obj})
+    return render(request, 'main/home_order_recommendation.html', {'loglist': page_obj, 'kw': kw})
 
 
 def posting(request, pk):

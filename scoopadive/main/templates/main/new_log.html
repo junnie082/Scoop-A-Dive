@@ -29,7 +29,7 @@
 </head>
 <body>
     {% include 'components/navbar.html' %}
-    <h1>New Post</h1>
+    <h1>New Log</h1>
     <div class="box">
     <form action="{% url 'main:new_log' %}" method="POST">
         {% csrf_token %}
