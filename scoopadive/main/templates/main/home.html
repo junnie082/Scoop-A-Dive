@@ -11,14 +11,13 @@
 
     <h1>Dive Logs</h1>
 
-
     <div class="container">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page">날짜순</a>
+            <a class="nav-link active" aria-current="page" style="color:black;">날짜순</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'main:home_order_recommendation' %}">추천순</a>
+            <a class="nav-link" href="{% url 'main:home_order_recommendation' %}" style="color: black;">추천순</a>
           </li>
         <div class="col-6">
             <div class="input-group">
@@ -43,7 +42,7 @@
                             {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
                         </td>
                         <td>
-                            <a href="/home/{{ log.pk }}/">{{ log.logName }}</a>
+                            <a href="/home/{{ log.pk }}/" style="color: black">{{ log.logName }}</a>
                         </td>
                         <div class="d-flex align-items-center">
                             {% if log.diver == 'admin' or log.diver == 'superuser' %}
@@ -51,8 +50,8 @@
                             {% else %}
                                 <p class="mb-0 px-2">{{ log.diver }}</p>
                             {% endif %}
-                            <span class="badge bg-danger rounded-pill me-2">{{ log.voter.count }} 추천</span>
-                            <span class="badge bg-success rounded-pill">{{ log.answer4logs_set.count }} 답글</span>
+                            <span class="badge bg-primary rounded-pill me-2">{{ log.voter.count }} 추천</span>
+                            <span class="badge bg-dark rounded-pill">{{ log.answer4logs_set.count }} 답글</span>
                         </div>
                     </li>
                 {% endfor %}
@@ -74,10 +73,6 @@
         <li class="page-item">
             <a class="page-link" data-page="{{ loglist.previous_page_number }}"
            href="javascript:void(0)">&laquo;</a>
-
-{#            <a class="page-link" href="?page={{ loglist.previous_page_number }}" aria-label="이전">#}
-{#                <span aria-hidden="true">&laquo;</span>#}
-{#            </a>#}
         </li>
     {% else %}
         <li class="page-item disabled" aria-disabled="true">
@@ -93,14 +88,12 @@
         {% if page_number >= loglist.number|add:-5 and page_number <= loglist.number|add:5 %}
             {% if page_number == loglist.number %}
                 <li class="page-item active" aria-current="page">
-{#                    <span class="page-link">{{ page_number }}</span>#}
                         <a class="page-link" data-page="{{ page_number }}"
            href="javascript:void(0)">{{ page_number }}</a>
 
                 </li>
             {% else %}
                 <li class="page-item">
-{#                    <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>#}
                         <a class="page-link" data-page="{{ page_number }}"
            href="javascript:void(0)">{{ page_number }}</a>
 
@@ -111,9 +104,6 @@
 
     {% if loglist.has_next %}
         <li class="page-item">
-{#            <a class="page-link" href="?page={{ loglist.next_page_number }}" aria-label="다음">#}
-{#                <span aria-hidden="true">&raquo;</span>#}
-{#            </a>#}
                 <a class="page-link" data-page="{{ loglist.next_page_number }}"
            href="javascript:void(0)">&raquo;</a>
 

@@ -108,7 +108,7 @@ def modify_post(request, post_id):
 
     post.save()
 
-    return render(request, 'board/detail.html', {'post': post})
+    return redirect('board:detail', post_id=post_id)
 
 @login_required(login_url='common:login')
 def post_vote(request, post_id):

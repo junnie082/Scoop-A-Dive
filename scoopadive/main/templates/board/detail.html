@@ -4,73 +4,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post.Name }}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+        <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
+    <title>{{ log.logName }}</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 20px;
-            padding: 0;
-            text-align: center;
-            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+            background-color: #007BFF;
             color: #333;
+            padding-top: 20px;
         }
 
         .container {
-            max-width: 550px;
+            max-width: 700px;
             margin: 0 auto;
+            padding: 5px;
+            background-color: #007BFF;
+            border-radius: 10px ;
+            border: 0;
         }
 
-        h1 {
+        .card-header {
+            background-color: #007BFF;
+            color: #ffffff;
+            padding-top: 10px;
+        }
+
+        .card-title {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        h1, h4 {
             color: #007BFF;
         }
 
-        a {
-            text-decoration: none;
-            color: #007BFF;
-            margin: 0 10px;
-            font-size: 18px;
-            font-weight: normal;
+        h3 {
+            color: #ffffff;
+            font-size: 30px;
+            font-weight: bold;
+            padding-top: 30px;
         }
 
-        a:hover {
-            text-decoration: underline;
+        h5 {
+            font-size: 30px;
+            color: #000000;
         }
 
-        .btn {
-            margin: 10px;
+        h6 {
+            color: #000000;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .diver-name {
+            font-size: 20px;
+            color: #000000;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #555;
         }
 
         .box-section {
+            width: 100%;
             background-color: #fff;
-            border: 1px solid #ddd;
+            border: 5px solid #007BFF; /* Set the border color to blue */
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
 
-        .list-group-item {
-            margin-bottom: 0px;
+        .btn {
+            margin: 10px;
         }
 
-        .comment-box a {
-            color: #dc3545;
-            text-decoration: none;
+        .answer-section {
+            border: 1px solid #ffffff;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .badge {
             margin-left: 5px;
         }
 
-        .comment-box a:hover {
-            text-decoration: underline;
-        }
-
-        #content {
+        .list-group-item {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
         }
 
         input[type="submit"] {
@@ -86,81 +117,75 @@
             background-color: #0056b3;
         }
 
-        /* Add these styles to your existing style block */
-        .writer-info {
-            font-size: 18px;
-            color: #007BFF;
-            margin-bottom: 10px;
+        /* Active Pagination Item */
+        .pagination .page-item.active .page-link {
+            background-color: #ffffff;
+            color: #0056b3;  /* Optionally, change the text color */
         }
 
-        .post-content {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 20px;
+        /* Inactive Pagination Item */
+        .pagination .page-item:not(.active) .page-link {
+            background-color: #007BFF;
+            color: #ffffff;  /* Optionally, change the text color */
         }
 
-        .post-date {
-            font-size: 14px;
-            color: #555;
-            margin-top: 10px;
+        .content-size {
+            font-size: 40px;
         }
 
     </style>
 </head>
 <body>
-    {% include 'components/navbar.html' %}
-    <a href="{% url 'board:index' %}" class="btn btn-link">Back to Board</a>
+    {% include "components/navbar.html" %}
 
-    <h1>{% if post.postName %}{{ post.postName }}{% endif %}</h1>
-    <div class="container box-section">
-    {% if user.is_authenticated %}
-        <p class="writer-info"><a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a></p>
-    {% else %}
-        <p class="writer-info">{{ post.writer }}</p>
-    {% endif %}
-        <div class="container box-section">
-            <h1>{{ post.Name }}</h1>
-            <p class="post-content">{{ post.content|mark }}</p>
-            <p class="post-date">Posted on: {{ post.date }}</p>
-        </div>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">{{  post.postName }}</h1>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% if user.is_authenticated %}
+                        <a href="/profile/{{ post.writer }}" class="diver-name"><strong>Writer: {{ post.writer }}</strong></a>
+                    {% else %}
+                    <p class="list-group-item"><strong>Writer:</strong> {{ post.writer }}</p>
+                    {% endif %}
+                    <div class="box-section content-size">
+                        {% if post.content %}
+                            {{ post.content }}
+                        {% endif %}
+                    </div>
+                </div>
+             </div>
 
-        {% if user.username != post.writer %}
-        <a href="javascript:void(0)" data-uri="{% url 'board:post_vote' post_id=post.id %}"
-            class="recommend btn btn-sm btn-outline-secondary"> Recommend
-            <span class="badge rounded-pill bg-success">{{ post.voter.count }}</span>
-        </a>
-        <script>
-            const recommend_elements = document.getElementsByClassName("recommend");
-            Array.from(recommend_elements).forEach(function(element) {
-                element.addEventListener('click', function() {
-                    if(confirm("Are you sure you want to recommend this log ?")) {
-                        location.href = this.dataset.uri;
-                    }
+        <a href="{% url 'board:index' %}" style="color: #007BFF;">Back to board</a>
+    {% if user.username and user.username != post.writer %}
+            <a href="javascript:void(0)" data-uri="{% url 'board:post_vote' post_id=post.id %}"
+                class="recommend btn btn-lg btn-outline-dark"> Recommend
+                <span class="badge rounded-pill text-bg-warning">{{ post.voter.count }}</span>
+            </a>
+            <script>
+                const recommend_elements = document.getElementsByClassName("recommend");
+                Array.from(recommend_elements).forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        if(confirm("Did you press recommend button?")) {
+                            location.href = this.dataset.uri;
+                        }
+                    });
                 });
-            });
-        </script>
+            </script>
         {% else %}
-
-        <div> Recommend
-            <span class="badge rounded-pill bg-success">{{ post.voter.count }}</span>
-        </div>
-        {% endif %}
-
-
-
-        {% if user.username == post.writer %}
-            <div class="my-3">
-                <a href="{% url 'board:view_modify_post' post_id=post.pk %}" class="btn btn-sm btn-outline-secondary">Edit</a>
-            </div>
-
-            <div class="container box-section">
-                <a href="{% url 'board:index' %}" class="btn btn-secondary">Back to List</a>
-                <a href="{% url 'board:remove_post' post.pk %}" class="btn btn-danger">Delete Post</a>
-            </div>
+            <h6> Recommended
+                <span class="badge rounded-pill text-bg-warning">{{ post.voter.count }}</span>
+            </h6>
         {% endif %}
     </div>
 
-    <h2>Answers</h2>
+    {% if request.user|lower == post.writer|lower %}
+    <a class="btn btn-outline-light" href="{% url 'board:view_modify_post' post_id=post.id %}">Edit</a>
+    {% endif %}
+
+    <h3>Answers</h3>
     <div class="container box-section answer-section">
         <div class="row">
             <div class="col-md-0 mx-auto">
@@ -195,9 +220,9 @@
                                 {% endif %}
 
                                 {% if answer.writer|lower == post.writer|lower %}
-                                    <a style="color:red;" href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}(작성자)</a>
+                                    <a style="color:red;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}(작성자)</a>
                                 {% else %}
-                                    <a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a>
+                                    <a href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a>
                                 {% endif %}
                             </h4>
                         </li>
@@ -206,6 +231,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Pagination -->
     <ul class="pagination justify-content-center">
@@ -244,6 +271,7 @@
             {% endif %}
         {% endfor %}
 
+
         {% if answer_list.has_next %}
             <li class="page-item">
                 <a class="page-link" href="?page={{ answer_list.next_page_number }}" aria-label="다음">
@@ -265,11 +293,23 @@
         {% endif %}
     </ul>
 
-    <!-- Answer Submission Form -->
-    <form action="{% url 'board:answer_create' post_id=post.pk %}" method="post" class="container box-section">
-        {% csrf_token %}
-        <textarea name="content" id="content" rows="3" placeholder="Write your answer here"></textarea>
-        <input type="submit" value="Submit Answer">
-    </form>
-</body>
+    {% if user.username %}
+         <!-- Answer Submission Form -->
+        <div class="container box-section answer-section">
+            <form action="{% url 'board:answer_create' post_id=post.id %}" method="post">
+                {% csrf_token %}
+                <textarea name="content" id="content" rows="3" class="form-control" placeholder="Write your answer here"></textarea>
+                <input type="submit" value="Submit Comment" class="btn btn-primary">
+            </form>
+        </div>
+    {% endif %}
+
+    {% if user.username == post.writer %}
+        <div class="container box-section answer-section">
+            <a href="/board/">Back to List</a>
+            <a href="/board/{{ log.pk }}/remove" class="btn btn-danger">Delete Post</a>
+        </div>
+    {% endif %}
+    </div>
+    </body>
 </html>
