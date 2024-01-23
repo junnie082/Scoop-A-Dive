@@ -159,6 +159,13 @@
             <p>No profile found for this user.</p>
         {% endif %}
     </div>
+    
+    {% if user.username == user_id %}
+        <div class="container button-section">
+            <button class="btn btn-secondary" style="border-radius: 30px;"><a href="{% url 'user_profile:view_modify_profile' user_id=user.username %}" style="color: white;">Edit Profile</a></button>
+            <button class="btn btn-danger" style="border-radius: 30px;"><a href="{% url 'common:logout' %}" style="color: white;">Logout</a></button>
+        </div>
+    {% endif %}
 
     <div class="logviews">
     <div class="container logs-section">
@@ -181,6 +188,7 @@
             </div>
         </div>
 
+
         <ul class="pagination justify-content-center">
         {% if loglist.has_previous %}
         <li class="page-item">
@@ -201,6 +209,7 @@
                 <span class="page-link" aria-hidden="true">&laquo;</span>
             </li>
         {% endif %}
+
 
         <!-- Page numbers -->
         {% for page_number in loglist.paginator.page_range %}
@@ -316,15 +325,6 @@
         </ul>
     </div>
     </div>
-
-    <a href="{% url 'main:home' %}">Back to Home</a>
-
-    {% if user.username == user_id %}
-        <div class="container button-section">
-            <button class="btn btn-primary"><a href="{% url 'user_profile:view_modify_profile' user_id=user.username %}" style="color: white;">Edit Profile</a></button>
-            <button class="btn btn-danger"><a href="{% url 'common:logout' %}" style="color: white;">Logout</a></button>
-        </div>
-    {% endif %}
 
     <!-- Bootstrap JS -->
     <script src="{% static 'bootstrap.min.js' %}"></script>
