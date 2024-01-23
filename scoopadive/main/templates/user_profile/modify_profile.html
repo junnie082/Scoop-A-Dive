@@ -4,11 +4,14 @@
 <head>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
-    <!-- Bootstrap JS and Popper.js -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
             // License Dropdown
@@ -25,37 +28,70 @@
             });
         });
     </script>
+
+
     <style>
+        .form {
+            max-width: 800px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form input,
+        .form select,
+        .form textarea,
+        .form button {
+            width: 100%; /* or you can set a specific width in pixels or percentage */
+            margin-bottom: 10px;
+        }
+
         #majorInput, #kisuInput {
             display: none; /* Hide the input field */
         }
     </style>
+
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>Profile</title>
+
 </head>
 <body>
     {% include 'components/navbar.html' %}
 
     <div class="container mt-5">
-        <h2>Modify Profile!!</h2>
+        <h2>Edit Profile</h2>
         <a href="{% url 'user_profile:view_profile' user_id=user_id %}">돌아가기</a>
 
-        <form action="{% url 'user_profile:modify_profile' user_id=user_id %}" method="POST">
+        <form action="{% url 'user_profile:modify_profile' user_id=user_id %}" method="POST" class="form">
             {% csrf_token %}
             <div class="form-floating mb-2">
-                <input name="name" class="form-control" id="floatingInput" placeholder="Your name">
+                <input name="name" class="form-control" id="floatingInput" value="{% if profile.name %}{{ profile.name }}{% endif %}">
                 <label for="floatingInput">Name</label>
             </div>
 
+            <!-- Birthday -->
             <div class="form-floating mb-2">
-                <input type="date" name="birhday" class="form-control" id="floatingInput">
+                <input type="date" name="birthday" value="{% if profile.birthday %}{{ profile.birthday|date:'Y-m-d' }}{% endif %}" class="form-control" id="dateInput" oninput="updateHiddenInput()">
                 <label for="floatingInput">Birthday</label>
             </div>
 
-            <!-- Diving License -->
-            <div class="input-group mb-2 license-dropdown">
+            <!-- Hidden input for Birthday -->
+            <input type="hidden" id="birthdayInput" name="birthday">
+
+            <script>
+                function updateHiddenInput() {
+                    var dateInput = document.getElementById('dateInput');
+                    var hiddenInput = document.getElementById('birthdayInput');
+                    hiddenInput.value = dateInput.value;
+                }
+            </script>
+
+
+                        <!-- Diving License -->
+            <div class="input-group mb-3 license-dropdown">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">License</button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Open Water</a></li>
@@ -64,12 +100,12 @@
                     <li><a class="dropdown-item" href="#">Master</a></li>
                     <li><a class="dropdown-item" href="#">Instructor</a></li>
                 </ul>
-                <input name="diveLicense" type="text" placeholder="Write down your license" class="form-control license-input" aria-label="Text input with dropdown button">
+                <input name="diveLicense" type="text" value="{% if profile.diveLicense %}{{ profile.diveLicense }}{% endif %}" placeholder="Write down your license" class="form-control license-input" aria-label="Text input with dropdown button">
             </div>
 
             <!-- Profile Image -->
             <div class="input-group mb-2">
-                <label class="input-group-text" for="inputGroupFile01">Upload</label>
+                <label class="input-group-text" for="inputGroupFile01">{% if profile.image %}{{ profile.image }}{% else %}Upload{% endif %}</label>
                 <input name="image" type="file" class="form-control" id="inputGroupFile01">
             </div>
 
@@ -81,7 +117,7 @@
                     <label class="visually-hidden" for="inlineFormInputGroupUsername">Student ID</label>
                     <div class="input-group">
                         <div class="input-group-text">Student ID</div>
-                        <input name="studentId" type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Your student ID in Seoul Tech">
+                        <input name="studentId" type="text" class="form-control" id="inlineFormInputGroupUsername" value="{% if profile.studentID %}{{ profile.studentID }}{% else %}Your student ID in Seoul Tech{% endif %}">
                     </div>
                 </div>
 
@@ -89,7 +125,7 @@
                 <div class="input-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">Kisu</label>
                     <select class="form-select" id="inputGroupSelect01" onchange="updateKisuValue(this)">
-                        <option selected>Choose...</option>
+                        <option selected>{% if profile.kisu %}{{ profile.kisu }}{% else %}Choose...{% endif %}</option>
                         <!-- Dynamically generate options from 1 to 40 using JavaScript -->
                         <script>
                             for (var i = 1; i <= 40; i++) {
@@ -116,7 +152,7 @@
             <!-- Major Dropdown -->
             <div class="form-floating mb-2">
                 <select class="form-select" id="floatingSelect" aria-label="Floating label select example" onchange="updateMajorValue(this)">
-                    <option selected>Open this select menu</option>
+                    <option selected>{% if profile.major %}{{ profile.major }}{% else %}Open this select menu{% endif %}</option>
                     {% for major in majors %}
                         <option value="{{ major }}">{{ major }}</option>
                     {% endfor %}
@@ -139,7 +175,7 @@
 
                 <!-- Absent for this semester -->
                 <div class="form-check mb-2">
-                    <input name="checkbox" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input name="checkbox" class="form-check-input" type="checkbox" value="{% if profile.is_absence %}{{ profile.is_absence }}{% endif %}" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         I'm absent this semester.
                     </label>
@@ -148,8 +184,8 @@
 
             <!-- Introduction -->
             <div class="form-floating">
-                <textarea name="introduction" class="form-control" placeholder="Introduce yourself" id="floatingTextarea2" style
-                ="height: 100px"></textarea>
+                <textarea name="introduction" class="form-control" placeholder="{% if profile.introduction %}{{ profile.introduction }}{% else %}Introduction{% endif %}" id="floatingTextarea2" style
+                ="height: 100px">{% if profile.introduction %}{{ profile.introduction }}{% else %}Introduction{% endif %}</textarea>
                 <label for="floatingTextarea2">Introduction</label>
             </div>
 

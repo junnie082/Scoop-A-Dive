@@ -9,15 +9,15 @@
 <body>
     {% include 'components/navbar.html' %}
 
-    <h1>Board</h1>
+    <h1>Dive Logs</h1>
 
     <div class="container">
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">날짜순</a>
+        <a class="nav-link" aria-current="page" href="{% url 'main:home' %}">날짜순</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'board:index_order_recommendation' %}">추천순</a>
+        <a class="nav-link active">추천순</a>
       </li>
     </ul>
     </div>
@@ -26,23 +26,23 @@
     <div class="row">
         <td class="col-md-8 mx-auto">
             <ul class="list-group">
-                {% for post in postList %}
+                {% for log in loglist %}
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <td>
                             <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
-                            {{ postList.paginator.count|sub:postList.start_index|sub:forloop.counter0|add:1 }}
+                            {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
                         </td>
                         <td>
-                            <a href="{{ post.pk }}/">{{ post.postName }}</a>
+                            <a href="home/{{ log.pk }}/">{{ log.logName }}</a>
                         </td>
                         <div class="d-flex align-items-center">
-                            {% if post.writer == 'admin' or post.writer == 'superuser' %}
-                                <p class="mb-0 px-2" style="color:red;">{{ post.writer }}</p>
+                            {% if log.diver == 'admin' or log.diver == 'superuser' %}
+                                <p class="mb-0 px-2" style="color:red;">{{ log.diver }}</p>
                             {% else %}
-                                <p class="mb-0 px-2">{{ post.writer }}</p>
+                                <p class="mb-0 px-2">{{ log.diver }}</p>
                             {% endif %}
-                            <span class="badge bg-danger rounded-pill me-2">{{ post.voter.count }} 추천</span>
-                            <span class="badge bg-success rounded-pill">{{ post.answer4post_set.count }} 답글</span>
+                            <span class="badge bg-danger rounded-pill me-2">{{ log.voter.count }} 추천</span>
+                            <span class="badge bg-success rounded-pill">{{ log.answer4logs_set.count }} 답글</span>
                         </div>
                     </li>
                 {% endfor %}
@@ -55,14 +55,14 @@
 
     <!-- Pagination -->
 <ul class="pagination justify-content-center">
-    {% if postList.has_previous %}
+    {% if loglist.has_previous %}
         <li class="page-item">
             <a class="page-link" href="?page=1" aria-label="처음으로">
                 <span aria-hidden="true">&laquo;&laquo;</span>
             </a>
         </li>
         <li class="page-item">
-            <a class="page-link" href="?page={{ postList.previous_page_number }}" aria-label="이전">
+            <a class="page-link" href="?page={{ loglist.previous_page_number }}" aria-label="이전">
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
@@ -76,9 +76,9 @@
     {% endif %}
 
     <!-- Page numbers -->
-    {% for page_number in postList.paginator.page_range %}
-        {% if page_number >= postList.number|add:-5 and page_number <= postList.number|add:5 %}
-            {% if page_number == postList.number %}
+    {% for page_number in loglist.paginator.page_range %}
+        {% if page_number >= loglist.number|add:-5 and page_number <= loglist.number|add:5 %}
+            {% if page_number == loglist.number %}
                 <li class="page-item active" aria-current="page">
                     <span class="page-link">{{ page_number }}</span>
                 </li>
@@ -90,14 +90,14 @@
         {% endif %}
     {% endfor %}
 
-    {% if postList.has_next %}
+    {% if loglist.has_next %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ postList.next_page_number }}" aria-label="다음">
+            <a class="page-link" href="?page={{ loglist.next_page_number }}" aria-label="다음">
                 <span aria-hidden="true">&raquo;</span>
             </a>
         </li>
         <li class="page-item">
-            <a class="page-link" href="?page={{ postList.paginator.num_pages }}" aria-label="마지막으로">
+            <a class="page-link" href="?page={{ loglist.paginator.num_pages }}" aria-label="마지막으로">
                 <span aria-hidden="true">&raquo;&raquo;</span>
             </a>
         </li>
@@ -111,7 +111,7 @@
     {% endif %}
 </ul>
     {% if user.is_authenticated %}
-        <a href="view_new_post/"  class="btn btn-dark">글쓰기</a>
+        <a href="new_log/"  class="btn btn-dark">글쓰기</a>
     {% endif %}
 </body>
 </html>

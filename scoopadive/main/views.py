@@ -2,6 +2,7 @@ from email import message
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import AnonymousUser
+from django.db.models import Count
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from django.utils import timezone
@@ -30,9 +31,15 @@ def home(request):
     page_obj = paginator.get_page(page)
 
     return render(request, 'main/home.html', {'loglist': page_obj})
-    # postlist = Post.objects.all()
-    # home.html 페이지를 열 때, 모든 Post인 postlist도 같이 가져옵니다
-    # return render(request, 'main/home.html', {'postlist':postlist})
+
+def home_order_recommendation(request):
+    page = request.GET.get('page', '1') # 페이지
+    loglist = Log.objects.annotate(num_voters=Count('voter')).order_by('-num_voters', '-create_date')
+    paginator = Paginator(loglist, 10) # 페이지당 10개씩 보여주기
+    page_obj = paginator.get_page(page)
+
+    return render(request, 'main/home_order_recommendation.html', {'loglist': page_obj})
+
 
 def posting(request, pk):
     page = request.GET.get('page', '1')  # Get the requested page number, default to 1 if not provided
@@ -101,7 +108,8 @@ def log_vote(request, log_id):
 
 @login_required()
 def view_modify_log(request, log_id):
-    return render(request, 'main/modify_log.html', {'log_id': log_id})
+    log = Log.objects.get(id=log_id)
+    return render(request, 'main/modify_log.html', {'log_id': log_id, 'log': log})
 
 @login_required
 def modify_log(request, log_id):
@@ -147,7 +155,7 @@ def modify_log(request, log_id):
 
     log.save()
 
-    return render(request, 'main/home.html')
+    return redirect('main:posting', pk=log_id)
 
 
 @login_required(login_url='common:login')

@@ -1,46 +1,57 @@
 {% load static %}
 {% load main_filter %}
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <!-- BootStrap CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>Diving Logs</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'board.css' %}">
 </head>
 <body>
-<!-- 네비게이션바 -->
-{% include "components/navbar.html" %}
+    {% include 'components/navbar.html' %}
 
-<!-- Bootstrap JS -->
-
-    <h1>Diving Logs</h1>
+    <h1>Dive Logs</h1>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <ul class="list-group">
-                    {% for log in loglist %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <td>
-                                <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
-                                {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
-                            </td>
-                            <div class="text-center">
-                                <h4 class="fw-bold mb-2"><a href="{{ log.pk }}/">{{ log.logName }}</a></h4>
-                                <p class="mb-0">{{ log.diver }}</p>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <span class="badge bg-primary rounded-pill me-2">{{ log.voter.count }} 추천</span>
-                                <span class="badge bg-success rounded-pill">{{ log.answer4logs_set.count }} 답글</span>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page">날짜순</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'main:home_order_recommendation' %}">추천순</a>
+      </li>
+    </ul>
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <td class="col-md-8 mx-auto">
+            <ul class="list-group">
+                {% for log in loglist %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <td>
+                            <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
+                            {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
+                        </td>
+                        <td>
+                            <a href="/home/{{ log.pk }}/">{{ log.logName }}</a>
+                        </td>
+                        <div class="d-flex align-items-center">
+                            {% if log.diver == 'admin' or log.diver == 'superuser' %}
+                                <p class="mb-0 px-2" style="color:red;">{{ log.diver }}</p>
+                            {% else %}
+                                <p class="mb-0 px-2">{{ log.diver }}</p>
+                            {% endif %}
+                            <span class="badge bg-danger rounded-pill me-2">{{ log.voter.count }} 추천</span>
+                            <span class="badge bg-success rounded-pill">{{ log.answer4logs_set.count }} 답글</span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
+</div>
+
+
 
     <!-- Pagination -->
 <ul class="pagination justify-content-center">
@@ -100,11 +111,7 @@
     {% endif %}
 </ul>
     {% if user.is_authenticated %}
-    <button><a href="new_log/" style="color: white;">글쓰기</a></button>
+        <a href="new_log/"  class="btn btn-dark">글쓰기</a>
     {% endif %}
-
-    <!-- Bootstrap JS -->
-    <script src="{% static 'bootstrap.min.js' %}"></script>
-
 </body>
 </html>

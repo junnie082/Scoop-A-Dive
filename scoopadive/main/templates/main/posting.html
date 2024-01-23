@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
         <!-- Bootstrap JS -->
     <script src="{% static 'bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
     <title>{{ log.logName }}</title>
     <style>
@@ -20,23 +20,68 @@
 
 
         .container {
-            max-width: 800px;
+            max-width: 550px;
             margin: 0 auto;
+            padding: 5px;
+            background-color: #007BFF;
+            border-radius: 10px ;
+            border: 0;
         }
 
-        h1, h2, h3, h4, h5 {
+
+        .card-header {
+            background-color: #007BFF;
+            color: #ffffff;
+            padding-top: 10px;
+        }
+
+        .card-title {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        h1, h4 {
             color: #007BFF;
         }
 
-        p {
+        h3 {
             font-size: 30px;
+            font-weight: bold;
+            padding-top: 30px;
+        }
+
+        h5 {
+            font-size: 30px;
+            color: #000000;
+        }
+
+        h6 {
+            color: #ffffff;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .diver-name {
+            font-size: 40px;
+            color: #000000;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 10px;
             margin-bottom: 10px;
             color: #555;
         }
 
+
         .box-section {
+            width: 100%;
             background-color: #fff;
-            border: 1px solid #ddd;
+            border: 5px solid #007BFF; /* Set the border color to blue */
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
@@ -48,7 +93,7 @@
         }
 
         .answer-section {
-            border-top: 1px solid #ddd;
+            border: 1px;
             margin-top: 20px;
             padding-top: 20px;
         }
@@ -57,144 +102,179 @@
             margin-left: 5px;
         }
 
+        .list-group-item {
+            width: 100%;
+            margin-bottom: 0px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
     </style>
 </head>
 <body>
     {% include "components/navbar.html" %}
 
-<div class="container mt-4">
-    <div class="card">
-        <div class="card-header">
-            <h1 class="card-title">{{ log.logName }}</h1>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                {% if user.is_authenticated %}
-                <a href="/profile/{{ log.diver }}" class="list-group-item"><strong>Diver:</strong> {{ log.diver }}</a>
-                {% else %}
-                <p class="list-group-item"><strong>Diver:</strong> {{ log.diver }}</p>
-                {% endif %}
-                <h5 class="list-group-item"><strong>Log #</strong> {{ log.diveNo }}</h5>
-                <h2>Dive Info</h2>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Date:</strong> {{ log.date }}</li>
-                        <li class="list-group-item"><strong>Temperature:</strong> {{ log.temperature }}</li>
-                        <li class="list-group-item"><strong>Buddy:</strong> {{ log.buddy }}</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Location:</strong> {{ log.location }}</li>
-                        <li class="list-group-item"><strong>Weight:</strong> {{ log.weight }}</li>
-                    </ul>
-                </div>
-
-                <h2>Time</h2>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Time In:</strong> {{ log.timeIn }}</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Time Out:</strong> {{ log.timeOut }}</li>
-                    </ul>
-                </div>
-
-                <h2>Air</h2>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Start(Bar):</strong> {{ log.barStart }}</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>End(Bar):</strong> {{ log.barEnd }}</li>
-                    </ul>
-                </div>
-
-                <h2>Depth</h2>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Max Depth:</strong> {{ log.maxDepth }}</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Min Depth:</strong> {{ log.minDepth }}</li>
-                    </ul>
-                </div>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">{{ log.logName }}</h1>
             </div>
+            <div class="card-body">
+                <div class="row">
+                    {% if user.is_authenticated %}
+                        <a href="/profile/{{ log.diver }}" class="diver-name"><strong>Diver: {{ log.diver }}</strong></a>
+                    {% else %}
+                    <p class="list-group-item"><strong>Diver:</strong> {{ log.diver }}</p>
+                    {% endif %}
+                    <h5 class="list-group-item"><strong>Log #</strong> {{ log.diveNo }}</h5>
+                    <div class="box-section">
 
-            <div class="mt-3">
-                <h2>Comments</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text">{{ log.comments }}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-3">
-                <h2>Images</h2>
-                <!-- Images Section -->
-                {% if log.images %}
-                    <div class="card">
-                        <div class="card-body">
-                            <img src="{{ log.images.url }}" alt="{{ log.logName }}" class="img-fluid">
+                    <h2>Dive Info</h2>
+                    <div class="row"> <!-- Add this row container -->
+                        <div class="col-md-6 bo">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Date:</strong> {{ log.date }}</li>
+                                <li class="list-group-item"><strong>Temperature:</strong> {{ log.temperature }} °C</li>
+                                <li class="list-group-item"><strong>Buddy:</strong> {{ log.buddy }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Location:</strong> {{ log.location }}</li>
+                                <li class="list-group-item"><strong>Weight:</strong> {{ log.weight }}</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
+
+                <div class="box-section">
+                    <h2>Time</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Time In:</strong> {{ log.timeIn }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Time Out:</strong> {{ log.timeOut }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-section">
+                    <h2>Air</h2>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>Start(Bar):</strong> {{ log.barStart }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>End(Bar):</strong> {{ log.barEnd }}</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+
+                    <div class="box-section">
+                        <h2>Depth</h2>
+                        <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Max Depth:</strong> {{ log.maxDepth }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item"><strong>Min Depth:</strong> {{ log.minDepth }}</li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <h2>Comments</h2>
+                    <div class="box-section">
+                        <div class="card-body">
+                            <p class="card-text">{{ log.comments }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <h2>Images</h2>
+                    <!-- Images Section -->
+                    {% if log.images %}
+                        <div class="box-section">
+                            <div class="card-body">
+                                <img src="{{ log.images.url }}" alt="{{ log.logName }}" class="img-fluid">
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+
+                {% if user.username == log.diver %}
+                    <div class="my-3">
+                        <a href="{% url 'main:view_modify_log' log_id=log.id %}"
+                           class="btn btn-sm btn-primary">edit</a>
+                    </div>
                 {% endif %}
             </div>
-
-            {% if user.username == log.diver %}
-                <div class="my-3">
-                    <a href="{% url 'main:view_modify_log' log_id=log.id %}"
-                       class="btn btn-sm btn-outline-secondary">edit</a>
-                </div>
-            {% endif %}
         </div>
-    </div>
-</div>
 
     {% if user.username and user.username != log.diver %}
-        <a href="javascript:void(0)" data-uri="{% url 'main:log_vote' log_id=log.id %}"
-            class="recommend btn btn-sm btn-outline-secondary"> Recommend
-            <span class="badge rounded-pill bg-success">{{ log.voter.count }}</span>
-        </a>
-        <script>
-            const recommend_elements = document.getElementsByClassName("recommend");
-            Array.from(recommend_elements).forEach(function(element) {
-                element.addEventListener('click', function() {
-                    if(confirm("Did you press recommend button?")) {
-                        location.href = this.dataset.uri;
-                    }
+            <a href="javascript:void(0)" data-uri="{% url 'main:log_vote' log_id=log.id %}"
+                class="recommend btn btn-lg btn-outline-light"> Recommend
+                <span class="badge rounded-pill text-bg-warning">{{ log.voter.count }}</span>
+            </a>
+            <script>
+                const recommend_elements = document.getElementsByClassName("recommend");
+                Array.from(recommend_elements).forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        if(confirm("Did you press recommend button?")) {
+                            location.href = this.dataset.uri;
+                        }
+                    });
                 });
-            });
-        </script>
-    {% else %}
-        <div> Recommend
-            <span class="badge rounded-pill bg-success">{{ log.voter.count }}</span>
-        </div>
-    {% endif %}
+            </script>
+        {% else %}
+            <h6> Recommended
+                <span class="badge rounded-pill text-bg-warning">{{ log.voter.count }}</span>
+            </h6>
+        {% endif %}
+    </div>
 
 
-    <h2>Answers</h2>
-    <div class="container">
+    <h3>Answers</h3>
+    <div class="container box-section answer-section">
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-md-0 mx-auto">
                 <ul class="list-group">
                     {% for answer in answer_list %}
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <td>
                                 <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
-                                {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}
+                                {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}.
                             </td>
 
-                            <div class="mb-10">
+                            <td class="mb-10">
                                 {{ answer.content }}
-                            </div>
+                            </td>
 
                             <h4 class="fw-bold mb-2">
                                 {% if request.user|lower == answer.author|lower %}
@@ -209,8 +289,6 @@
                                             if (confirm('정말 삭제하시겠습니까?')) {
                                                 // If the user clicks "OK", proceed with the deletion
                                                 window.location.href = event.target.getAttribute('href');
-                                            } else {
-                                                // If the user clicks "Cancel", do nothing
                                             }
                                         });
                                     </script>
@@ -228,6 +306,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Pagination -->
     <ul class="pagination justify-content-center">
@@ -299,7 +379,7 @@
     {% endif %}
 
     {% if user.username == log.diver %}
-        <div class="container box-section">
+        <div class="container box-section answer-section">
             <a href="/home/">Back to List</a>
             <a href="/home/{{ log.pk }}/remove" class="btn btn-danger">Delete Log</a>
         </div>

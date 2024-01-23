@@ -3,47 +3,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>글쓰기 페이지</title>
+
+    <title>Modify Log</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 500px;
+        }
+        h1 {
+            font-size: 60px;
+            padding: 20px;
+            font-weight: bold;
+            margin-bottom: 0; /* Adjust as needed */
+        }
+    </style>
 </head>
 <body>
-<!-- 네비게이션바 -->
-{% include "components/navbar.html" %}
-
+    {% include 'components/navbar.html' %}
     <h1>New Post</h1>
-    <form method="POST" action="{% url 'board:new_post' %}">
+    <div class="box">
+    <form action="{% url 'board:new_post' %}" method="POST">
         {% csrf_token %}
-
-        <!-- Title -->
         <div class="form-floating mb-3">
           <input type="text" name="postName" class="form-control" id="floatingInput" placeholder="Integer only" required>
           <label for="floatingInput">Title (Name of the Post)</label>
         </div>
 
-        <!-- Content -->
-        <div class="form-floating">
-            <h2>Content</h2>
-          <textarea name="content" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
-          <label for="floatingTextarea2">Content</label>
+        <div class="form-floating mb-3">
+            <textarea rows="10" name="content" class="form-control" id="floatingInput" placeholder="Integer only" style="height: auto;" required></textarea>
+            <label for="floatingInput">Content</label>
         </div>
 
+        <input type="submit" value="글쓰기" class="btn btn-primary mt-2">
 
-        <!-- Images -->
-        <div class="form-floating">
-            <h2>Images</h2>
-          <input type="file" name="images" class="form-control" id="inputGroupFile01">
-        </div>
-
-
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">글쓰기</button>
-        </div>
     </form>
+    </div>
 
-
-<!-- Bootstrap JS -->
-<script src="{% static 'bootstrap.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
 
 </body>
 </html>
