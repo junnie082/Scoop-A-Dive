@@ -11,16 +11,26 @@
 
     <h1>Dive Logs</h1>
 
+
     <div class="container">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page">날짜순</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'main:home_order_recommendation' %}">추천순</a>
-      </li>
-    </ul>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page">날짜순</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'main:home_order_recommendation' %}">추천순</a>
+          </li>
+        <div class="col-6">
+            <div class="input-group">
+                <input type="text" id="search_kw" class="form-control" value="{{ kw|default_if_none:'' }}">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="btn_search">찾기</button>
+                </div>
+            </div>
+        </div>
+        </ul>
     </div>
+
 
     <div class="container">
     <div class="row">
@@ -53,7 +63,7 @@
 
 
 
-    <!-- Pagination -->
+<!-- Pagination -->
 <ul class="pagination justify-content-center">
     {% if loglist.has_previous %}
         <li class="page-item">
@@ -62,9 +72,12 @@
             </a>
         </li>
         <li class="page-item">
-            <a class="page-link" href="?page={{ loglist.previous_page_number }}" aria-label="이전">
-                <span aria-hidden="true">&laquo;</span>
-            </a>
+            <a class="page-link" data-page="{{ loglist.previous_page_number }}"
+           href="javascript:void(0)">&laquo;</a>
+
+{#            <a class="page-link" href="?page={{ loglist.previous_page_number }}" aria-label="이전">#}
+{#                <span aria-hidden="true">&laquo;</span>#}
+{#            </a>#}
         </li>
     {% else %}
         <li class="page-item disabled" aria-disabled="true">
@@ -80,11 +93,17 @@
         {% if page_number >= loglist.number|add:-5 and page_number <= loglist.number|add:5 %}
             {% if page_number == loglist.number %}
                 <li class="page-item active" aria-current="page">
-                    <span class="page-link">{{ page_number }}</span>
+{#                    <span class="page-link">{{ page_number }}</span>#}
+                        <a class="page-link" data-page="{{ page_number }}"
+           href="javascript:void(0)">{{ page_number }}</a>
+
                 </li>
             {% else %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+{#                    <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>#}
+                        <a class="page-link" data-page="{{ page_number }}"
+           href="javascript:void(0)">{{ page_number }}</a>
+
                 </li>
             {% endif %}
         {% endif %}
@@ -92,9 +111,12 @@
 
     {% if loglist.has_next %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ loglist.next_page_number }}" aria-label="다음">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
+{#            <a class="page-link" href="?page={{ loglist.next_page_number }}" aria-label="다음">#}
+{#                <span aria-hidden="true">&raquo;</span>#}
+{#            </a>#}
+                <a class="page-link" data-page="{{ loglist.next_page_number }}"
+           href="javascript:void(0)">&raquo;</a>
+
         </li>
         <li class="page-item">
             <a class="page-link" href="?page={{ loglist.paginator.num_pages }}" aria-label="마지막으로">
@@ -110,8 +132,16 @@
         </li>
     {% endif %}
 </ul>
+
+    <script src="{% static 'search.js' %}"></script>
+
     {% if user.is_authenticated %}
         <a href="new_log/"  class="btn btn-dark">글쓰기</a>
     {% endif %}
+
+    <form id="searchForm" method="get" action="{% url 'main:home' %}">
+        <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
+        <input type="hidden" id="page" name="page" value="{{ page }}">
+    </form>
 </body>
 </html>
