@@ -99,7 +99,6 @@ def new_log(request):
                 images = request.POST['images'],
                 create_date = timezone.now()
             )
-            print("date: " + str(new_log.date))
 
         return redirect('/home/')
     return render(request, 'main/new_log.html')

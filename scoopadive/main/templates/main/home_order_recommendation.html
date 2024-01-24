@@ -5,6 +5,21 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'board.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 <body>
     {% include 'components/navbar.html' %}
@@ -14,7 +29,7 @@
     <div class="container">
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="{% url 'main:home' %}">날짜순</a>
+        <a class="nav-link" aria-current="page" href="{% url 'main:home' %}" style="color: black;">날짜순</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active">추천순</a>
@@ -42,16 +57,16 @@
                             {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
                         </td>
                         <td>
-                            <a href="home/{{ log.pk }}/">{{ log.logName }}</a>
+                            <a href="home/{{ log.pk }}/" style="color: black;">{{ log.logName }}</a>
                         </td>
                         <div class="d-flex align-items-center">
                             {% if log.diver == 'admin' or log.diver == 'superuser' %}
-                                <p class="mb-0 px-2" style="color:red;">{{ log.diver }}</p>
+                                <a class="mb-0 px-2" href="{% url 'user_profile:view_profile' user_id=log.diver %}" style="color:red;">{{ log.diver }}</a>
                             {% else %}
-                                <p class="mb-0 px-2">{{ log.diver }}</p>
+                                <a class="mb-0 px-2" href="{% url 'user_profile:view_profile' user_id=log.diver %}" style="color: black;">{{ log.diver }}</a>
                             {% endif %}
-                            <span class="badge bg-danger rounded-pill me-2">{{ log.voter.count }} 추천</span>
-                            <span class="badge bg-success rounded-pill">{{ log.answer4logs_set.count }} 답글</span>
+                            <span class="badge bg-primary rounded-pill me-2">{{ log.voter.count }} 추천</span>
+                            <span class="badge bg-dark rounded-pill">{{ log.answer4logs_set.count }} 답글</span>
                         </div>
                     </li>
                 {% endfor %}
@@ -72,10 +87,6 @@
         <li class="page-item">
             <a class="page-link" data-page="{{ loglist.previous_page_number }}"
            href="javascript:void(0)">&laquo;</a>
-
-{#            <a class="page-link" href="?page={{ loglist.previous_page_number }}" aria-label="이전">#}
-{#                <span aria-hidden="true">&laquo;</span>#}
-{#            </a>#}
         </li>
     {% else %}
         <li class="page-item disabled" aria-disabled="true">
@@ -91,14 +102,12 @@
         {% if page_number >= loglist.number|add:-5 and page_number <= loglist.number|add:5 %}
             {% if page_number == loglist.number %}
                 <li class="page-item active" aria-current="page">
-{#                    <span class="page-link">{{ page_number }}</span>#}
                         <a class="page-link" data-page="{{ page_number }}"
            href="javascript:void(0)">{{ page_number }}</a>
 
                 </li>
             {% else %}
                 <li class="page-item">
-{#                    <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>#}
                         <a class="page-link" data-page="{{ page_number }}"
            href="javascript:void(0)">{{ page_number }}</a>
 
@@ -109,9 +118,6 @@
 
     {% if loglist.has_next %}
         <li class="page-item">
-{#            <a class="page-link" href="?page={{ loglist.next_page_number }}" aria-label="다음">#}
-{#                <span aria-hidden="true">&raquo;</span>#}
-{#            </a>#}
                 <a class="page-link" data-page="{{ loglist.next_page_number }}"
            href="javascript:void(0)">&raquo;</a>
 
@@ -134,7 +140,7 @@
     <script src="{% static 'search.js' %}"></script>
 
     {% if user.is_authenticated %}
-        <a href="new_log/"  class="btn btn-dark">글쓰기</a>
+        <a href="{% url 'main:new_log' %}"  class="btn btn-dark">글쓰기</a>
     {% endif %}
 
     <form id="searchForm" method="get" action="{% url 'main:home_order_recommendation' %}">

@@ -4,73 +4,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post.Name }}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+        <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
+    <title>{{ log.logName }}</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 20px;
             padding: 0;
             text-align: center;
-            background-color: #f4f4f4;
+            background-color: #007BFF;
             color: #333;
         }
 
+        .card {
+            border: 10px solid #ffffff;
+        }
+
         .container {
+            text-align: center;
             max-width: 550px;
             margin: 0 auto;
+            padding: 5px;
+            background-color: #007BFF;
+            border-radius: 10px ;
+            border: 0;
+        }
+
+        .card-header {
+            background-color: #007BFF;
+            color: #ffffff;
+            padding-top: 10px;
+        }
+
+        .card-title {
+            font-size: 60px;
+            font-weight: bold;
         }
 
         h1 {
             color: #007BFF;
+            font-size: 50px; /* Adjust the font size as desired */
+            font-weight: bold; /* Make the text bold */
         }
 
-        a {
-            text-decoration: none;
-            color: #007BFF;
-            margin: 0 10px;
-            font-size: 18px;
-            font-weight: normal;
+        h2 {
+            font-weight: bold;
         }
 
-        a:hover {
-            text-decoration: underline;
+        h3 {
+            color: #ffffff;
+            font-size: 30px;
+            font-weight: bold;
+            padding-top: 30px;
         }
 
-        .btn {
-            margin: 10px;
+        h4 {
+            font-size: 20px;
+        }
+
+        h5 {
+            font-size: 30px;
+            color: #000000;
+        }
+
+        h6 {
+            color: #ffffff;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #555;
         }
 
         .box-section {
+            width: 100%;
             background-color: #fff;
-            border: 1px solid #ddd;
+            border: 5px solid #007BFF; /* Set the border color to blue */
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
 
-        .list-group-item {
-            margin-bottom: 0px;
+        .btn {
+            margin: 10px;
         }
 
-        .comment-box a {
-            color: #dc3545;
-            text-decoration: none;
+        .answer-section {
+            border: 1px;
+        }
+
+        .badge {
             margin-left: 5px;
         }
 
-        .comment-box a:hover {
-            text-decoration: underline;
-        }
-
-        #content {
+        .list-group-item {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 5px;
+            margin-bottom: 0px;
         }
 
         input[type="submit"] {
@@ -86,100 +124,118 @@
             background-color: #0056b3;
         }
 
-        /* Add these styles to your existing style block */
-        .writer-info {
-            font-size: 18px;
-            color: #007BFF;
-            margin-bottom: 10px;
+        /* Active Pagination Item */
+        .pagination .page-item.active .page-link {
+            background-color: #ffffff;
+            color: #0056b3;  /* Optionally, change the text color */
         }
 
-        .post-content {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 20px;
+        /* Inactive Pagination Item */
+        .pagination .page-item:not(.active) .page-link {
+            background-color: #007BFF;
+            color: #ffffff;  /* Optionally, change the text color */
         }
 
-        .post-date {
-            font-size: 14px;
-            color: #555;
-            margin-top: 10px;
+        .content-size {
+            font-size: 20px;
         }
 
     </style>
 </head>
 <body>
-    {% include 'components/navbar.html' %}
-    <a href="{% url 'board:index' %}" class="btn btn-link">Back to Board</a>
+    {% include "components/navbar.html" %}
 
-    <h1>{% if post.postName %}{{ post.postName }}{% endif %}</h1>
-    <div class="container box-section">
-    {% if user.is_authenticated %}
-        <p class="writer-info"><a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a></p>
-    {% else %}
-        <p class="writer-info">{{ post.writer }}</p>
-    {% endif %}
-        <div class="container box-section">
-            <h1>{{ post.Name }}</h1>
-            <p class="post-content">{{ post.content|mark }}</p>
-            <p class="post-date">Posted on: {{ post.date }}</p>
-        </div>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">{{  post.postName }}</h1>
+                {% if user.is_authenticated %}
+                    <a href="/profile/{{ post.writer }}" class="list-group-item" style="color: white; font-size: 20px;"><strong>Writer: {{ post.writer }}</strong></a>
+                {% else %}
+                    <p class="list-group-item" style="color: white; font-size: 20px; text-decoration: underline;"><strong>Writer:</strong> {{ post.writer }}</p>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="content-size">
+                        {% if post.content %}
+                            {{ post.content }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% if post.images %}
+                    <div class="box-section">
+                        <div class="card-body">
+                            <img src="{{ post.images.url }}" alt="{{ post.postName }}" class="img-fluid">
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
 
-        {% if user.username != post.writer %}
-        <a href="javascript:void(0)" data-uri="{% url 'board:post_vote' post_id=post.id %}"
-            class="recommend btn btn-sm btn-outline-secondary"> Recommend
-            <span class="badge rounded-pill bg-success">{{ post.voter.count }}</span>
-        </a>
-        <script>
-            const recommend_elements = document.getElementsByClassName("recommend");
-            Array.from(recommend_elements).forEach(function(element) {
-                element.addEventListener('click', function() {
-                    if(confirm("Are you sure you want to recommend this log ?")) {
-                        location.href = this.dataset.uri;
-                    }
+        {% if user.username and user.username != post.writer %}
+            <a href="javascript:void(0)" data-uri="{% url 'board:post_vote' post_id=post.id %}"
+                class="recommend btn btn-lg btn-outline-dark"> Recommend
+                <span class="badge rounded-pill text-bg-warning">{{ post.voter.count }}</span>
+            </a>
+            <script>
+                const recommend_elements = document.getElementsByClassName("recommend");
+                Array.from(recommend_elements).forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        if(confirm("Did you press recommend button?")) {
+                            location.href = this.dataset.uri;
+                        }
+                    });
                 });
-            });
-        </script>
+            </script>
         {% else %}
-
-        <div> Recommend
-            <span class="badge rounded-pill bg-success">{{ post.voter.count }}</span>
+        <div class="card-header">
+            <h6> Recommended
+                <span class="badge rounded-pill text-bg-warning">{{ post.voter.count }}</span>
+            </h6>
         </div>
-        {% endif %}
-
-
-
-        {% if user.username == post.writer %}
-            <div class="my-3">
-                <a href="{% url 'board:view_modify_post' post_id=post.pk %}" class="btn btn-sm btn-outline-secondary">Edit</a>
-            </div>
-
-            <div class="container box-section">
-                <a href="{% url 'board:index' %}" class="btn btn-secondary">Back to List</a>
-                <a href="{% url 'board:remove_post' post.pk %}" class="btn btn-danger">Delete Post</a>
-            </div>
         {% endif %}
     </div>
 
-    <h2>Answers</h2>
+    {% if request.user|lower == post.writer|lower %}
+    <a class="btn btn-outline-light" href="{% url 'board:view_modify_post' post_id=post.id %}">Edit</a>
+    {% endif %}
+
+    <a class="btn btn-outline-light" href="{% url 'board:index' %}" style="color: #ffffff;">Back to board</a>
+
+    <h3>Answers</h3>
     <div class="container box-section answer-section">
         <div class="row">
             <div class="col-md-0 mx-auto">
                 <ul class="list-group">
                     {% for answer in answer_list %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <td>
+                        <li class="list-group-item justify-content-between align-items-center">
+                            <h4 style="font-size: 10px">
                                 <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
-                                {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}.
-                            </td>
+                                {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}번째 댓글
+                            </h4>
 
-                            <td class="mb-10">
+                            <h4 style="font-size: 10px;" class="mb-0">
                                 {{ answer.content }}
-                            </td>
+                            </h4>
 
-                            <h4 class="fw-bold mb-2">
+
+                            <h4 class="mb-0">
+                                {% if answer.writer|lower == post.writer|lower %}
+                                        <a style="color:red; font-size: 10px;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}(작성자)</a>
+                                    {% else %}
+                                        {% if user.is_authenticated %}
+                                        <a style="color: black; font-size: 10px;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a>
+                                        {% else %}
+                                        <a style="color: black; font-size: 10px;">{{ answer.writer }}</a>
+                                        {% endif %}
+                                {% endif %}
                                 {% if request.user|lower == answer.writer|lower %}
-                                    <a href="{% url 'board:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white;">수정</a>
-                                    <a href="{% url 'board:answer_delete' answer.id %}" onclick="return confirm('정말 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
+                                    <a href="{% url 'main:answer_modify' answer_id=answer.id  %}" class="bg-sm bg-warning rounded-pill me-0 px-2" style="font-size:10px;color:white;text-decoration: none">수정</a>
+                                    <a href="{% url 'main:answer_delete' answer.id %}" onclick="return confirm('정말 삭제하시겠습니까?')" class="btn-sm bg-danger rounded-pill me-0 px-2" style="font-size:10px;color: white;text-decoration: none;">삭제</a>
 
                                     <script>
                                         document.getElementById('deleteButton').addEventListener('click', function (event) {
@@ -193,12 +249,6 @@
                                         });
                                     </script>
                                 {% endif %}
-
-                                {% if answer.writer|lower == post.writer|lower %}
-                                    <a style="color:red;" href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}(작성자)</a>
-                                {% else %}
-                                    <a href="{% url 'user_profile:view_profile' user_id=post.writer %}">{{ post.writer }}</a>
-                                {% endif %}
                             </h4>
                         </li>
                     {% endfor %}
@@ -206,6 +256,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Pagination -->
     <ul class="pagination justify-content-center">
@@ -244,6 +296,7 @@
             {% endif %}
         {% endfor %}
 
+
         {% if answer_list.has_next %}
             <li class="page-item">
                 <a class="page-link" href="?page={{ answer_list.next_page_number }}" aria-label="다음">
@@ -265,11 +318,23 @@
         {% endif %}
     </ul>
 
-    <!-- Answer Submission Form -->
-    <form action="{% url 'board:answer_create' post_id=post.pk %}" method="post" class="container box-section">
-        {% csrf_token %}
-        <textarea name="content" id="content" rows="3" placeholder="Write your answer here"></textarea>
-        <input type="submit" value="Submit Answer">
-    </form>
-</body>
+    {% if user.username %}
+         <!-- Answer Submission Form -->
+        <div class="container box-section answer-section">
+            <form action="{% url 'board:answer_create' post_id=post.id %}" method="post">
+                {% csrf_token %}
+                <textarea name="content" id="content" rows="3" class="form-control" placeholder="Write your answer here"></textarea>
+                <input type="submit" value="Submit Comment" class="btn btn-primary">
+            </form>
+        </div>
+    {% endif %}
+
+    {% if user.username == post.writer %}
+        <div class="container box-section answer-section">
+            <a href="/board/">Back to List</a>
+            <a href="{% url 'board:remove_post' post_id=post.pk %}" class="btn btn-danger">Delete Post</a>
+        </div>
+    {% endif %}
+    </div>
+    </body>
 </html>

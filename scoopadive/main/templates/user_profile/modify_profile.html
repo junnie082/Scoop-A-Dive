@@ -2,11 +2,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #000000;
+        }
+
+        h1 {
+            font-size: 60px;
+            padding: 10px;
+            color: #007BFF;
+            font-weight: bold;
+            margin-bottom: 0; /* Adjust as needed */
+        }
+
+        h3 {
+            font-size: 40px;
+            color: #007BFF;
+        }
+
+        .form {
+            max-width: 800px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-floating {
+            width:70%;
+        }
+
+        .form input,
+        .form select,
+        .form textarea,
+        .form button {
+            width: 100%; /* or you can set a specific width in pixels or percentage */
+            margin-bottom: 10px;
+        }
+
+        #majorInput, #kisuInput {
+            display: none; /* Hide the input field */
+        }
+    </style>
+
+{#    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">#}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
@@ -29,41 +77,12 @@
         });
     </script>
 
-
-    <style>
-        .form {
-            max-width: 800px;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .form input,
-        .form select,
-        .form textarea,
-        .form button {
-            width: 100%; /* or you can set a specific width in pixels or percentage */
-            margin-bottom: 10px;
-        }
-
-        #majorInput, #kisuInput {
-            display: none; /* Hide the input field */
-        }
-    </style>
-
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>Profile</title>
-
 </head>
 <body>
     {% include 'components/navbar.html' %}
 
     <div class="container mt-5">
-        <h2>Edit Profile</h2>
-        <a href="{% url 'user_profile:view_profile' user_id=user_id %}">돌아가기</a>
+        <h1>Edit Profile</h1>
 
         <form action="{% url 'user_profile:modify_profile' user_id=user_id %}" method="POST" class="form">
             {% csrf_token %}
@@ -90,8 +109,8 @@
             </script>
 
 
-                        <!-- Diving License -->
-            <div class="input-group mb-3 license-dropdown">
+            <!-- License Dropdown -->
+            <div class="form-floating input-group mb-3 license-dropdown">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">License</button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Open Water</a></li>
@@ -100,12 +119,32 @@
                     <li><a class="dropdown-item" href="#">Master</a></li>
                     <li><a class="dropdown-item" href="#">Instructor</a></li>
                 </ul>
-                <input name="diveLicense" type="text" value="{% if profile.diveLicense %}{{ profile.diveLicense }}{% endif %}" placeholder="Write down your license" class="form-control license-input" aria-label="Text input with dropdown button">
+                <input style="padding: 0;" name="diveLicense" type="text" value="{% if profile.diveLicense %}{{ profile.diveLicense }}{% endif %}" placeholder="Write down your license" class="form-control license-input px-2" aria-label="Text input with dropdown button">
             </div>
 
+                <!-- Bootstrap JS and Popper.js (Bootstrap 5 includes Popper.js) -->
+            <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+
+
+            <script>
+                // Get all elements with class 'dropdown-item' within the element with class 'license-dropdown'
+                var dropdownItems = document.querySelectorAll('.license-dropdown .dropdown-item');
+
+                // Iterate through each dropdown item and add a click event listener
+                dropdownItems.forEach(function(item) {
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault(); // Prevent the default behavior of the link
+                        var selectedValue = this.textContent; // Get the text content of the clicked item
+                        // Set the value of the input with class 'license-input' to the selected value
+                        document.querySelector('.license-input').value = selectedValue;
+                    });
+                });
+
+            </script>
+
             <!-- Profile Image -->
-            <div class="input-group mb-2">
-                <label class="input-group-text" for="inputGroupFile01">{% if profile.image %}{{ profile.image }}{% else %}Upload{% endif %}</label>
+            <div style="width: 560px;">
+                <label class="input-group-text" for="inputGroupFile01">Image 1. {% if profile.image %}{{ profile.image }}{% else %}Upload{% endif %}</label>
                 <input name="image" type="file" class="form-control" id="inputGroupFile01">
             </div>
 
@@ -113,16 +152,15 @@
                 <h3>Only for STST members!</h3>
 
                 <!-- Student ID -->
-                <div class="col-12 mb-2">
-                    <label class="visually-hidden" for="inlineFormInputGroupUsername">Student ID</label>
-                    <div class="input-group">
-                        <div class="input-group-text">Student ID</div>
-                        <input name="studentId" type="text" class="form-control" id="inlineFormInputGroupUsername" value="{% if profile.studentID %}{{ profile.studentID }}{% else %}Your student ID in Seoul Tech{% endif %}">
+                <div class="form-floating">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Student ID</span>
+                      <input name="studentId" value="{% if profile.studentID %}{{ profile.studentID }}{% endif %}" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
 
                 <!-- Kisu -->
-                <div class="input-group mb-2">
+                <div class="form-floating minput-group mb-2">
                     <label class="input-group-text" for="inputGroupSelect01">Kisu</label>
                     <select class="form-select" id="inputGroupSelect01" onchange="updateKisuValue(this)">
                         <option selected>{% if profile.kisu %}{{ profile.kisu }}{% else %}Choose...{% endif %}</option>
@@ -174,12 +212,25 @@
 
 
                 <!-- Absent for this semester -->
-                <div class="form-check mb-2">
-                    <input name="checkbox" class="form-check-input" type="checkbox" value="{% if profile.is_absence %}{{ profile.is_absence }}{% endif %}" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        I'm absent this semester.
-                    </label>
+                <div style="padding: 10px;" class="justify-content-center row form-floating">
+                    <div class="col">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            I'm absent this semester.
+                        </label>
+                    </div>
+                    <div class="col-3">
+                        <input name="absence" type="hidden" value="off"> <!-- Default value when not checked -->
+                        <input name="absence" class="form-check-input form-check-lg" type="checkbox" {% if profile.is_absence %}checked{% endif %} id="flexCheckDefault" onchange="updateCheckboxValue(this)">
+                    </div>
                 </div>
+
+
+                <script>
+                    function updateCheckboxValue(checkbox) {
+                        var hiddenInput = document.querySelector('input[name="checkbox"]');
+                        hiddenInput.value = checkbox.checked ? 'on' : 'off';
+                    }
+                </script>
             {% endif %}
 
             <!-- Introduction -->
@@ -189,8 +240,9 @@
                 <label for="floatingTextarea2">Introduction</label>
             </div>
 
+        <div class="form-floating">
             <input type="submit" value="수정하기" class="btn btn-primary mt-2">
-
+        </div>
         </form>
     </div>
 

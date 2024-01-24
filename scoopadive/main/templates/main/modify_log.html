@@ -3,7 +3,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -16,11 +15,20 @@
     <title>Modify Log</title>
 
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
         .form {
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 800px; /* Adjust the maximum width as needed */
+            max-width: 900px; /* Adjust the maximum width as needed */
             margin: auto;
         }
 
@@ -47,10 +55,9 @@
 </head>
 <body>
     {% include 'components/navbar.html' %}
-
+    <h1>Edit Log</h1>
     <form action="{% url 'main:modify_log' log_id=log_id %}" method="POST" class="form">
         {% csrf_token %}
-        <h1>Edit Log</h1>
         <div class="form-floating mb-0">
           <input type="text" name="logName" class="form-control" id="floatingInput" value="{% if log.logName %}{{ log.logName }}{% endif %}">
           <label for="floatingInput">Title (Name of the Log)</label>
@@ -124,13 +131,14 @@
             <textarea name="comments" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px">{% if log.comments %}{{ log.comments }}{% endif %}</textarea>
         </div>
 
-        <div class="form-floating">
-            <h2>Images</h2>
-          <input type="file" name="images" class="form-control" id="inputGroupFile01">
+        <div style="width: 450px;">
+            <label class="input-group-text" for="inputGroupFile01">Image 1. {% if log.images %}{{ log.images }}{% else %}Upload{% endif %}</label>
+            <input name="images" type="file" class="form-control" id="inputGroupFile01">
         </div>
 
-        <input type="submit" value="수정하기" class="btn btn-primary mt-2">
-
+        <div class="form-floating mb-0">
+            <input type="submit" value="수정하기" class="btn btn-primary mt-2">
+        </div>
     </form>
 
     <!-- Bootstrap JS -->

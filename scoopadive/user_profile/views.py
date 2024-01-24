@@ -36,6 +36,7 @@ def view_profile(request, user_id):
 def view_modify_profile(request, user_id):
     current_user = request.user
     majors = check_major()
+
     try:
         profile = Profile.objects.get(user=current_user)
     except Profile.DoesNotExist:
@@ -58,7 +59,6 @@ def modify_profile(request, user_id):
     name = request.POST.get('name')
     student_id = request.POST.get('studentId')
     birthday = request.POST.get('birthday')
-    print('birthday: ' + str(birthday))
     kisu = request.POST.get('kisu')
     dive_license = request.POST.get('diveLicense')
     introduction = request.POST.get('introduction')
@@ -68,8 +68,7 @@ def modify_profile(request, user_id):
     absence = request.POST.get('absence')
     image = request.POST.get('image')
 
-    print('age: ' + str(age))
-
+    print('absence: ' + str(absence))
     if name != '':
         profile.name = name
     if student_id != '':
@@ -88,7 +87,9 @@ def modify_profile(request, user_id):
     if image != '':
         profile.image = image
 
+
     profile.is_absence = absence == 'on'
+    print('profile.is_absence' + str(profile.is_absence))
     profile.save()
 
     return redirect('user_profile:view_profile', user_id=user_id)

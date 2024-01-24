@@ -12,14 +12,16 @@
     <title>{{ log.logName }}</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
             background-color: #f4f4f4;
             color: #333;
-            padding-top: 20px;
         }
 
-
         .container {
+            text-align: center;
             max-width: 550px;
             margin: 0 auto;
             padding: 5px;
@@ -27,7 +29,6 @@
             border-radius: 10px ;
             border: 0;
         }
-
 
         .card-header {
             background-color: #007BFF;
@@ -40,18 +41,22 @@
             font-weight: bold;
         }
 
-        h2 {
-            font-weight: bold;
+        h1 {
+            color: #007BFF;
         }
 
-        h1, h4 {
-            color: #007BFF;
+        h2 {
+            font-weight: bold;
         }
 
         h3 {
             font-size: 30px;
             font-weight: bold;
             padding-top: 30px;
+        }
+
+        h4 {
+            font-size: 20px;
         }
 
         h5 {
@@ -77,7 +82,6 @@
             color: #555;
         }
 
-
         .box-section {
             width: 100%;
             background-color: #fff;
@@ -94,8 +98,6 @@
 
         .answer-section {
             border: 1px;
-            margin-top: 20px;
-            padding-top: 20px;
         }
 
         .badge {
@@ -104,6 +106,7 @@
 
         .list-group-item {
             width: 100%;
+            padding: 5px;
             margin-bottom: 0px;
         }
 
@@ -231,7 +234,7 @@
                 {% if user.username == log.diver %}
                     <div class="my-3">
                         <a href="{% url 'main:view_modify_log' log_id=log.id %}"
-                           class="btn btn-sm btn-primary">edit</a>
+                           class="btn btn-primary">edit</a>
                     </div>
                 {% endif %}
             </div>
@@ -266,20 +269,29 @@
             <div class="col-md-0 mx-auto">
                 <ul class="list-group">
                     {% for answer in answer_list %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <td>
+                        <li class="list-group-item justify-content-between align-items-center">
+                            <h4 style="font-size: 10px">
                                 <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
-                                {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}.
-                            </td>
+                                {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}번째 댓글
+                            </h4>
 
-                            <td class="mb-10">
+                            <h4 style="font-size: 10px;" class="mb-0">
                                 {{ answer.content }}
-                            </td>
+                            </h4>
 
-                            <h4 class="fw-bold mb-2">
+                            <h4 class="mb-0">
+                                {% if answer.author|lower == log.diver|lower %}
+                                        <a style="color:red; font-size: 10px;" href="{% url 'user_profile:view_profile' user_id=answer.author %}">{{ answer.author }}(작성자)</a>
+                                    {% else %}
+                                        {% if user.is_authenticated %}
+                                        <a style="color: black; font-size: 10px;" href="{% url 'user_profile:view_profile' user_id=answer.author %}">{{ answer.author }}</a>
+                                        {% else %}
+                                        <a style="color: black; font-size: 10px;">{{ answer.author }}</a>
+                                        {% endif %}
+                                {% endif %}
                                 {% if request.user|lower == answer.author|lower %}
-                                    <a href="{% url 'main:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white;">수정</a>
-                                    <a href="{% url 'main:answer_delete' answer.id %}" onclick="return confirm('정말 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
+                                    <a href="{% url 'main:answer_modify' answer_id=answer.id  %}" class="bg-sm bg-warning rounded-pill me-0 px-2" style="font-size:10px;color:white;text-decoration: none">수정</a>
+                                    <a href="{% url 'main:answer_delete' answer.id %}" onclick="return confirm('정말 삭제하시겠습니까?')" class="btn-sm bg-danger rounded-pill me-0 px-2" style="font-size:10px;color: white;text-decoration: none;">삭제</a>
 
                                     <script>
                                         document.getElementById('deleteButton').addEventListener('click', function (event) {
@@ -292,12 +304,6 @@
                                             }
                                         });
                                     </script>
-                                {% endif %}
-
-                                {% if answer.author|lower == log.diver|lower %}
-                                    <a style="color:red;" href="{% url 'user_profile:view_profile' user_id=answer.author %}">{{ answer.author }}(작성자)</a>
-                                {% else %}
-                                    <a href="{% url 'user_profile:view_profile' user_id=answer.author %}">{{ answer.author }}</a>
                                 {% endif %}
                             </h4>
                         </li>
