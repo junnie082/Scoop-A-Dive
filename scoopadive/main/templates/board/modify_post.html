@@ -12,6 +12,16 @@
 
     <title>Modify Log</title>
     <style>
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
         .box {
             display: flex;
             justify-content: center;
@@ -23,6 +33,7 @@
             width: 500px;
         }
         h1 {
+            color: #007BFF;
             font-size: 60px;
             padding: 20px;
             font-weight: bold;
@@ -46,7 +57,10 @@
             <label for="floatingInput">Content</label>
         </div>
 
-
+        <div class="input-group mb-2">
+            <label class="input-group-text" for="inputGroupFile01">{% if post.images %}{{ post.images }}{% else %}Upload{% endif %}</label>
+            <input name="images" type="file" class="form-control" id="inputGroupFile01">
+        </div>
 
         <input type="submit" value="수정하기" class="btn btn-primary mt-2">
 

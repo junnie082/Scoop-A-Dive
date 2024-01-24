@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>{{ user.username }}'s Profile</title>
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+{#    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">#}
 
     <style>
         body {
@@ -97,6 +97,7 @@
 
         .list-group-item {
             padding: 1px;
+
         }
 
         .introduction-section {
@@ -180,7 +181,7 @@
                                 {{ loglist.paginator.count|sub:loglist.start_index|sub:forloop.counter0|add:1 }}
                             </td>
                             <div class="text-center">
-                                <h4 class="mb-2"><a href="{% url 'main:posting' pk=log.id %}">{{ log.logName }}</a></h4>
+                                <h4 style="font-size: 20px;" class="mb-2"><a href="{% url 'main:posting' pk=log.id %}">{{ log.logName }}</a></h4>
                             </div>
                         </li>
                     {% endfor %}
@@ -260,7 +261,7 @@
                                 {{ postlist.paginator.count|sub:postlist.start_index|sub:forloop.counter0|add:1 }}
                             </td>
                             <div class="text-center">
-                                <h4 class="mb-2"><a href="{% url 'board:detail' post_id=post.id %}">{{ post.postName }}</a></h4>
+                                <h4 style="font-size: 20px;" class="mb-2"><a href="{% url 'board:detail' post_id=post.id %}">{{ post.postName }}</a></h4>
                             </div>
                         </li>
                     {% endfor %}

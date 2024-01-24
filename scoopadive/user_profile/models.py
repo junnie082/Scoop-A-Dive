@@ -8,17 +8,17 @@ from main.models import Log
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=20)
-    birthday = models.DateField(null=True)
-    age = models.IntegerField(null=True)
-    diveLicense = models.CharField(null=True, max_length=50)
-    is_ststMember = models.BooleanField(default=False)
-    studentID = models.IntegerField(null=True)
-    major = models.CharField(null=True, max_length=50)
-    kisu = models.IntegerField(null=True)
-    is_absence = models.BooleanField(null=True, default=False)
-    introduction = models.TextField(null=True)
+    birthday = models.DateField(null=True, blank=True)
+    age = models.IntegerField(null=True, blank=True)
+    diveLicense = models.CharField(null=True, blank=True, max_length=50)
+    is_ststMember = models.BooleanField(null=True, blank=True, default=False)
+    studentID = models.IntegerField(null=True, blank=True)
+    major = models.CharField(null=True, blank=True,max_length=50)
+    kisu = models.IntegerField(null=True, blank=True)
+    is_absence = models.BooleanField(null=True, blank=True, default=False)
+    introduction = models.TextField(null=True, blank=True)
     image = models.ImageField(blank=True, null=True)
-    loglist = models.ForeignKey(Log, null=True,on_delete=models.CASCADE)
+    loglist = models.ForeignKey(Log, null=True, blank=True, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'Profiles'

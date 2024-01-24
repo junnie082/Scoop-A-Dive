@@ -12,14 +12,21 @@
     <title>{{ log.logName }}</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
             background-color: #007BFF;
             color: #333;
-            padding-top: 20px;
+        }
+
+        .card {
+            border: 10px solid #ffffff;
         }
 
         .container {
-            max-width: 700px;
+            text-align: center;
+            max-width: 550px;
             margin: 0 auto;
             padding: 5px;
             background-color: #007BFF;
@@ -38,12 +45,14 @@
             font-weight: bold;
         }
 
-        h2 {
-            font-weight: bold;
+        h1 {
+            color: #007BFF;
+            font-size: 50px; /* Adjust the font size as desired */
+            font-weight: bold; /* Make the text bold */
         }
 
-        h1, h4 {
-            color: #007BFF;
+        h2 {
+            font-weight: bold;
         }
 
         h3 {
@@ -53,20 +62,19 @@
             padding-top: 30px;
         }
 
+        h4 {
+            font-size: 20px;
+        }
+
         h5 {
             font-size: 30px;
             color: #000000;
         }
 
         h6 {
-            color: #000000;
+            color: #ffffff;
             padding: 20px;
-            font-size: 30px;
-        }
-
-        .diver-name {
             font-size: 20px;
-            color: #000000;
         }
 
         p {
@@ -90,9 +98,7 @@
         }
 
         .answer-section {
-            border: 1px solid #ffffff;
-            margin-top: 20px;
-            padding-top: 20px;
+            border: 1px;
         }
 
         .badge {
@@ -101,6 +107,7 @@
 
         .list-group-item {
             width: 100%;
+            padding: 5px;
             margin-bottom: 0px;
         }
 
@@ -130,7 +137,7 @@
         }
 
         .content-size {
-            font-size: 40px;
+            font-size: 20px;
         }
 
     </style>
@@ -142,24 +149,34 @@
         <div class="card">
             <div class="card-header">
                 <h1 class="card-title">{{  post.postName }}</h1>
+                {% if user.is_authenticated %}
+                    <a href="/profile/{{ post.writer }}" class="list-group-item" style="color: white; font-size: 20px;"><strong>Writer: {{ post.writer }}</strong></a>
+                {% else %}
+                    <p class="list-group-item" style="color: white; font-size: 20px; text-decoration: underline;"><strong>Writer:</strong> {{ post.writer }}</p>
+                {% endif %}
             </div>
             <div class="card-body">
                 <div class="row">
-                    {% if user.is_authenticated %}
-                        <a href="/profile/{{ post.writer }}" class="diver-name"><strong>Writer: {{ post.writer }}</strong></a>
-                    {% else %}
-                    <p class="list-group-item"><strong>Writer:</strong> {{ post.writer }}</p>
-                    {% endif %}
-                    <div class="box-section content-size">
+                    <div class="content-size">
                         {% if post.content %}
                             {{ post.content }}
                         {% endif %}
                     </div>
                 </div>
-             </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% if post.images %}
+                    <div class="box-section">
+                        <div class="card-body">
+                            <img src="{{ post.images.url }}" alt="{{ post.postName }}" class="img-fluid">
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
 
-        <a href="{% url 'board:index' %}" style="color: #007BFF;">Back to board</a>
-    {% if user.username and user.username != post.writer %}
+        {% if user.username and user.username != post.writer %}
             <a href="javascript:void(0)" data-uri="{% url 'board:post_vote' post_id=post.id %}"
                 class="recommend btn btn-lg btn-outline-dark"> Recommend
                 <span class="badge rounded-pill text-bg-warning">{{ post.voter.count }}</span>
@@ -175,9 +192,11 @@
                 });
             </script>
         {% else %}
+        <div class="card-header">
             <h6> Recommended
                 <span class="badge rounded-pill text-bg-warning">{{ post.voter.count }}</span>
             </h6>
+        </div>
         {% endif %}
     </div>
 
@@ -185,26 +204,38 @@
     <a class="btn btn-outline-light" href="{% url 'board:view_modify_post' post_id=post.id %}">Edit</a>
     {% endif %}
 
+    <a class="btn btn-outline-light" href="{% url 'board:index' %}" style="color: #ffffff;">Back to board</a>
+
     <h3>Answers</h3>
     <div class="container box-section answer-section">
         <div class="row">
             <div class="col-md-0 mx-auto">
                 <ul class="list-group">
                     {% for answer in answer_list %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <td>
+                        <li class="list-group-item justify-content-between align-items-center">
+                            <h4 style="font-size: 10px">
                                 <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->
-                                {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}.
-                            </td>
+                                {{ answer_list.paginator.count|sub:answer_list.start_index|sub:forloop.counter0|add:1 }}번째 댓글
+                            </h4>
 
-                            <td class="mb-10">
+                            <h4 style="font-size: 10px;" class="mb-0">
                                 {{ answer.content }}
-                            </td>
+                            </h4>
 
-                            <h4 class="fw-bold mb-2">
+
+                            <h4 class="mb-0">
+                                {% if answer.writer|lower == post.writer|lower %}
+                                        <a style="color:red; font-size: 10px;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}(작성자)</a>
+                                    {% else %}
+                                        {% if user.is_authenticated %}
+                                        <a style="color: black; font-size: 10px;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a>
+                                        {% else %}
+                                        <a style="color: black; font-size: 10px;">{{ answer.writer }}</a>
+                                        {% endif %}
+                                {% endif %}
                                 {% if request.user|lower == answer.writer|lower %}
-                                    <a href="{% url 'board:answer_modify' answer_id=answer.id  %}" class="badge-sm bg-warning rounded-pill me-0 px-2" style="color:white;">수정</a>
-                                    <a href="{% url 'board:answer_delete' answer.id %}" onclick="return confirm('정말 삭제하시겠습니까?')" class="badge-sm bg-danger rounded-pill me-0 px-2" style="color: white;">삭제</a>
+                                    <a href="{% url 'main:answer_modify' answer_id=answer.id  %}" class="bg-sm bg-warning rounded-pill me-0 px-2" style="font-size:10px;color:white;text-decoration: none">수정</a>
+                                    <a href="{% url 'main:answer_delete' answer.id %}" onclick="return confirm('정말 삭제하시겠습니까?')" class="btn-sm bg-danger rounded-pill me-0 px-2" style="font-size:10px;color: white;text-decoration: none;">삭제</a>
 
                                     <script>
                                         document.getElementById('deleteButton').addEventListener('click', function (event) {
@@ -217,12 +248,6 @@
                                             }
                                         });
                                     </script>
-                                {% endif %}
-
-                                {% if answer.writer|lower == post.writer|lower %}
-                                    <a style="color:red;" href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}(작성자)</a>
-                                {% else %}
-                                    <a href="{% url 'user_profile:view_profile' user_id=answer.writer %}">{{ answer.writer }}</a>
                                 {% endif %}
                             </h4>
                         </li>
@@ -307,7 +332,7 @@
     {% if user.username == post.writer %}
         <div class="container box-section answer-section">
             <a href="/board/">Back to List</a>
-            <a href="/board/{{ log.pk }}/remove" class="btn btn-danger">Delete Post</a>
+            <a href="{% url 'board:remove_post' post_id=post.pk %}" class="btn btn-danger">Delete Post</a>
         </div>
     {% endif %}
     </div>

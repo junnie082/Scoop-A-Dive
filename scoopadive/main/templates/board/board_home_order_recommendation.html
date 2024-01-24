@@ -7,11 +7,20 @@
     <link rel="stylesheet" type="text/css" href="{% static 'board.css' %}">
     <style>
         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
             background-color: #007BFF;
+            color: #ffffff;
         }
 
         h1 {
             color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
         }
 
         /* Active Pagination Item */
@@ -66,10 +75,12 @@
                             <a href="{{ post.pk }}/" style="color: white;">{{ post.postName }}</a>
                         </td>
                         <div class="d-flex align-items-center">
-                            {% if post.writer == 'admin' or post.writer == 'superuser' %}
-                                <p class="mb-0 px-2" style="color:yellow;">{{ post.writer }}</p>
+                            {% if post.writer and post.writer != 'admin' and post.writer != 'superuser' %}
+                                <a class="mb-0 px-2" href="{% url 'user_profile:view_profile' user_id=post.writer %}" style="color: white;">{{ post.writer }}</a>
+                            {% elif post.writer %}
+                                <a class="mb-0 px-2" href="{% url 'user_profile:view_profile' user_id=post.writer %}" style="color: yellow;">{{ post.writer }}</a>
                             {% else %}
-                                <p class="mb-0 px-2">{{ post.writer }}</p>
+                                <span class="mb-0 px-2" style="color: gray;">Anonymous</span>
                             {% endif %}
                             <span class="badge text-bg-warning rounded-pill me-2">{{ post.voter.count }} 추천</span>
                             <span class="badge text-bg-light rounded-pill">{{ post.answer4post_set.count }} 답글</span>

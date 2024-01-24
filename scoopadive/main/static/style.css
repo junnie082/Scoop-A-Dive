@@ -1,6 +1,5 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px;
+.container {
+    max-width: 800px;
     text-align: center;
 }
 
@@ -8,5 +7,4 @@ h1 {
     color: #007BFF;
     font-size: 50px; /* Adjust the font size as desired */
     font-weight: bold; /* Make the text bold */
-    text-shadow: 1px 1px 2px #000000;
 }
