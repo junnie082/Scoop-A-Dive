@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <title>Modify Log</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 900px; /* Adjust the maximum width as needed */
+            margin: auto;
+        }
+
+        .form input,
+        .form textarea,
+        .form button
+        {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+
+        .form-floating {
+            width:50%;
+        }
+
+        h1 {
+            font-size: 60px;
+            padding: 20px;
+            font-weight: bold;
+            margin-bottom: 0; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+    <h1>Edit Log</h1>
+    <form action="{% url 'main:modify_log' log_id=log_id %}" method="POST" class="form">
+        {% csrf_token %}
+        <div class="form-floating mb-0">
+          <input type="text" name="logName" class="form-control" id="floatingInput" value="{% if log.logName %}{{ log.logName }}{% endif %}">
+          <label for="floatingInput">Title (Name of the Log)</label>
+        </div>
+
+        <div class="form-floating mb-0">
+          <input type="number" name="diveNo" class="form-control" id="floatingInput" value="{% if log.diveNo %}{{ log.diveNo }}{% endif %}" placeholder="Integer only">
+          <label for="floatingInput">Diving No.</label>
+        </div>
+
+        <div class="form-floating mb-0">
+            <input type="date" name="date" class="form-control" id="floatingInput" value="{% if log.date %}{{ log.date|date:'Y-m-d'  }}{% endif %}">
+            <label for="floatingInput">Date</label>
+        </div>
+
+        <div class="form-floating mb-0">
+          <input type="text" name="location" class="form-control" id="floatingInput" value="{% if log.location %}{{ log.location }}{% endif %}" placeholder="Where did you dive?">
+          <label for="floatingInput">Location</label>
+        </div>
+
+        <div class="form-floating mb-0">
+          <input type="text" name="buddy" class="form-control" id="floatingInput" value="{% if log.buddy %}{{ log.buddy }}{% endif %}" placeholder="Who was your buddy?">
+          <label for="floatingInput">Buddy</label>
+        </div>
+
+        <div class="form-floating mb-0">
+          <input type="number" name="weight" class="form-control" id="floatingInput" value="{% if log.weight %}{{ log.weight }}{% endif %}" placeholder="How heavy was your weight?">
+          <label for="floatingInput">Weight</label>
+        </div>
+
+        <div class="form-floating mb-0">
+            <input type="number" name="temperature" step="any" class="form-control" id="floatingInput" value="{% if log.temperature %}{{ log.temperature }}{% endif %}" placeholder="How cold was the water?">
+            <label for="floatingInput">Temperature (°C, float)</label>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-sm">
+            <label for="floatingInput">Time In</label>
+            <input type="time" name="timeIn" class="form-control" value="{% if log.timeIn %}{{ log.timeIn|date:'H:i' }}{% endif %}" placeholder="Time In" aria-label="City">
+          </div>
+          <div class="col-sm">
+            <label for="floatingInput">Time Out</label>
+            <input type="time" name="timeOut" class="form-control" value="{% if log.timeOut %}{{ log.timeOut|date:'H:i' }}{% endif %}" placeholder="Time Out" aria-label="State">
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-sm">
+            <label for="floatingInput">Air Start</label>
+            <input type="number" name="barStart" step="any" class="form-control" value="{% if log.barStart %}{{ log.barStart }}{% endif %}" placeholder="Start (Bar)" aria-label="City">
+          </div>
+          <div class="col-sm">
+            <label for="floatingInput">Air End</label>
+            <input type="number" name="barEnd" step="any" class="form-control" value="{% if log.barEnd %}{{ log.barEnd }}{% endif %}" placeholder="End (Bar)" aria-label="State">
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-sm">
+            <label for="floatingInput">Max Depth</label>
+            <input type="number" name="maxDepth" step="any" class="form-control" value="{% if log.maxDepth %}{{ log.maxDepth }}{% endif %}" placeholder="Max Depth" aria-label="City">
+          </div>
+          <div class="col-sm">
+            <label for="floatingInput">Min Depth</label>
+            <input type="number" name="minDepth" step="any" class="form-control" value="{% if log.minDepth %}{{ log.minDepth }}{% endif %}" placeholder="Min Depth" aria-label="State">
+          </div>
+        </div>
+
+        <div class="form-floating">
+            <h2>Comments</h2>
+            <textarea name="comments" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px">{% if log.comments %}{{ log.comments }}{% endif %}</textarea>
+        </div>
+
+        <div style="width: 450px;">
+            <label class="input-group-text" for="inputGroupFile01">Image 1. {% if log.images %}{{ log.images }}{% else %}Upload{% endif %}</label>
+            <input name="images" type="file" class="form-control" id="inputGroupFile01">
+        </div>
+
+        <div class="form-floating mb-0">
+            <input type="submit" value="수정하기" class="btn btn-primary mt-2">
+        </div>
+    </form>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+
+</body>
+</html>

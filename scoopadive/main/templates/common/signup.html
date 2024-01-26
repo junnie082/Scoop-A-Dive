@@ -1,0 +1,99 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<!-- 네비게이션바 -->
+{% include "components/navbar.html" %}
+
+<div class="container mt-5">
+  <form method="post" class="was-validated" action="{% url 'common:signup' %}">
+    {% csrf_token %}
+    <h3 class="dark-grey-text text-center">
+      <strong>회원가입</strong>
+    </h3>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="md-form">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" name="username" id="username" class="form-control">
+          <label for="username">아이디</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="md-form">
+          <i class="fas fa-key prefix grey-text"></i>
+          <input type="password" name="password1" id="password1" class="form-control">
+          <label for="password1">패스워드</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="md-form">
+          <i class="fas fa-key prefix grey-text"></i>
+          <input type="password" name="password2" id="password2" class="form-control">
+          <label for="password2">패스워드 확인</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="md-form">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" name="email" id="email" class="form-control">
+          <label for="email">이메일</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="md-form">
+          <i class="fas fa-signature prefix grey-text"></i>
+          <input type="text" name="name" id="name" class="form-control">
+          <label for="name">성명</label>
+        </div>
+      </div>
+    </div>
+
+{#    <div class="row">#}
+{#      <div class="col-md-6 mx-auto">#}
+{#        <div class="form-check mt-4 ml-3">#}
+{#          <input type="checkbox" class="form-check-input" name="is_ststMember" id="is_ststMember">#}
+{#          <label class="form-check-label" for="is_ststMember">Member of Seoul Tech Scuba Team?</label>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+
+    <div class="text-center">
+        <button class="btn btn-primary">회원가입</button>
+    </div>
+  </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="{% static 'bootstrap.min.js' %}"></script>
+</body>
+</html>

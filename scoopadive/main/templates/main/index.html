@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scoop A Dive</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007BFF;
+            font-size: 100px; /* Adjust the font size as desired */
+            font-weight: bold; /* Make the text bold */
+            text-shadow: 1px 1px 2px #000000;
+        }
+
+        .link {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer; /* Add cursor pointer for clickable effect */
+            transition: background-color 0.3s, color 0.3s; /* Add smooth transition */
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 30px;
+            transition: color 0.3s; /* Add smooth transition for text color */
+        }
+
+        .link:hover {
+            background-color: #007BFF;
+        }
+
+        .link:hover a {
+            color: white;
+        }
+    </style>
+    <script>
+        // JavaScript to handle the redirection when the link div is clicked
+        function redirectToLogout() {
+            window.location.href = "{% url 'common:logout' %}";
+        }
+    </script>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <div class="container">
+        <h1>Scoop A Dive</h1>
+        <div class="link" onclick="location.href='/home';">
+            <a id="list-link" href="/home">Dive Logs</a>
+        </div>
+        {% if not user.is_authenticated %}
+            <a href="{% url 'common:signup' %}">회원가입</a>
+            <a href="{% url 'common:login' %}">로그인</a>
+        {% elif profile.is_ststMember %}
+            <div class="link" onclick="location.href='/board';">
+                <a id="list-link" href="/board">Board</a>
+            </div>
+            <div class="link" onclick="location.href='https://junnie082.github.io/happy-buddies/';">
+                <a id="list-link" href="https://junnie082.github.io/happy-buddies/">Happy Buddies</a>
+            </div>
+            <div class="link" onclick="location.href='{% url 'divepedia:index' %}';">
+                <a id="list-link" href="{% url 'divepedia:index' %}">Divepedia</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

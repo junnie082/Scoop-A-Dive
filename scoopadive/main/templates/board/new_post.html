@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <title>Modify Log</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 500px;
+        }
+        h1 {
+            font-size: 60px;
+            padding: 20px;
+            color: #007BFF;
+            font-weight: bold;
+            margin-bottom: 0; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+    <h1>New Post</h1>
+    <div class="box">
+    <form action="{% url 'board:new_post' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+          <input type="text" name="postName" class="form-control" id="floatingInput" placeholder="Integer only" required>
+          <label for="floatingInput">Title (Name of the Post)</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <textarea rows="10" name="content" class="form-control" id="floatingInput" placeholder="Integer only" style="height: auto;" required></textarea>
+            <label for="floatingInput">Content</label>
+        </div>
+
+        <div class="input-group mb-2">
+            <label class="input-group-text" for="inputGroupFile01">images</label>
+            <input name="images" type="file" class="form-control" id="inputGroupFile01">
+        </div>
+
+        <input type="submit" value="글쓰기" class="btn btn-primary mt-2">
+
+    </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <!-- Bootstrap JS -->
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <style>
+        body {
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+    <!-- 답변 수정-->
+    <div class="container my-3">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="content" class="form-label">답변내용</label>
+                <textarea class="form-control" name="content" id="content"
+                          rows="10" required>{{ form.content.value|default_if_none:'' }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">저장하기</button>
+        </form>
+    </div>
+</body>
+</html>
