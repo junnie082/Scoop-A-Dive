@@ -44,8 +44,6 @@ def home(request):
     paginator = Paginator(loglist, 10)  # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
 
-    print('kw:' + str(kw))
-
     return render(request, 'main/home.html', {'loglist': page_obj, 'page': page, 'kw': kw})
 
 def home_order_recommendation(request):
@@ -140,7 +138,6 @@ def view_modify_log(request, log_id):
 @login_required
 def modify_log(request, log_id):
     log = Log.objects.get(pk=log_id)
-    print("log: " + str(log.diver))
     logName = request.POST.get('logName')
     diver = request.POST.get('diver')
     diveNo = request.POST.get('diveNo')
@@ -157,10 +154,10 @@ def modify_log(request, log_id):
     temperature = request.POST.get('temperature')
     comments = request.POST.get('comments')
     images = request.POST.get('images')
-    print("logName: " + str(logName) + " diver: " + str(diver) + " diveNo: " + str(diveNo) + " date: " + str(date) + " location: " + str(location)
-          + " buddy: " + str(buddy) + " timeIn: " + str(timeIn) + " timeOut: " + str(timeOut) + " weight: " + str(weight)
-          + "barStart: " + str(barStart) + " barEnd: " + str(barEnd) + " maxDepth: " + str(maxDepth) + " minDepth: " + str(minDepth)
-          + " temperature: " + str(temperature) + " comments: " + str(comments) + " images: " + str(images))
+    # print("logName: " + str(logName) + " diver: " + str(diver) + " diveNo: " + str(diveNo) + " date: " + str(date) + " location: " + str(location)
+    #       + " buddy: " + str(buddy) + " timeIn: " + str(timeIn) + " timeOut: " + str(timeOut) + " weight: " + str(weight)
+    #       + "barStart: " + str(barStart) + " barEnd: " + str(barEnd) + " maxDepth: " + str(maxDepth) + " minDepth: " + str(minDepth)
+    #       + " temperature: " + str(temperature) + " comments: " + str(comments) + " images: " + str(images))
 
     if logName != '': log.logName = logName
     if diver != None: log.diver = diver

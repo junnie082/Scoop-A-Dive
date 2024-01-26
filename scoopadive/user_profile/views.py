@@ -68,7 +68,6 @@ def modify_profile(request, user_id):
     absence = request.POST.get('absence')
     image = request.POST.get('image')
 
-    print('absence: ' + str(absence))
     if name != '':
         profile.name = name
     if student_id != '':
@@ -89,7 +88,6 @@ def modify_profile(request, user_id):
 
 
     profile.is_absence = absence == 'on'
-    print('profile.is_absence' + str(profile.is_absence))
     profile.save()
 
     return redirect('user_profile:view_profile', user_id=user_id)

@@ -81,7 +81,6 @@ def answer_create(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     writer = request.user
     content = request.POST.get('content')
-    print("content: " + str(content))
 
     # Check if content is not None and not an empty string
     if content is not None and content.strip():
