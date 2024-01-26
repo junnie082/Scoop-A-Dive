@@ -16,10 +16,16 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    str(BASE_DIR / 'main/static'),
-]
-STATIC_ROOT = str(BASE_DIR / 'staticfiles')
+# STATICFILES_DIRS = [
+#     str(BASE_DIR / 'main/static'),
+# ]
+# STATIC_ROOT = str(BASE_DIR / 'staticfiles')
+ALLOWED_HOSTS = ['3.36.81.50']
+
+STATIC_ROOT = BASE_DIR / 'main/static/'
+STATICFILES_DIRS = []
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
 
 
 MEDIA_URL = '/media/'
@@ -33,13 +39,6 @@ LOGOUT_REDIRECT_URL = '/'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-z1oj6w022bh14)3-##+jb!&bh^=b1j96(2-e_0k$9^1ho!6mhi'
 # SECRET_KEY = os.environ.get('django-insecure-z1oj6w022bh14)3-##+jb!&bh^=b1j96(2-e_0k$9^1ho!6mhi')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['3.36.81.50']
-
-
 # Application definition
 
 INSTALLED_APPS = [
