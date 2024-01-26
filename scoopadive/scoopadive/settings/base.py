@@ -15,15 +15,19 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-STATIC_URL = '/static/'
 # STATICFILES_DIRS = [
 #     str(BASE_DIR / 'main/static'),
 # ]
 # STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 ALLOWED_HOSTS = ['3.36.81.50']
 
-STATIC_ROOT = BASE_DIR / 'main/static/'
-STATICFILES_DIRS = []
+STATIC_URL = '/static/'
+
+# Additional locations of static files
+STATICFILES_DIRS = [str(BASE_DIR / 'main/static')]
+
+# Absolute filesystem path to the directory that will hold static files.
+STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
