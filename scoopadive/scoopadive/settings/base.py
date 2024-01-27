@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 print('BASET_DIR: ' + str(BASE_DIR))
 # STATICFILES_DIRS = [
 #     str(BASE_DIR / 'main/static'),
