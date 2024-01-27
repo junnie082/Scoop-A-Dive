@@ -13,20 +13,22 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+#BASE_DIR = /home/ubuntu/projects/mysite/scoopadive
+
 print('BASE_DIR: ' + str(BASE_DIR))
-# STATICFILES_DIRS = [
-#     str(BASE_DIR / 'main/static'),
-# ]
-# STATIC_ROOT = str(BASE_DIR / 'staticfiles')
+STATICFILES_DIRS = [
+     str(BASE_DIR / 'main/static'),
+]
+STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 ALLOWED_HOSTS = ['3.36.81.50']
 
 STATIC_URL = '/static/'
 
 # Additional locations of static files
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+#STATICFILES_DIRS = [
+#    BASE_DIR / 'static'
+#]
 
 # Absolute filesystem path to the directory that will hold static files.
 # STATIC_ROOT = str(BASE_DIR / 'static')
