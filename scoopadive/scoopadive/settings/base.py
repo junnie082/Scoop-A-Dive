@@ -13,8 +13,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
+BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
+print('BASET_DIR: ' + str(BASE_DIR))
 # STATICFILES_DIRS = [
 #     str(BASE_DIR / 'main/static'),
 # ]
@@ -24,10 +24,12 @@ ALLOWED_HOSTS = ['3.36.81.50']
 STATIC_URL = '/static/'
 
 # Additional locations of static files
-STATICFILES_DIRS = [str(BASE_DIR / 'main/static')]
+STATICFILES_DIRS = [
+    BASE_DIR / 'main/static'
+]
 
 # Absolute filesystem path to the directory that will hold static files.
-STATIC_ROOT = str(BASE_DIR / 'staticfiles')
+STATIC_ROOT = str(BASE_DIR / 'static')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
