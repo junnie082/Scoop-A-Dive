@@ -7,7 +7,7 @@ from main.models import Log
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=20)
+    name = models.CharField(null=True, blank=True, max_length=20)
     birthday = models.DateField(null=True, blank=True)
     age = models.IntegerField(null=True, blank=True)
     diveLicense = models.CharField(null=True, blank=True, max_length=50)

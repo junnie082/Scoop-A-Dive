@@ -1,7 +1,7 @@
 from .base import *
 
-ALLOWED_HOSTS = ['52.78.240.94']
-STATIC_ROOT = str(BASE_DIR / 'static/')
+ALLOWED_HOSTS = ['3.36.81.50', 'scoopadive.com']
+STATIC_ROOT = str(BASE_DIR / 'main/static/')
 
 print("STATIC_ROOT: " + STATIC_ROOT)
 STATICFILES_DIRS = []

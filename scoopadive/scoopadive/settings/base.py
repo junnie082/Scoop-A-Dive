@@ -21,9 +21,9 @@ STATICFILES_DIRS = [
      str(BASE_DIR / 'main/static'),
 ]
 STATIC_ROOT = str(BASE_DIR / 'staticfiles')
-ALLOWED_HOSTS = ['52.78.240.94', '127.0.0.1']
+ALLOWED_HOSTS = ['3.36.81.50']
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 # Additional locations of static files
 #STATICFILES_DIRS = [
@@ -33,7 +33,7 @@ STATIC_URL = '/static/'
 # Absolute filesystem path to the directory that will hold static files.
 # STATIC_ROOT = str(BASE_DIR / 'static')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 MEDIA_URL = '/media/'
