@@ -1,0 +1,675 @@
+[2024-01-30 11:08:54 +0900] [162141] [INFO] Starting gunicorn 21.2.0
+[2024-01-30 11:08:54 +0900] [162141] [INFO] Listening at: unix:/tmp/gunicorn.sock (162141)
+[2024-01-30 11:08:54 +0900] [162141] [INFO] Using worker: sync
+[2024-01-30 11:08:54 +0900] [162142] [INFO] Booting worker with pid: 162142
+[2024-01-30 11:08:59 +0900] [162141] [INFO] Handling signal: int
+[2024-01-30 02:08:59 +0000] [162142] [INFO] Worker exiting (pid: 162142)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+[2024-01-30 11:09:01 +0900] [162141] [INFO] Shutting down: Master
+[2024-01-30 11:09:09 +0900] [162151] [INFO] Starting gunicorn 21.2.0
+[2024-01-30 11:09:09 +0900] [162151] [INFO] Listening at: unix:/tmp/gunicorn.sock (162151)
+[2024-01-30 11:09:09 +0900] [162151] [INFO] Using worker: sync
+[2024-01-30 11:09:09 +0900] [162154] [INFO] Booting worker with pid: 162154
+[2024-01-30 11:09:52 +0900] [162151] [INFO] Handling signal: hup
+[2024-01-30 11:09:52 +0900] [162151] [INFO] Hang up: Master
+[2024-01-30 11:09:52 +0900] [162151] [ERROR] Worker (pid:162154) was sent SIGHUP!
+[2024-01-30 11:09:53 +0900] [162186] [INFO] Booting worker with pid: 162186
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:29: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'main.models.Log'> QuerySet.
+  paginatorLog = Paginator(loglist, 5)
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:30: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'board.models.Post'> QuerySet.
+  paginatorPost = Paginator(postlist, 5)
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /media/스크린샷 2024-01-28 오후 11.39.10.png
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /2020/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /2020/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+Not Found: /geoserver
+Not Found: /robots.txt
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+[2024-01-30 12:31:59 +0900] [162151] [CRITICAL] WORKER TIMEOUT (pid:162186)
+[2024-01-30 03:32:00 +0000] [162186] [INFO] Worker exiting (pid: 162186)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+[2024-01-30 12:32:00 +0900] [162151] [ERROR] Worker (pid:162186) was sent SIGKILL! Perhaps out of memory?
+[2024-01-30 12:32:00 +0900] [166190] [INFO] Booting worker with pid: 166190
+[2024-01-30 12:33:10 +0900] [162151] [CRITICAL] WORKER TIMEOUT (pid:166190)
+[2024-01-30 03:33:10 +0000] [166190] [INFO] Worker exiting (pid: 166190)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+[2024-01-30 12:33:11 +0900] [162151] [ERROR] Worker (pid:166190) was sent SIGKILL! Perhaps out of memory?
+[2024-01-30 12:33:11 +0900] [166237] [INFO] Booting worker with pid: 166237
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /administrator/index.php
+Not Found: /view-source:
+Not Found: /misc/ajax.js
+Not Found: /merchant/z/payment/
+Not Found: /3ds.php
+Not Found: /3ds1633693954432212
+Not Found: /merchant/code
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Invalid HTTP_HOST header: '/tmp/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/tmp/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Bad Request: /
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /administrator/index.php
+Not Found: /view-source:
+Not Found: /misc/ajax.js
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /administrator/index.php
+Not Found: /view-source:
+Not Found: /misc/ajax.js
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /2020/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Not Found: /xmlrpc.php
+Not Found: /wp-login.php
+Not Found: /wp/xmlrpc.php
+Not Found: /wordpress/xmlrpc.php
+Not Found: /old/xmlrpc.php
+Not Found: /new/xmlrpc.php
+Not Found: /blog/xmlrpc.php
+Not Found: /.env
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Not Found: /robots.txt
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /2020/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /2020/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /2020/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Invalid HTTP_HOST header: 'ec2-3-36-81-50.ap-northeast-2.compute.amazonaws.com'. You may need to add 'ec2-3-36-81-50.ap-northeast-2.compute.amazonaws.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'ec2-3-36-81-50.ap-northeast-2.compute.amazonaws.com'. You may need to add 'ec2-3-36-81-50.ap-northeast-2.compute.amazonaws.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /2020/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /robots.txt
+Invalid HTTP_HOST header: '/tmp/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/tmp/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Bad Request: /
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Not Found: /main.js
+Not Found: /accounts/login/
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Not Found: /.git/config
+Not Found: /wp-admin/setup-config.php
+Not Found: /wp-admin/install.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wordpress/
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /2020/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /2018/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /media/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Not Found: //wp-admin/setup-config.php
+Not Found: //wordpress/wp-admin/setup-config.php
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /sitemap.xml
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /robots.txt
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /xmlrpc.php
+Not Found: /blog/wp-includes/wlwmanifest.xml
+Not Found: /web/wp-includes/wlwmanifest.xml
+Not Found: /wordpress/wp-includes/wlwmanifest.xml
+Not Found: /website/wp-includes/wlwmanifest.xml
+Not Found: /wp/wp-includes/wlwmanifest.xml
+Not Found: /news/wp-includes/wlwmanifest.xml
+Not Found: /2018/wp-includes/wlwmanifest.xml
+Not Found: /2019/wp-includes/wlwmanifest.xml
+Not Found: /shop/wp-includes/wlwmanifest.xml
+Not Found: /wp1/wp-includes/wlwmanifest.xml
+Not Found: /test/wp-includes/wlwmanifest.xml
+Not Found: /media/wp-includes/wlwmanifest.xml
+Not Found: /wp2/wp-includes/wlwmanifest.xml
+Not Found: /site/wp-includes/wlwmanifest.xml
+Not Found: /cms/wp-includes/wlwmanifest.xml
+Not Found: /sito/wp-includes/wlwmanifest.xml
+Invalid HTTP_HOST header: '/tmp/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '/tmp/gunicorn.sock:'. The domain name provided is not valid according to RFC 1034/1035.
+Bad Request: /
+Not Found: /.git/config
+Not Found: /.git/config
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Error: That port is already in use.
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Watching for file changes with StatReloader
+Error: That port is already in use.
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+[2024-01-31 10:36:08 +0900] [230988] [INFO] Starting gunicorn 21.2.0
+[2024-01-31 10:36:08 +0900] [230988] [INFO] Listening at: unix:/tmp/gunicorn.sock (230988)
+[2024-01-31 10:36:08 +0900] [230988] [INFO] Using worker: sync
+[2024-01-31 10:36:08 +0900] [230991] [INFO] Booting worker with pid: 230991
+[2024-01-31 10:36:10 +0900] [230988] [INFO] Handling signal: int
+[2024-01-31 01:36:11 +0000] [230991] [INFO] Worker exiting (pid: 230991)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+[2024-01-31 10:36:13 +0900] [230988] [INFO] Shutting down: Master
+[2024-01-31 10:36:19 +0900] [230998] [INFO] Starting gunicorn 21.2.0
+[2024-01-31 10:36:19 +0900] [230998] [INFO] Listening at: unix:/tmp/gunicorn.sock (230998)
+[2024-01-31 10:36:19 +0900] [230998] [INFO] Using worker: sync
+[2024-01-31 10:36:20 +0900] [231000] [INFO] Booting worker with pid: 231000
+[2024-01-31 10:37:12 +0900] [230998] [INFO] Handling signal: hup
+[2024-01-31 10:37:12 +0900] [230998] [INFO] Hang up: Master
+[2024-01-31 10:37:13 +0900] [230998] [ERROR] Worker (pid:231000) was sent SIGHUP!
+[2024-01-31 10:37:13 +0900] [231038] [INFO] Booting worker with pid: 231038
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:29: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'main.models.Log'> QuerySet.
+  paginatorLog = Paginator(loglist, 5)
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:30: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'board.models.Post'> QuerySet.
+  paginatorPost = Paginator(postlist, 5)
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+[2024-01-31 10:41:15 +0900] [230998] [CRITICAL] WORKER TIMEOUT (pid:231038)
+[2024-01-31 01:41:15 +0000] [231038] [INFO] Worker exiting (pid: 231038)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+[2024-01-31 10:41:16 +0900] [230998] [ERROR] Worker (pid:231038) was sent SIGKILL! Perhaps out of memory?
+[2024-01-31 10:41:16 +0900] [231204] [INFO] Booting worker with pid: 231204
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:29: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'main.models.Log'> QuerySet.
+  paginatorLog = Paginator(loglist, 5)
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:30: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'board.models.Post'> QuerySet.
+  paginatorPost = Paginator(postlist, 5)
+[2024-01-31 10:50:32 +0900] [230998] [CRITICAL] WORKER TIMEOUT (pid:231204)
+[2024-01-31 01:50:32 +0000] [231204] [INFO] Worker exiting (pid: 231204)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+[2024-01-31 10:50:34 +0900] [230998] [ERROR] Worker (pid:231204) was sent SIGKILL! Perhaps out of memory?
+[2024-01-31 10:50:34 +0900] [231668] [INFO] Booting worker with pid: 231668
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:29: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'main.models.Log'> QuerySet.
+  paginatorLog = Paginator(loglist, 5)
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:30: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'board.models.Post'> QuerySet.
+  paginatorPost = Paginator(postlist, 5)
+/home/ubuntu/projects/mysite/scoopadive/scoopadive/urls.py changed, reloading.
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 31, 2024 - 01:24:27
+Django version 5.0.1, using settings 'scoopadive.settings.prod'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+[31/Jan/2024 02:22:00] "GET / HTTP/1.1" 200 3786
+Not Found: /robots.txt
+/home/ubuntu/projects/mysite/scoopadive/main/templatetags/main_filter.py changed, reloading.
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 31, 2024 - 01:57:05
+Django version 5.0.1, using settings 'scoopadive.settings.prod'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+[2024-01-31 11:42:43 +0900] [230998] [CRITICAL] WORKER TIMEOUT (pid:231668)
+[2024-01-31 11:42:44 +0900] [230998] [ERROR] Worker (pid:231668) was sent SIGKILL! Perhaps out of memory?
+[2024-01-31 11:42:44 +0900] [234049] [INFO] Booting worker with pid: 234049
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:29: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'main.models.Log'> QuerySet.
+  paginatorLog = Paginator(loglist, 5)
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:30: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'board.models.Post'> QuerySet.
+  paginatorPost = Paginator(postlist, 5)
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+[2024-01-31 11:46:42 +0900] [230998] [CRITICAL] WORKER TIMEOUT (pid:234049)
+[2024-01-31 02:46:43 +0000] [234049] [INFO] Worker exiting (pid: 234049)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+[2024-01-31 11:46:43 +0900] [230998] [ERROR] Worker (pid:234049) was sent SIGKILL! Perhaps out of memory?
+[2024-01-31 11:46:43 +0900] [234218] [INFO] Booting worker with pid: 234218
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-12-06 오후 9.04.56.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /installer.php
+Not Found: /.git/config
