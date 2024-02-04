@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Buddies</title>
+    <link rel="stylesheet" href="id.css">
+    <style>
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    #dateHeading {
+        font-size: 40px;
+    }
+
+    #inputList {
+        width: 800px;
+        max-height: 50%; /* Set maximum height */
+        overflow-y: auto; /* Add vertical scrollbar if needed */
+        border: 3px solid #000;
+        padding: 10px;
+        /* Other styles */
+    }
+
+    #resultTxt {
+        font-size: 50px;
+    }
+
+    #memberButton {
+        padding: 10px 20px;
+        border: 2px solid #3498db;
+        background-color: #fff;
+        color: #3498db;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 5px;
+    }
+
+    .member-button {
+        padding: 10px 20px;
+        border: 2px solid #3498db;
+        background-color: #fff;
+        color: #3498db;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 5px;
+    }
+
+    .member-button:hover {
+        background-color: #3498db;
+        color: white;
+    }
+
+    /*#memberButton:hover {*/
+    /*    background-color: #3498db;*/
+    /*    color: #fff;*/
+    /*}*/
+
+    #tableHeading {
+        color: black;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    #dateHeading {
+        font-size: 25px;
+    }
+
+    #buddyItem {
+        font-size: 20px;
+    }
+
+    #addBtn {
+        margin: 5px;
+        font-size: 20px;
+        background-color: skyblue;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #doneBtn, #resetBtn {
+        margin: 5px;
+        font-size: 30px;
+        background-color: white;
+        border: 2px solid black; /* Define border style */
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #addBtn:hover,
+    #doneBtn:hover,
+    #resetBtn:hover {
+        background-color: lightblue;
+        color: white;
+    }
+
+    #deleteBtn:hover {
+        background-color: lightpink;
+        /* Any other style adjustments you may want */
+    }
+
+    #selectedDate {
+        width: 20vw;
+        height: 4vh;
+    }
+
+    #memberNames {
+        width: 30vw;
+        height: 4vh;
+    }
+
+    #result {
+        display: flex;
+        justify-content: flex-start;
+    }
+    </style>
+{#    <link rel="stylesheet" href="style.css">#}
+    <style>
+    /* Updated CSS for adjusted form-and-table and button sizes */
+    input {
+        margin: 5px;
+        font-size: 20px;
+    }
+
+    .names-list {
+        display: flex;
+        /* Add other styles as needed */
+    }
+
+    .input-with-button {
+        display: flex;
+        align-items: center;
+    }
+
+    .input-with-button input {
+        flex: 1;
+        margin-right: 5px;
+    }
+
+    .input-with-button button {
+        flex-shrink: 0;
+    }
+
+    .pair-container {
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        gap: 20px; /* Add space between pairs */
+        margin-top: 20px; /* Adjust margin as needed */
+    }
+
+    .paired-buddies {
+        width: 800px;
+        margin-top: 20px;
+        background-color: #f5f5f5;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+
+    .form {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .result-container {
+        text-align: center;
+        background-color: #f9f9f9;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .buddies-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Center text horizontally */
+    h2, .buddy-pairs-text {
+        font-size: 30px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .paired-buddies h3 {
+        text-align: center;
+    }
+
+    /* Add styles for the dates */
+    .date-text {
+        font-size: 20px;
+        font-weight: bold;
+        border: 3px solid #ccc;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin: 5px;
+        display: block;
+    }
+
+    .input-list {
+        margin-left: 50px;
+        max-width: 800px;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    /* Center the names */
+    .member-names {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Style for the buddies list */
+    .buddies-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    /* Style for individual buddy pairs */
+    .buddy-pair {
+        border: 1px solid #ccc;
+        padding: 5px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+    }
+
+    .form-and-table {
+        display: flex;
+        flex-direction: column; /* Adjust layout to column */
+        gap: 20px; /* Gap between sections */
+    }
+
+    /* Updated CSS for form-section to center objects horizontally */
+
+    .form-section {
+        width: auto;
+        height: 30%;
+        background-color: #f5f5f5;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        display: flex; /* Add display flex */
+        flex-direction: column; /* Arrange children vertically */
+        justify-content: center; /* Center children horizontally */
+    }
+
+    .members-table {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #f5f5f5;
+    }
+
+    .members-table {
+        height: 30vh;
+        max-height: 350px;
+        overflow-y: auto;
+    }
+
+    .results,
+    .paired-buddies {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #f5f5f5;
+        overflow-y: auto;
+    }
+
+    /* Adjust the size of buttons */
+    .done-reset-buttons button {
+        padding: 8px 15px;
+        font-size: 14px;
+        /* Other button styles */
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 768px) {
+        .container {
+            width: 95%;
+        }
+        /* Adjust other styles for responsiveness */
+    }
+
+    .input-list {
+        width: 300px; /* Set a width if needed */
+        margin: 0 auto; /* Center horizontally */
+        padding: 0; /* Reset padding */
+        list-style-type: none; /* Remove list bullets */
+        /* Additional styles as needed */
+    }
+
+    /* Example styles for list items */
+    .input-list li {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    </style>
+{#    <link rel="stylesheet" href="memberTable.css">#}
+    <style>
+        /* CSS styles */
+    .list-member {
+        font-size: 20px; /* Adjust the font size as needed */
+        padding: 5px 10px;
+    }
+
+    .members-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px; /* Optional: Add margin as needed */
+        height: 30%;
+    }
+
+    /* Style for the members table */
+    .members-table {
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: 50%;
+        width: 40%;
+    }
+
+    /* Style for individual member items */
+    .members-list {
+        display: grid;
+        grid-template-columns: repeat(5, auto); /* Adjust column count as needed */
+        gap: 10px;
+        list-style: none;
+        padding: 10px; /* Adjust padding */
+        font-size: 15px; /* Reduce font size for individual names */
+    }
+
+    .members-list li {
+        padding: 5px;
+        border-radius: 5px;
+        text-align: center;
+        color: #fff;
+        width: auto;
+    }
+
+    /* Colors based on participation counts */
+    .blue { background-color: #3498db; }
+    .yellow { background-color: #f39c12; }
+    .red { background-color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-and-table">
+            <div class="form-section">
+                <div class="title">
+                    <h1>Happy Buddies</h1>
+                </div>
+                <!-- Your UI components go here -->
+                <div class="forms">
+                    <input type="date" id="selectedDate" placeholder="Select Date">
+                </div>
+                <div class="input-with-button">
+                    <div id="semesterButtons" class="semester-buttons"></div>
+                </div>
+                <div class="button-container">
+                    <div class="done-reset-buttons">
+                        <button id="doneBtn" onclick="done()">Done</button>
+                        <button id="resetBtn" onclick="reset()">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="results">
+            <div class="result-list">
+                <h2>Input</h2>
+                    <ul id="inputList" class="input-list">
+                <!-- Placeholder for input list items -->
+            </ul>
+        <!-- Placeholder for result items -->
+    </div>
+
+        </div>
+        <div class="members-container">
+            <div class="members-table" id="membersTable">
+                <!-- Placeholder for members table content -->
+            </div>
+        </div>
+
+            <!-- Placeholder for paired buddies content -->
+        </div>
+
+        <div id="pairedBuddies" class="paired-buddies">
+    </div>
+
+{#    <script src="algorithm.js"></script>#}
+    <script>
+    function pairUpBuddies(datesAndMembersList)  {
+        let copyList = [...datesAndMembersList];
+        let theRestOldStudents = [];
+
+        // Filter out dates with no members
+        copyList = copyList.filter(([date, members]) => members.length > 0);
+
+        // Sort datesAndMembersList by the number of members in descending order
+        copyList.sort((a, b) => b[1].length - a[1].length);
+
+
+        while (copyList.length !== 0) {
+            let datesAndMembers = copyList.pop();
+            let date = datesAndMembers[0];
+            let members = datesAndMembers[1];
+
+            // console.log("members: " + members);
+
+            let newStudent = [];
+            let oldStudent = [];
+
+            for (let name of members) {
+                if (name === '') continue;
+
+                if (membersInCntTable[name] <= 2) {
+                    if (membersSemesters[name] <= 2) {
+                        newStudent.push(name);
+                    } else {
+                        oldStudent.push(name);
+                    }
+                }
+
+            }
+
+            for (let buddy1 of newStudent) {
+                let buddy2 = null;
+                if (oldStudent.length !== 0) buddy2 = oldStudent.pop();
+
+                // Initializing buddies[date] if it doesn't exist
+                if (!(date in buddies)) {
+                    buddies[date] = [];
+                }
+
+                if (membersInCntTable[buddy1] <= 2 && membersInCntTable[buddy2] <= 2)
+                    buddies[date].push({ [buddy1]: buddy2 });
+                else if (membersInCntTable[buddy1] <= 2 && membersInCntTable[buddy2] === null)
+                    buddies[date].push({ [buddy1]: null})
+
+                addHisDays(buddy1);
+                if (buddy2 !== null) addHisDays(buddy2);
+            }
+
+
+            if (oldStudent.length !== 0) {
+                theRestOldStudents.push([date, [...oldStudent]]);
+            }
+
+            pairTheRest(theRestOldStudents);
+        }
+
+    }
+
+    function pairTheRest(oldStudents) {
+
+        oldStudents.reverse();
+
+        while (oldStudents.length !== 0) {
+
+            let datesAndMembers = oldStudents.pop();
+            let date = datesAndMembers[0];
+            let members = datesAndMembers[1];
+
+            while (members.length >= 2) {
+                let buddy1 = members.shift();
+                let buddy2 = members.pop();
+
+                if (membersInCntTable[buddy1] > 2 && membersInCntTable[buddy2] > 2) {
+                    continue;
+                }
+
+                if (!(date in buddies)) {
+                    buddies[date] = [];
+                }
+
+                if (membersInCntTable[buddy1] > 2) {
+                    buddies[date].push({[buddy2]: null});
+                    addHisDays(buddy1);
+                    continue;
+                }
+
+                if (membersInCntTable[buddy2] > 2) {
+                    buddies[date].push({[buddy1]: null});
+                    addHisDays(buddy2);
+                    continue;
+                }
+
+                if (membersInCntTable[buddy1] <= 2 && membersInCntTable[buddy2] <= 2) {
+                    buddies[date].push({ [buddy1]: buddy2 });
+                    addHisDays(buddy1);
+                    addHisDays(buddy2);
+                }
+
+            }
+
+            if (members.length === 1) {
+                let buddy = members.pop();
+
+                if (membersInCntTable[buddy] <= 2) {
+                    if (!(date in buddies)) {
+                        buddies[date] = [];
+                    }
+                    buddies[date].push({ [buddy]: null });
+
+                    addHisDays(buddy);
+                }
+            }
+        }
+
+    }
+    </script>
+{#    <script src="clicked.js"></script>#}
+    <script>
+    function done() {
+        const container = document.querySelector('.container');
+        const resultDiv = document.getElementById('pairedBuddies');
+        const doneButton = document.getElementById('doneBtn');
+
+        // Change the appearance of the Done button
+        doneButton.disabled = true;
+        doneButton.style.backgroundColor = 'darkgray'; // Change color to dark gray
+
+        // Clear the previous results
+        resultDiv.innerHTML = '';
+
+        // Merge buddies to datesAndMembersList
+        mergeBuddiesToList();
+
+        // Pair buddies based on the updated datesAndMembersList
+        pairUpBuddies(datesAndMembersList);
+
+        datesAndMembersList.sort((a, b) => new Date(a[0]) - new Date(b[0]));
+
+
+        // Track printed dates
+        const printedDates = new Set();
+        const resultHeading = document.createElement('h2');
+        resultHeading.textContent = 'Result';
+        resultDiv.appendChild(resultHeading);
+        // Loop through the datesAndMembersList and display the paired results
+        datesAndMembersList.forEach(([date, members]) => {
+            if (!printedDates.has(date)) {
+                const buddiesForDate = buddies[date] || [];
+                // Check if there are any buddy pairs for this date
+                if (buddiesForDate.length > 0) {
+                    const dateHeading = document.createElement('h3');
+                    dateHeading.id = 'dateHeading';
+                    dateHeading.textContent = `▶ ${date}`;
+                    resultDiv.appendChild(dateHeading);
+
+                    const pairContainer = document.createElement('div');
+                    pairContainer.classList.add('pair-container');
+                    pairContainer.style.display = 'flex'; // Set to display items in a row
+                    pairContainer.style.gap = '20px'; // Add spacing between items
+
+                    buddiesForDate.forEach(pair => {
+                        const buddyName = Object.keys(pair)[0];
+                        const buddyValue = pair[buddyName] || 'None';
+
+                        let buddyValueSemester = 'X';
+                        if (buddyValue !== 'None') {
+                            buddyValueSemester = membersSemesters[buddyValue];
+                        }
+
+                        const pairText = document.createElement('p');
+                        pairText.textContent = `${buddyName}(${membersSemesters[buddyName]}) - ${buddyValue}(${buddyValueSemester})`;
+                        pairText.style.border = '2px solid #3498db'; // Thicker border
+                        pairText.style.borderRadius = '10px'; // Rounded border
+                        pairText.style.padding = '10px'; // Add padding to create space between text and border
+
+                        pairContainer.appendChild(pairText);
+                    });
+
+                    resultDiv.appendChild(pairContainer);
+                    printedDates.add(date); // Add the printed date to the set
+                }
+            }
+        });
+
+        // cntMembers();
+        // Append the resultDiv to the container
+        container.appendChild(resultDiv);
+        buddies = {};
+
+    }
+
+    function reset() {
+        const doneButton = document.getElementById('doneBtn');
+        doneButton.disabled = false;
+        doneButton.style.backgroundColor = '';
+        resetCntTable();
+        datesAndMembersList = [];
+        buddies = {};
+        inputList.innerHTML = '';
+        pairedBuddies.innerHTML = ''; // Clears the paired results
+        resetMemberButtons();
+    }
+
+    // Function to reset member buttons to white
+    // Function to reset all buttons to white
+    function resetAllButtons() {
+        const buttons = document.querySelectorAll('.semester-members button');
+        buttons.forEach(button => {
+            button.style.backgroundColor = '';
+            button.style.color = '';
+        });
+    }
+
+    // Event listener for the resetBtn
+    document.getElementById('resetBtn').addEventListener('click', () => {
+        resetAllButtons(); // Call the function to reset all buttons
+    });
+
+    function addMember(date, name) {
+        const doneButton = document.getElementById('doneBtn');
+        doneButton.disabled = false;
+        doneButton.style.backgroundColor = '';
+
+        let selectedDate = date.trim();
+        let addMemberName = name.trim();
+
+        resetCntTable();
+
+        if (selectedDate === "" || addMemberName === "") {
+            alert("Please select a date and enter member names.");
+            return;
+        }
+
+        // Check if all entered member names exist in the membersSemesters object
+        if (!checkIfMembersExist([addMemberName])) {
+            alert("Please enter valid member names.");
+            return;
+        }
+
+        // Find if the selected date already exists in datesAndMembersList
+        const existingDateIndex = datesAndMembersList.findIndex(([date]) => date === selectedDate);
+
+        if (existingDateIndex !== -1) {
+            const [, existingMembers] = datesAndMembersList[existingDateIndex];
+
+            // Check if the member already exists for the selected date
+            if (!existingMembers.includes(addMemberName)) {
+                existingMembers.push(addMemberName);
+            } else {
+                return;
+            }
+        } else {
+            // Add a new entry for the selected date with the member
+            datesAndMembersList.push([selectedDate, [addMemberName]]);
+        }
+
+        // Update the displayed list
+        updateDisplayList();
+    }
+    </script>
+{#    <script src="script.js"></script>#}
+    <script>
+{#    const membersInCntTable = {#}
+{#            // Initialize members in counting table#}
+{#            "류창수": 0, "진성우": 0, "유도현": 0, "한종한": 0,#}
+{#            "한영숙": 0, "김해슬": 0, "김우찬": 0, "박찬경": 0,#}
+{#            "김선국": 0, "최태오": 0, "김성민": 0, "함민우": 0,#}
+{#            "이용헌": 0, "이수연": 0, "서연우": 0, "안민혁": 0,#}
+{#            "강지수": 0, "전효정": 0, "최승혜": 0, "박수겸": 0,#}
+{#            "오효석": 0, "이의린": 0, "임채영": 0, "윤희정": 0,#}
+{#            "김담우": 0, "김찬희": 0, "장승호": 0, "방재현": 0,#}
+{#            "정기호": 0, "조시은": 0, "성예진": 0, "심혜원": 0,#}
+{#            "이준": 0, "문성원": 0, "김형준": 0#}
+{# };#}
+
+    const membersInCntTable = {
+        {% for member in members %}
+            '{{ member.name|safe }}': 0,
+        {% endfor %}
+    }
+
+    const membersSemesters = {
+    {% for member in members %}
+        '{{ member.name|safe }}': {{ member.kisu }},
+    {% endfor %}
+    }
+
+{#const membersSemesters = {#}
+{#            // Initialize members with their semester days#}
+{#            "류창수": 10, "진성우": 10, "유도현": 10, "한종한": 10,#}
+{#            "한영숙": 10, "김해슬": 10, "김우찬": 10, "박찬경": 10,#}
+{#            "김선국": 8, "최태오": 8, "김성민": 8, "함민우": 8,#}
+{#            "이용헌": 8, "이수연": 8, "서연우": 8, "안민혁": 8,#}
+{#            "강지수": 6,  "전효정": 6,  "최승혜": 6,  "박수겸": 6,#}
+{#            "오효석": 6,  "이의린": 4,  "임채영": 4, "윤희정": 4,#}
+{#            "김담우": 4, "김찬희": 4, "장승호": 4, "방재현": 4,#}
+{#            "정기호": 4, "조시은": 2,  "성예진": 2, "심혜원": 2,#}
+{#            "이준": 2, "문성원": 2,  "김형준": 2#}
+{# };#}
+
+
+    buddies = {
+
+    };
+
+    let inputList = document.getElementById("inputList");
+    let datesAndMembersList = [];
+
+// function cntMembers() {
+//     for (let date in buddies) {
+//         buddies[date].forEach((name) => {
+//             if (name !== null) {
+//                 // Add a console log here to inspect 'name' and 'membersInCntTable[name]'
+//                 console.log(`Name: ${name}, Count: ${membersInCntTable[name]}`);
+//
+//                 membersInCntTable[name] += 1;
+//             }
+//         });
+//     }
+// }
+
+
+    // Function to create buttons for members of each semester
+    function createSemesterButtons() {
+        const semesterButtonsContainer = document.getElementById('semesterButtons');
+
+        // Loop through each Kisu
+        for (let kisu = 40; kisu >= 1; kisu--) {
+            // Check if there are members for this Kisu
+            const membersForKisu = Object.keys(membersSemesters).filter(
+                member => membersSemesters[member] === kisu
+            );
+
+            if (membersForKisu.length === 0) {
+                continue; // Skip printing if no members for this Kisu
+            }
+
+            const semesterDiv = document.createElement('div');
+            semesterDiv.classList.add('semester');
+
+            const semesterHeading = document.createElement('h3');
+            semesterHeading.textContent = `Kisu ${kisu}`;
+            semesterDiv.appendChild(semesterHeading);
+
+            const semesterMembersDiv = document.createElement('div');
+            semesterMembersDiv.classList.add('semester-members');
+
+            // Loop through members to find those belonging to this Kisu
+            for (const member in membersSemesters) {
+                if (membersSemesters[member] === kisu) {
+                    const memberButton = document.createElement('button');
+                    memberButton.textContent = member;
+                    memberButton.dataset.memberName = member; // Store member name in dataset
+                    memberButton.classList.add('member-button'); // Add a class for styling
+
+                    memberButton.addEventListener('click', () => {
+                        const selectedDate = document.getElementById('selectedDate').value;
+                        if (selectedDate.trim() !== '') {
+                            const isMemberInList = datesAndMembersList.some(
+                                ([date, addedMember]) => date === selectedDate && addedMember === member
+                            );
+
+                            if (isMemberInList) {
+                                const memberIndex = datesAndMembersList.findIndex(
+                                    ([date, addedMember]) => date === selectedDate && addedMember === member
+                                );
+
+                                if (memberIndex !== -1) {
+                                    datesAndMembersList.splice(memberIndex, 1);
+                                }
+                                removeMemberFromDate(member, selectedDate);
+
+                                memberButton.style.backgroundColor = '';
+                                memberButton.style.color = '';
+                            } else {
+                                addMember(selectedDate, member);
+                                datesAndMembersList.push([selectedDate, member]);
+                                memberButton.style.backgroundColor = '#3498db';
+                                memberButton.style.color = 'white';
+                            }
+                            updateDisplayList();
+                        } else {
+                            alert('Please select a date.');
+                        }
+                    });
+
+                    semesterMembersDiv.appendChild(memberButton);
+                }
+            }
+
+            semesterDiv.appendChild(semesterMembersDiv);
+            semesterButtonsContainer.appendChild(semesterDiv);
+
+            const enter = document.createElement('br');
+            semesterButtonsContainer.appendChild(enter);
+        }
+
+        const dateInput = document.getElementById('selectedDate');
+        dateInput.addEventListener('change', () => {
+            const selectedDate = dateInput.value;
+
+            // Reset all buttons to default state
+            const buttons = document.querySelectorAll('.semester-members button');
+            buttons.forEach(button => {
+                button.style.backgroundColor = '';
+                button.style.color = '';
+            });
+
+            // Find members present in datesAndMembersList for the selected date
+            const membersForSelectedDate = datesAndMembersList
+                .filter(([date, _]) => date === selectedDate)
+                .map(([_, member]) => member);
+
+            // Set buttons to blue for members present in datesAndMembersList on the selected date
+            membersForSelectedDate.forEach(member => {
+                const button = document.querySelector(`[data-member-name="${member}"]`);
+                if (button) {
+                    button.style.backgroundColor = '#3498db';
+                    button.style.color = 'white';
+                }
+            });
+        });
+    }
+
+    // Call the function to create semester buttons
+    createSemesterButtons();
+
+
+    function updateDisplayList() {
+        const inputList = document.getElementById('inputList');
+        inputList.innerHTML = '';
+
+        const printedDates = []; // Track printed dates
+
+        // Iterate through the datesAndMembersList
+        datesAndMembersList.forEach(([date, members]) => {
+            if (!printedDates.includes(date)) {
+                const listItem = document.createElement('li');
+                listItem.classList.add('list-item');
+
+                const dateText = document.createElement('span');
+                dateText.textContent = `${date}`;
+                dateText.classList.add('date-text');
+                listItem.appendChild(dateText);
+
+                inputList.appendChild(listItem);
+                printedDates.push(date); // Add date to printedDates array
+
+                // Add logic to print members for this date
+                if (Array.isArray(members)) {
+                    members.forEach(member => {
+                        const memberText = document.createElement('span');
+                        memberText.textContent = member;
+                        memberText.classList.add('list-member');
+                        inputList.appendChild(memberText);
+                    });
+                } else {
+                    const memberText = document.createElement('span');
+                    memberText.textContent = members;
+                    memberText.classList.add('list-member');
+                    inputList.appendChild(memberText);
+                }
+            }
+        });
+    }
+
+
+    function createMembersTable() {
+        const membersTableDiv = document.getElementById('membersTable');
+        membersTableDiv.innerHTML = ''; // Clear previous content
+
+        const tableHeading = document.createElement('h2');
+        tableHeading.textContent = 'Counted Training Days'; // Removed < > from the heading text
+        membersTableDiv.appendChild(tableHeading);
+
+        const membersList = document.createElement('ul');
+        membersList.classList.add('members-list');
+
+        // Iterate through the direct properties of membersInCntTable
+        for (const member in membersInCntTable) {
+            if (Object.prototype.hasOwnProperty.call(membersInCntTable, member)) {
+                const participationCount = membersInCntTable[member];
+
+                const memberItem = document.createElement('li');
+                memberItem.textContent = `${member}: ${participationCount}`;
+
+                // Apply appropriate class based on participation count
+                if (participationCount === 3) {
+                    memberItem.classList.add('blue');
+                } else if (participationCount === 1 || participationCount === 2) {
+                    memberItem.classList.add('yellow');
+                } else {
+                    memberItem.classList.add('red');
+                }
+
+                membersList.appendChild(memberItem);
+            }
+        }
+
+        membersTableDiv.appendChild(membersList);
+    }
+
+
+    // Function to update member count table continuously
+    setInterval(createMembersTable, 500); // Update every 0.5 seconds
+
+    // Call the createMembersTable function initially to populate the table
+    createMembersTable();
+
+
+
+    function removeMemberFromDate(member, date) {
+        datesAndMembersList = datesAndMembersList.map(([existingDate, members]) => {
+            if (existingDate === date) {
+                const updatedMembers = Array.isArray(members)
+                    ? members.filter(name => name !== member)
+                    : members; // If 'members' is not an array, retain the original value
+
+                return [existingDate, updatedMembers];
+            }
+            return [existingDate, members];
+        });
+
+        updateDisplayList();
+    }
+
+
+    document.querySelectorAll('.member-button').forEach(button => {
+        button.addEventListener('click', function () {
+            document.querySelectorAll('.member-button').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+
+            button.classList.add('selected');
+        });
+    });
+
+
+    function printDatesAndMembersList() {
+        console.log('Dates and Members:');
+        datesAndMembersList.forEach(([date, members]) => {
+            console.log(`Date: ${date}`);
+            console.log('Members:');
+            if (Array.isArray(members)) {
+                members.forEach(member => {
+                    console.log(member);
+                });
+            } else {
+                console.log(members); // Display non-array members directly
+            }
+        });
+    }
+
+
+
+    function getMemberNames() {
+        return Object.keys(members);
+    }
+
+    function addHisDays(name) {
+        membersInCntTable[name] += 1;
+    }
+
+    function resetCntTable() {
+        for (let name in membersInCntTable) {
+            membersInCntTable[name] = 0;
+        }
+    }
+
+
+    function checkIfMembersExist(addMemberNames) {
+        let membersList = addMemberNames.map(name => name.trim());
+
+        // Get the valid member names from membersSemesters object
+        const validMembers = Object.keys(membersSemesters);
+
+        // Check if all entered member names exist in the valid members list
+        return membersList.every(name => validMembers.includes(name));
+    }
+
+    function mergeBuddiesToList() {
+        const existingMembers = datesAndMembersList.flatMap(([_, members]) => members);
+
+        for (const date in buddies) {
+            if (Object.prototype.hasOwnProperty.call(buddies, date)) {
+                const buddyPairs = buddies[date];
+
+                const members = [];
+                buddyPairs.forEach(pair => {
+                    const keys = Object.keys(pair);
+                    const buddy1 = keys[0];
+                    const buddy2 = pair[keys[0]];
+
+                    if (existingMembers.includes(buddy1)) {
+                        members.push(buddy1);
+                    }
+                    if (buddy2 && existingMembers.includes(buddy2)) {
+                        members.push(buddy2);
+                    }
+                });
+
+                datesAndMembersList.push([date, members]);
+            }
+        }
+    }
+    </script>
+</body>
+</html>

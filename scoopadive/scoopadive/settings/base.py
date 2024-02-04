@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'user_profile',
     'divepedia',
     'board',
+    'happy_buddies',
 ]
 
 MIDDLEWARE = [

@@ -33,6 +33,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('divepedia/', include('divepedia.urls')),
     path('board/', include('board.urls')),
+    path('happy_buddies/', include('happy_buddies.urls')),
 ]
 
 # Serve media files during development
