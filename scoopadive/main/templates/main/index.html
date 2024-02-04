@@ -77,8 +77,8 @@
             <div class="link" onclick="location.href='/board';">
                 <a id="list-link" href="/board">Board</a>
             </div>
-            <div class="link" onclick="location.href='https://junnie082.github.io/happy-buddies/';">
-                <a id="list-link" href="https://junnie082.github.io/happy-buddies/">Happy Buddies</a>
+            <div class="link" onclick="{% url 'happy_buddies:index' %}">
+                <a id="list-link" href="{% url 'happy_buddies:index' %}">Happy Buddies</a>
             </div>
             <div class="link" onclick="location.href='{% url 'divepedia:index' %}';">
                 <a id="list-link" href="{% url 'divepedia:index' %}">Divepedia</a>
