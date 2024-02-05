@@ -17,7 +17,7 @@ class Profile(models.Model):
     kisu = models.IntegerField(null=True, blank=True)
     is_absence = models.BooleanField(null=True, blank=True, default=False)
     introduction = models.TextField(null=True, blank=True)
-    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
     loglist = models.ForeignKey(Log, null=True, blank=True, on_delete=models.CASCADE)
 
     class Meta:

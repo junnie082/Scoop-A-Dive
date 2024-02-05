@@ -20,7 +20,7 @@ class Log(models.Model):
     minDepth = models.FloatField()
     temperature = models.FloatField()
     comments = models.TextField()
-    images = models.ImageField(upload_to='images/', blank=True, null=True)
+    images = models.ImageField(upload_to='log_images/', blank=True, null=True)
     create_date = models.DateTimeField(null=True)
     voter = models.ManyToManyField(User) # 추천인 추가
 
