@@ -7,7 +7,7 @@ class Post(models.Model):
     content = models.TextField()
     writer = models.CharField(max_length=20)
     date = models.DateTimeField()
-    images = models.ImageField(blank=True, null=True)
+    images = models.ImageField(upload_to='images/', blank=True, null=True)
     voter = models.ManyToManyField(User)  # 추천인 추가
 
     class Meta:

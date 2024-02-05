@@ -64,7 +64,7 @@ def new_post(request):
             writer=request.user,
             date=timezone.now(),
             content=request.POST['content'],
-            images=request.POST['images']
+            images=request.FILES.get('images', None)
         )
 
     return redirect('board:index')
@@ -101,7 +101,7 @@ def modify_post(request, post_id):
     postName = request.POST.get('postName')
     date = timezone.now()
     content = request.POST.get('content')
-    images = request.POST.get('images')
+    images=request.FILES.get('images', None)
 
     if postName != '': post.postName = postName
     if date != '': post.date = date
