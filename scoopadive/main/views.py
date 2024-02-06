@@ -78,6 +78,10 @@ def posting(request, pk):
 
 def new_log(request):
     if request.method == 'POST':
+        if 'images' in request.FILES: 
+            images = request.FILES['images']
+        else: 
+            images = None
         if 'timeIn' in request.POST and 'timeOut' in request.POST:
             new_log = Log.objects.create(
                 diver = request.user,
@@ -94,7 +98,7 @@ def new_log(request):
                 minDepth = request.POST['minDepth'],
                 temperature = request.POST['temperature'],
                 comments = request.POST['comments'],
-                images = request.POST['images'],
+                images = images,
                 create_date = timezone.now()
             )
 
@@ -153,7 +157,10 @@ def modify_log(request, log_id):
     minDepth = request.POST.get('minDepth')
     temperature = request.POST.get('temperature')
     comments = request.POST.get('comments')
-    images = request.POST.get('images')
+    if 'images' in request.FILES:
+        images = request.FILES['images']
+    else:
+        images = None
     # print("logName: " + str(logName) + " diver: " + str(diver) + " diveNo: " + str(diveNo) + " date: " + str(date) + " location: " + str(location)
     #       + " buddy: " + str(buddy) + " timeIn: " + str(timeIn) + " timeOut: " + str(timeOut) + " weight: " + str(weight)
     #       + "barStart: " + str(barStart) + " barEnd: " + str(barEnd) + " maxDepth: " + str(maxDepth) + " minDepth: " + str(minDepth)
