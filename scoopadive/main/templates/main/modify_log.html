@@ -133,7 +133,7 @@
 
         <div style="width: 450px;">
             <label class="input-group-text" for="inputGroupFile01">Image 1. {% if log.images %}{{ log.images }}{% else %}Upload{% endif %}</label>
-            <input name="images" type="file" class="form-control" id="inputGroupFile01">
+            <input name="images" type="file" class="form-control" id="inputGroupFile01" placeholder="{{ log.images }}">
         </div>
 
         <div class="form-floating mb-0">

@@ -4,9 +4,9 @@ from django.db import models
 # Create your models here.
 class Post(models.Model):
     postName = models.CharField(max_length=200)
-    content = models.TextField()
+    content = models.TextField(blank=True, null=True)
     writer = models.CharField(max_length=20)
-    date = models.DateTimeField()
+    date = models.DateTimeField(blank=True, null=True)
     images = models.ImageField(upload_to='board_images/', blank=True, null=True)
     voter = models.ManyToManyField(User)  # 추천인 추가
 

@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from django.db.models import Count, Q
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
+from django.utils.datastructures import MultiValueDictKeyError
 
 from board.models import Post, Answer4Post
 
@@ -64,7 +65,7 @@ def new_post(request):
             writer=request.user,
             date=timezone.now(),
             content=request.POST['content'],
-            images=request.FILES['images']
+            images=request.FILES.get('images')
         )
 
     return redirect('board:index')
@@ -101,7 +102,10 @@ def modify_post(request, post_id):
     postName = request.POST.get('postName')
     date = timezone.now()
     content = request.POST.get('content')
-    images = request.FILES['images']
+    try:
+        images = request.FILES['images']
+    except MultiValueDictKeyError:
+        images = None
 
     if postName != '': post.postName = postName
     if date != '': post.date = date
