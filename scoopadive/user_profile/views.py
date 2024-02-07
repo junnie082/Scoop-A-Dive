@@ -66,7 +66,7 @@ def modify_profile(request, user_id):
     age = calculate_age(birthday) if birthday else None
     major = request.POST.get('major')
     absence = request.POST.get('absence')
-    image = request.POST.get('image')
+    image = request.FILES.get('image')
 
     if name != '':
         profile.name = name

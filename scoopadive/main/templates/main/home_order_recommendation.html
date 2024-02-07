@@ -60,11 +60,19 @@
                             <a href="home/{{ log.pk }}/" style="color: black;">{{ log.logName }}</a>
                         </td>
                         <div class="d-flex align-items-center">
+                        {% if user.is_authenticated %}
                             {% if log.diver == 'admin' or log.diver == 'superuser' %}
                                 <a class="mb-0 px-2" href="{% url 'user_profile:view_profile' user_id=log.diver %}" style="color:red;">{{ log.diver }}</a>
                             {% else %}
                                 <a class="mb-0 px-2" href="{% url 'user_profile:view_profile' user_id=log.diver %}" style="color: black;">{{ log.diver }}</a>
                             {% endif %}
+                        {% else %}
+                            {% if log.diver == 'admin' or log.diver == 'superuser' %}
+                                <a class="mb-0 px-2" style="color:red;">{{ log.diver }}</a>
+                            {% else %}
+                                <a class="mb-0 px-2" style="color: black;">{{ log.diver }}</a>
+                            {% endif %}
+                        {% endif %}
                             <span class="badge bg-primary rounded-pill me-2">{{ log.voter.count }} 추천</span>
                             <span class="badge bg-dark rounded-pill">{{ log.answer4logs_set.count }} 답글</span>
                         </div>
