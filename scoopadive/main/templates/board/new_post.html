@@ -41,8 +41,8 @@
     {% include 'components/navbar.html' %}
     <h1>New Post</h1>
     <div class="box">
-    <form action="{% url 'board:new_post' %}" method="POST">
-        {% csrf_token %}
+    <form action="{% url 'board:new_post' %}" method="POST" enctype="multipart/form-data">   
+	{% csrf_token %}
         <div class="form-floating mb-3">
           <input type="text" name="postName" class="form-control" id="floatingInput" placeholder="Integer only" required>
           <label for="floatingInput">Title (Name of the Post)</label>

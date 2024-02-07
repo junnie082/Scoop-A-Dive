@@ -56,7 +56,7 @@
 <body>
     {% include 'components/navbar.html' %}
     <h1>Edit Log</h1>
-    <form action="{% url 'main:modify_log' log_id=log_id %}" method="POST" class="form">
+    <form action="{% url 'main:modify_log' log_id=log_id %}" method="POST" class="form" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-floating mb-0">
           <input type="text" name="logName" class="form-control" id="floatingInput" value="{% if log.logName %}{{ log.logName }}{% endif %}">

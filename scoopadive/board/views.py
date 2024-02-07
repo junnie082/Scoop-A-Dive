@@ -59,16 +59,12 @@ def view_new_post(request):
 
 def new_post(request):
     if request.method == 'POST':
-        if 'images' in request.FILES:
-            images = request.FILES['images']
-        else:
-            images = None
         new_post = Post.objects.create(
             postName = request.POST['postName'],
             writer=request.user,
             date=timezone.now(),
             content=request.POST['content'],
-            images=images
+            images=request.FILES.get('images')
         )
 
     return redirect('board:index')
@@ -105,10 +101,8 @@ def modify_post(request, post_id):
     postName = request.POST.get('postName')
     date = timezone.now()
     content = request.POST.get('content')
-    if 'images' in request.FILES:
-        images = request.FILES['images']
-    else:
-        images = None
+    images = request.FILES.get('images')
+
 
     if postName != '': post.postName = postName
     if date != '': post.date = date
