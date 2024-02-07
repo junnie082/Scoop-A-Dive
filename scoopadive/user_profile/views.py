@@ -68,7 +68,8 @@ def modify_profile(request, user_id):
     absence = request.POST.get('absence')
     image = request.FILES.get('image')
 
-    if name != '':
+    print("image: " + str(image))
+    if name != '': 
         profile.name = name
     if student_id != '':
         profile.studentID = student_id
@@ -83,7 +84,7 @@ def modify_profile(request, user_id):
         profile.major = major
     if introduction != '':
         profile.introduction = introduction
-    if image != '':
+    if image is not None:
         profile.image = image
 
 

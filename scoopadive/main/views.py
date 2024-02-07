@@ -174,8 +174,9 @@ def modify_log(request, log_id):
     if minDepth != '':log.minDepth = minDepth
     if temperature != '':log.temperature = temperature
     if comments != '':log.comments = comments
-    if images != '': log.images = images
 
+    if images is not None: 
+        log.images = images
     log.save()
 
     return redirect('main:posting', pk=log_id)

@@ -144,8 +144,8 @@
 
             <!-- Profile Image -->
             <div style="width: 560px;">
-                <label class="input-group-text" for="inputGroupFile01">Image 1. {% if profile.image %}{{ profile.image }}{% else %}Upload{% endif %}</label>
-                <input name="image" type="file" class="form-control" id="inputGroupFile01">
+                <label class="input-group-text" for="inputGroupFile01">Image {% if profile.image %}{{ profile.image }}{% else %}Upload{% endif %}</label>
+                <input name="image" type="file" class="form-control" id="inputGroupFile01" >
             </div>
 
             {% if profile.is_ststMember %}

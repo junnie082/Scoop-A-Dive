@@ -5,4 +5,4 @@ STATIC_ROOT = str(BASE_DIR / 'main/static/')
 
 print("STATIC_ROOT: " + STATIC_ROOT)
 STATICFILES_DIRS = []
-DEBUG = False
+DEBUG = True
