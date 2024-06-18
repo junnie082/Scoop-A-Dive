@@ -10,24 +10,6 @@ def logout_view(request):
     logout(request)
     return redirect('main:index')
 
-# def signup(request):
-#     if request.method == "POST":
-#         form = UserForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             username = form.cleaned_data.get('username')
-#             raw_password = form.cleaned_data.get('password1')
-#             user = authenticate(username=username, password=raw_password)
-#             login(request, user)
-#             return redirect('main:index')
-#         else:
-#             print("Form is not valid. Errors:", form.errors)
-#     else:
-#         form = UserForm()
-#
-#     return render(request, 'common/signup.html', {'form': form})
-
-
 def signup(request):
     if request.method == 'POST':
         # Extract user registration data from the POST request

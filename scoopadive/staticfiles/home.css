@@ -1,0 +1,28 @@
+.container {
+    max-width: 550px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+ul.list-group {
+    margin: 0;
+    padding: 0;
+}
+
+.list-group {
+    margin: 0;
+    padding: 0;
+}
+
+.list-group-item {
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 55px;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 0; /* Adjust as needed */
+}

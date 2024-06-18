@@ -1,5 +1,5 @@
-{% load static %}
 {% load main_filter %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,7 +159,7 @@
                 <div class="row">
                     <div class="content-size">
                         {% if post.content %}
-                            {{ post.content }}
+                            {{ post.content|mark }}
                         {% endif %}
                     </div>
                 </div>
@@ -219,7 +219,7 @@
                             </h4>
 
                             <h4 style="font-size: 10px;" class="mb-0">
-                                {{ answer.content }}
+                                {{ answer.content|mark }}
                             </h4>
 
 
